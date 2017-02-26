@@ -3,10 +3,12 @@
 Clone repository and run:
 
 ```sh
-$ npm install
+$ yarn install
 ```
 
 ## Requirements
+
+[Yarn Package Manager](https://yarnpkg.com/en/docs/install)
 
 node 5+
 
@@ -30,18 +32,6 @@ Also build the production bundle:
 
 ```sh
 $ npm run dist
-```
-
-## Tests
-
-```sh
-$ npm test
-```
-
-Coverage
-
-```sh
-$ npm test -- --coverage
 ```
 
 ## License
