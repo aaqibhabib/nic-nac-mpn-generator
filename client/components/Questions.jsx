@@ -1,8 +1,6 @@
 import React from 'react';
 import update from 'immutability-helper';
 
-import Results from 'components/Results/results';
-
 export default class Questions extends React.Component {
     constructor(props) {
         super(props);
@@ -35,9 +33,6 @@ export default class Questions extends React.Component {
     }
     render() {
         const currentQuesiton = this.state.questions[this.state.currentQuestionIndex];
-        if (this.state.currentQuestionIndex >= this.state.questions.length) {
-            return <Results results={this.state.questions} />;
-        }
         return (
             <div>
                 <h1>{currentQuesiton.message}</h1>
