@@ -1,9 +1,9 @@
 import React from 'react';
+import { Navbar, NavItem, Row, Col } from 'react-materialize';
 
-import Questions from 'components/Questions'
-import { Navbar, NavItem, Row, Col } from 'react-materialize'
+import Steps from 'components/Steps';
 
-class IndexComponent extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div>
@@ -14,12 +14,10 @@ class IndexComponent extends React.Component {
             <NavItem href='#'>Github</NavItem>
           </Navbar>
         </Row>
-        <Row>
-          <Questions />
-        </Row>
+          <Steps />
       </div>
     );
   }
 }
 
-export default IndexComponent;
+export default App;
