@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -10,6 +11,24 @@ import MenuItem from 'material-ui/MenuItem';
 import Steps from './Steps';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        _.bindAll(this, 'onSelectionChange');
+        this.state = {
+            currentStepIndex: 0,
+            selections: {},
+        };
+    }
+
+    onSelectionChange(id, state) {
+        this.setState({ selections: {
+            ...this.state.selections,
+            [id]: state,
+        } }, () => {
+            console.log(this.state.selections);
+        });
+    }
+
     render() {
         return (
             <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
@@ -28,7 +47,11 @@ class App extends React.Component {
                               <MenuItem primaryText="Github" />
                           </IconMenu>}
                     />
-                    <Steps />
+                    <Steps
+                      currentStepIndex={this.state.currentStepIndex}
+                      selections={this.state.selections}
+                      onSelectionChange={this.onSelectionChange}
+                    />
                 </div>
             </MuiThemeProvider>
         );

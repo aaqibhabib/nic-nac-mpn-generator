@@ -1,5 +1,4 @@
 import React from 'react';
-import update from 'immutability-helper';
 import _ from 'lodash';
 import { Step, Stepper, StepLabel } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -20,15 +19,7 @@ export default class Questions extends React.Component {
     onClick() {
         this.setState({ currentStepIndex: this.state.currentStepIndex + 1 });
     }
-    onChange(e) {
-        this.setState({
-            questions: update(this.state.questions, {
-                [this.state.currentQuestionIndex]: {
-                    answer: { $set: e.target.value },
-                },
-            }),
-        });
-    }
+
     render() {
         const currentStep = Steps[this.state.currentStepIndex];
         return (
@@ -61,17 +52,40 @@ export default class Questions extends React.Component {
                 </Stepper>
                 <div style={{ maxWidth: '900px', marginRight: 'auto', marginLeft: 'auto' }} >
                     <h4>{currentStep.title}</h4>
-                    {currentStep.questions.map((question) => {
-                        if (question.type === QuestionTypes.CHECKBOX) {
-                            return <CheckboxQuestion key={question.id} {...question} />;
-                        } else if (question.type === QuestionTypes.RADIO) {
-                            return <RadioQuestion key={question.id} {...question} />;
-                        }
-                        return null;
-                    })}
+                    {currentStep.values.map(questionGroup =>
+                        (<div key={questionGroup.key}>
+                            <h5>{questionGroup.key}</h5>
+                            {questionGroup.values.map((question) => {
+                                const key = `${currentStep.key}-${questionGroup.key}-${question.id}`;
+                                const selection = _.get(this.props.selections, [key], {});
+                                if (question.type === QuestionTypes.CHECKBOX) {
+                                    return (<CheckboxQuestion
+                                      {...question}
+                                      key={question.id}
+                                      selection={selection}
+                                      onChange={this.props.onSelectionChange}
+                                    />);
+                                } else if (question.type === QuestionTypes.RADIO) {
+                                    return (<RadioQuestion
+                                      {...question}
+                                      key={question.id}
+                                      selection={selection}
+                                      onChange={this.props.onSelectionChange}
+                                    />);
+                                }
+                                return null;
+                            })}
+                        </div>),
+                    )}
                     <RaisedButton className="right" label="Continue" primary onClick={this.onClick} />
                 </div>
             </div>
         );
     }
 }
+
+Questions.propTypes = {
+    // eslint-disable-next-line react/forbid-prop-types
+    selections: React.PropTypes.object.isRequired,
+    onSelectionChange: React.PropTypes.func.isRequired,
+};
