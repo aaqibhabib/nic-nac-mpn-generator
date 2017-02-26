@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
+import { Card, CardHeader, CardText } from 'material-ui/Card';
 import Checkbox from 'material-ui/Checkbox';
 
 const styles = {
@@ -9,24 +9,27 @@ const styles = {
 };
 
 export default class CheckboxQuestion extends React.Component {
-
     render() {
         return (
             <Card>
                 <CardHeader
-                    title={this.props.prompt}
+                  title={this.props.prompt}
                 />
                 <CardText>
-                    {this.props.options.map((option, i) => {
-                        return (
-                            <Checkbox key={i}
-                                label={option}
-                                style={styles.checkbox}
-                            />
-                        );
-                    })}
+                    {this.props.options.map(option => (
+                        <Checkbox
+                          key={option}
+                          label={option}
+                          style={styles.checkbox}
+                        />
+                        ))}
                 </CardText>
             </Card>
         );
     }
 }
+
+CheckboxQuestion.propTypes = {
+    prompt: React.PropTypes.string.isRequired,
+    options: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired,
+};

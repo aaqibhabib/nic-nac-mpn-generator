@@ -4,7 +4,7 @@ import _ from 'lodash';
 import { Step, Stepper, StepLabel } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import { Steps, QuestionTypes } from 'config.js';
+import { Steps, QuestionTypes } from '../config';
 import CheckboxQuestion from './CheckboxQuestion';
 import RadioQuestion from './RadioQuestion';
 
@@ -14,26 +14,26 @@ export default class Questions extends React.Component {
         _.bindAll(this, 'onClick');
         this.state = {
             currentStepIndex: 0,
-        }
+        };
     }
 
-    onClick(e) {
-        this.setState({ currentStepIndex: this.state.currentStepIndex + 1 })
+    onClick() {
+        this.setState({ currentStepIndex: this.state.currentStepIndex + 1 });
     }
     onChange(e) {
         this.setState({
             questions: update(this.state.questions, {
                 [this.state.currentQuestionIndex]: {
-                    answer: { $set: e.target.value }
-                }
-            })
+                    answer: { $set: e.target.value },
+                },
+            }),
         });
     }
     render() {
         const currentStep = Steps[this.state.currentStepIndex];
         return (
             <div>
-                <Stepper linear={true} activeStep={this.state.currentStepIndex}>
+                <Stepper linear activeStep={this.state.currentStepIndex}>
                     <Step>
                         <StepLabel>Contact Info</StepLabel>
                     </Step>
@@ -61,14 +61,15 @@ export default class Questions extends React.Component {
                 </Stepper>
                 <div style={{ maxWidth: '900px', marginRight: 'auto', marginLeft: 'auto' }} >
                     <h4>{currentStep.title}</h4>
-                    {currentStep.questions.map(question => {
+                    {currentStep.questions.map((question) => {
                         if (question.type === QuestionTypes.CHECKBOX) {
                             return <CheckboxQuestion key={question.id} {...question} />;
                         } else if (question.type === QuestionTypes.RADIO) {
                             return <RadioQuestion key={question.id} {...question} />;
                         }
+                        return null;
                     })}
-                    <RaisedButton className='right' label='Continue' primary={true} onClick={this.onClick}></RaisedButton>
+                    <RaisedButton className="right" label="Continue" primary onClick={this.onClick} />
                 </div>
             </div>
         );

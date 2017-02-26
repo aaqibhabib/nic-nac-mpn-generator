@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
+import { Card, CardHeader, CardText } from 'material-ui/Card';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 
 const styles = {
@@ -11,22 +11,27 @@ const styles = {
 export default class RadioQuestion extends React.Component {
     render() {
         return (
-            <Card className='' title={this.props.prompt}>
+            <Card className="" title={this.props.prompt}>
                 <CardHeader title={this.props.prompt} />
                 <CardText>
                     <RadioButtonGroup name={this.props.id}>
-                        {this.props.options.map((option, i) => {
-                            return (
-                                <RadioButton key={i}
-                                    value={option}
-                                    label={option}
-                                    style={styles.radio}
-                                />
-                            );
-                        })}
+                        {this.props.options.map(option => (
+                            <RadioButton
+                              key={option}
+                              value={option}
+                              label={option}
+                              style={styles.radio}
+                            />
+                            ))}
                     </RadioButtonGroup>
                 </CardText>
             </Card>
         );
     }
 }
+
+RadioQuestion.propTypes = {
+    id: React.PropTypes.string.isRequired,
+    prompt: React.PropTypes.string.isRequired,
+    options: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired,
+};
