@@ -33,7 +33,7 @@ export const Steps = [
                 ]
             },
         ]
-        
+
     },
     {
         id: 'step-2',
@@ -64,6 +64,6 @@ export const Steps = [
                 ]
             },
         ]
-        
+
     },
 ]

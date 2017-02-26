@@ -1,8 +1,8 @@
 import React from 'react';
 import update from 'immutability-helper';
 import _ from 'lodash';
-import { Button, Col, Row } from 'react-materialize';
-import Stepper from 'react-stepper-horizontal';
+import { Step, Stepper, StepLabel } from 'material-ui/Stepper';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import { Steps, QuestionTypes } from 'config.js';
 import CheckboxQuestion from './CheckboxQuestion';
@@ -32,12 +32,35 @@ export default class Questions extends React.Component {
     render() {
         const currentStep = Steps[this.state.currentStepIndex];
         return (
-            <Row>
-                <Col m={8} s={12} offset='m2'>
-                    <div>
-                        <Stepper steps={['Step One', 'Step Two', 'Step Three', 'Step Four']} activeStep={1} />
-                    </div>
-                    <Row><h4>{currentStep.title}</h4></Row>
+            <div>
+                <Stepper linear={true} activeStep={this.state.currentStepIndex}>
+                    <Step>
+                        <StepLabel>Contact Info</StepLabel>
+                    </Step>
+                    <Step>
+                        <StepLabel>HIPPA Policy</StepLabel>
+                    </Step>
+                    <Step>
+                        <StepLabel>Data Usage</StepLabel>
+                    </Step>
+                    <Step>
+                        <StepLabel>Data Sharing</StepLabel>
+                    </Step>
+                    <Step>
+                        <StepLabel>User Options</StepLabel>
+                    </Step>
+                    <Step>
+                        <StepLabel>Policy Changes</StepLabel>
+                    </Step>
+                    <Step>
+                        <StepLabel>Review</StepLabel>
+                    </Step>
+                    <Step>
+                        <StepLabel>Export Notice</StepLabel>
+                    </Step>
+                </Stepper>
+                <div style={{ maxWidth: '900px', marginRight: 'auto', marginLeft: 'auto' }} >
+                    <h4>{currentStep.title}</h4>
                     {currentStep.questions.map(question => {
                         if (question.type === QuestionTypes.CHECKBOX) {
                             return <CheckboxQuestion key={question.id} {...question} />;
@@ -45,9 +68,9 @@ export default class Questions extends React.Component {
                             return <RadioQuestion key={question.id} {...question} />;
                         }
                     })}
-                    <Row><Button className='right' waves='light' onClick={this.onClick}>Continue</Button></Row>
-                </Col>
-            </Row>
+                    <RaisedButton className='right' label='Continue' primary={true} onClick={this.onClick}></RaisedButton>
+                </div>
+            </div>
         );
     }
 }

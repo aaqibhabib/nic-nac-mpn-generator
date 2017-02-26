@@ -1,20 +1,32 @@
 import React from 'react';
-import { Card, Col, Row, Input } from 'react-materialize';
+import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
+import Checkbox from 'material-ui/Checkbox';
+
+const styles = {
+    checkbox: {
+        marginBottom: 16,
+    },
+};
 
 export default class CheckboxQuestion extends React.Component {
+
     render() {
         return (
-            <Row>
-                <Card className='' textClassName='' title={this.props.prompt}>
+            <Card>
+                <CardHeader
+                    title={this.props.prompt}
+                />
+                <CardText>
                     {this.props.options.map((option, i) => {
                         return (
-                            <Row key={i}>
-                                <Input name={this.props.id} type='checkbox' value={option} label={option} />
-                            </Row>
+                            <Checkbox key={i}
+                                label={option}
+                                style={styles.checkbox}
+                            />
                         );
                     })}
-                </Card>
-            </Row>
+                </CardText>
+            </Card>
         );
     }
 }

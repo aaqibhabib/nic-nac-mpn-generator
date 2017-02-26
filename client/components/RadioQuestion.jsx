@@ -1,20 +1,32 @@
 import React from 'react';
-import { Card, Col, Row, Input } from 'react-materialize';
+import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
+import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
+
+const styles = {
+    radio: {
+        marginBottom: 16,
+    },
+};
 
 export default class RadioQuestion extends React.Component {
     render() {
         return (
-            <Row>
-                <Card className='' textClassName='' title={this.props.prompt}>
-                    {this.props.options.map((option, i) => {
-                        return (
-                            <Row key={i}>
-                                <Input name={this.props.id} type='radio' value={option} label={option} />
-                            </Row>
-                        );
-                    })}
-                </Card>
-            </Row>
+            <Card className='' title={this.props.prompt}>
+                <CardHeader title={this.props.prompt} />
+                <CardText>
+                    <RadioButtonGroup name={this.props.id}>
+                        {this.props.options.map((option, i) => {
+                            return (
+                                <RadioButton key={i}
+                                    value={option}
+                                    label={option}
+                                    style={styles.radio}
+                                />
+                            );
+                        })}
+                    </RadioButtonGroup>
+                </CardText>
+            </Card>
         );
     }
 }
