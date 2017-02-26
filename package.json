@@ -21,6 +21,8 @@
     "lodash": "4.17.4",
     "react": "15.4.2",
     "react-dom": "15.4.2",
+    "react-materialize": "^0.18.1",
+    "react-stepper-horizontal": "^1.0.5",
     "webpack": "^1.12.12"
   },
   "devDependencies": {
