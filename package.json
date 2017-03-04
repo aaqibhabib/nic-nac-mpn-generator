@@ -4,7 +4,7 @@
   "description": "NPM Generator",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "webpack-dev-server --hot --inline",
     "lint": "eslint client/components/**",
     "dist": "cross-env NODE_ENV=production webpack -p --progress",
     "postinstall": "npm run dist"

@@ -6,15 +6,8 @@
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
   <body>
-
   <div id="js-main"></div>
-
-  <%- body %>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <% if (env.production) { %>
-    <script async src="<%= env.assets.main.js %>"></script>
-  <% } else { %>
-    <script src="http://localhost:3000/client/main.js"></script>
-  <% } %>
+  <script src="dist/main.js"></script>
   </body>
 </html>
