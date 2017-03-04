@@ -5,6 +5,12 @@ export const QuestionTypes = {
     CHECKBOX: 'checkbox',
 };
 
+const COMMON_OPTIONS = [
+    'aaqib0',
+    'aaqib2',
+    'aaqib3',
+];
+
 export const Questions = [
     {
         id: 'p-1 g-1 q-1',
@@ -14,9 +20,7 @@ export const Questions = [
         type: QuestionTypes.CHECKBOX,
         prompt: 's-1 g-1 q-1 prompt',
         options: [
-            'aaqib1',
-            'aaqib2',
-            'aaqib3',
+            ...COMMON_OPTIONS,
             'other',
             'we do not track',
         ],
@@ -29,9 +33,7 @@ export const Questions = [
         type: QuestionTypes.CHECKBOX,
         prompt: 's-1 g-1 q-2 prompt',
         options: [
-            'aaqib1',
-            'aaqib2',
-            'aaqib3',
+            ...COMMON_OPTIONS,
             'other',
             'we do not track',
         ],
@@ -43,6 +45,20 @@ export const Questions = [
         title: 'step 2 title',
         type: QuestionTypes.RADIO,
         prompt: 's-1 g-2 q-1 prompt',
+        options: [
+            'aaqib1',
+            ...COMMON_OPTIONS,
+            'other',
+            'we do not track',
+        ],
+    },
+    {
+        id: 's-1 g-2 q-1',
+        groupID: 'Hey',
+        pageID: 0,
+        title: 'Where do I show up?',
+        type: QuestionTypes.CHECKBOX,
+        prompt: 'Hello?',
         options: [
             'aaqib1',
             'aaqib2',
