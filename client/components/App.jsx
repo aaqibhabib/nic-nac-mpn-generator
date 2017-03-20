@@ -7,16 +7,25 @@ import AppBar from 'material-ui/AppBar';
 import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
 
+import Stepper from './Stepper';
 import Steps from './Steps';
+import Intro from './Intro';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        _.bindAll(this, 'onSelectionChange');
+        _.bindAll(this, 'onSelectionChange', 'onIntroChange', 'onClick');
         this.state = {
             currentStepIndex: 0,
             selections: {},
+            entityName: '',
+            privacyPolicyLink: '',
+            commentLink: '',
+            emailAddress: '',
+            phoneNumber: '',
+            address: '',
         };
     }
 
@@ -27,6 +36,16 @@ class App extends React.Component {
         } }, () => {
             console.log(this.state.selections);
         });
+    }
+
+    onIntroChange(id, state) {
+        this.setState({
+            [id]: state,
+        });
+    }
+
+    onClick() {
+        this.setState({ currentStepIndex: this.state.currentStepIndex + 1 });
     }
 
     render() {
@@ -47,11 +66,28 @@ class App extends React.Component {
                               <MenuItem primaryText="Github" />
                           </IconMenu>}
                     />
-                    <Steps
+                    <Stepper
                       currentStepIndex={this.state.currentStepIndex}
-                      selections={this.state.selections}
-                      onSelectionChange={this.onSelectionChange}
                     />
+                    {(() => {
+                        if (this.state.currentStepIndex === 0) {
+                            return (<Intro
+                              entityName={this.state.entityName}
+                              privacyPolicyLink={this.state.privacyPolicyLink}
+                              commentLink={this.state.commentLink}
+                              emailAddress={this.state.emailAddress}
+                              phoneNumber={this.state.phoneNumber}
+                              address={this.state.address}
+                              onIntroChange={this.onIntroChange}
+                            />);
+                        }
+                        return (<Steps
+                          currentStepIndex={this.state.currentStepIndex}
+                          selections={this.state.selections}
+                          onSelectionChange={this.onSelectionChange}
+                        />);
+                    })()}
+                    <RaisedButton className="right" label="Continue" primary onClick={this.onClick} />
                 </div>
             </MuiThemeProvider>
         );

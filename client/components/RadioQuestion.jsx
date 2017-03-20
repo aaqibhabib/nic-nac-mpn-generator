@@ -42,7 +42,10 @@ export default class RadioQuestion extends React.Component {
 RadioQuestion.propTypes = {
     id: React.PropTypes.string.isRequired,
     pageID: React.PropTypes.number.isRequired,
-    groupID: React.PropTypes.number.isRequired,
+    groupID: React.PropTypes.oneOfType([
+        React.PropTypes.number,
+        React.PropTypes.string,
+    ]).isRequired,
     prompt: React.PropTypes.string.isRequired,
     options: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired,
     selection: React.PropTypes.string.isRequired,
