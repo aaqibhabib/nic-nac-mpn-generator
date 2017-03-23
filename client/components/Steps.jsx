@@ -10,11 +10,11 @@ export default class Questions extends React.Component {
         const currentStep = Steps[this.props.currentStepIndex];
         return (
             <div>
-                <div style={{ maxWidth: '900px', marginRight: 'auto', marginLeft: 'auto' }} >
+                <div>
                     <h4>{currentStep.title}</h4>
                     {currentStep.values.map(questionGroup =>
                         (<div key={questionGroup.key}>
-                            <h5>{questionGroup.key}</h5>
+                            <h3>{questionGroup.key}</h3>
                             {questionGroup.values.map((question) => {
                                 const key = `${currentStep.key}-${questionGroup.key}-${question.id}`;
                                 const selection = _.get(this.props.selections, [key], {});

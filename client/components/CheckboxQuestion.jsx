@@ -1,11 +1,12 @@
 import React from 'react';
 import _ from 'lodash';
-import { Card, CardHeader, CardText } from 'material-ui/Card';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 import Checkbox from 'material-ui/Checkbox';
 
 const styles = {
     checkbox: {
-        marginBottom: 16,
+        marginBottom: '16px',
+        fontSize: '16px',
     },
 };
 
@@ -50,9 +51,7 @@ export default class CheckboxQuestion extends React.Component {
     render() {
         return (
             <Card>
-                <CardHeader
-                  title={this.props.prompt}
-                />
+                <CardTitle ><div style={{ fontSize: 20 }}>{this.props.prompt}</div></CardTitle>
                 <CardText>
                     {this.props.options.map(option => (<MPNCheckbox
                       key={option}

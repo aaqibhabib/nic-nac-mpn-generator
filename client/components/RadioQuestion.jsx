@@ -1,11 +1,12 @@
 import React from 'react';
 import _ from 'lodash';
-import { Card, CardHeader, CardText } from 'material-ui/Card';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 
 const styles = {
     radio: {
-        marginBottom: 16,
+        marginBottom: '16px',
+        fontSize: '16px',
     },
 };
 
@@ -21,7 +22,7 @@ export default class RadioQuestion extends React.Component {
     render() {
         return (
             <Card title={this.props.prompt}>
-                <CardHeader title={this.props.prompt} />
+                <CardTitle ><div style={{ fontSize: 20 }}>{this.props.prompt}</div></CardTitle>
                 <CardText>
                     <RadioButtonGroup name={this.props.id} onChange={this.onChange} valueSelected={this.props.selection}>
                         {this.props.options.map(option => (

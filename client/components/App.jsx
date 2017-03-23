@@ -4,21 +4,34 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
-import IconMenu from 'material-ui/IconMenu';
-import IconButton from 'material-ui/IconButton';
-import MenuItem from 'material-ui/MenuItem';
+import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import Stepper from './Stepper';
 import Steps from './Steps';
+import Contact from './Contact';
 import Intro from './Intro';
+
+const styles = {
+    container: {
+        maxWidth: '900px',
+        marginRight: 'auto',
+        marginLeft: 'auto',
+    },
+    right: {
+        float: 'right',
+    },
+    left: {
+        float: 'left',
+    },
+};
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        _.bindAll(this, 'onSelectionChange', 'onIntroChange', 'onClick');
+        _.bindAll(this, 'onSelectionChange', 'onIntroChange', 'nextStep', 'previousStep');
         this.state = {
-            currentStepIndex: 0,
+            currentStepIndex: -1,
             selections: {},
             entityName: '',
             privacyPolicyLink: '',
@@ -44,8 +57,12 @@ class App extends React.Component {
         });
     }
 
-    onClick() {
+    nextStep() {
         this.setState({ currentStepIndex: this.state.currentStepIndex + 1 });
+    }
+
+    previousStep() {
+        this.setState({ currentStepIndex: this.state.currentStepIndex - 1 });
     }
 
     render() {
@@ -56,38 +73,53 @@ class App extends React.Component {
                       title="MPN Generator"
                       showMenuIconButton={false}
                       iconElementRight={
-                          <IconMenu
-                            iconButtonElement={<IconButton iconClassName="material-icons">more_vert</IconButton>}
-                            targetOrigin={{ horizontal: 'right', vertical: 'top' }}
-                            anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
-                          >
-                              <MenuItem primaryText="Home" />
-                              <MenuItem primaryText="About" />
-                              <MenuItem primaryText="Github" />
-                          </IconMenu>}
+                          <div style={{marginTop:"6px"}}>
+                              <FlatButton style={{color:"white"}} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Home" />
+                              <FlatButton style={{color:"white"}} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="About" />
+                              <FlatButton style={{color:"white"}} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Github" />
+                          </div>}
                     />
-                    <Stepper
-                      currentStepIndex={this.state.currentStepIndex}
-                    />
-                    {(() => {
-                        if (this.state.currentStepIndex === 0) {
-                            return (<Intro
-                              entityName={this.state.entityName}
-                              privacyPolicyLink={this.state.privacyPolicyLink}
-                              commentLink={this.state.commentLink}
-                              emailAddress={this.state.emailAddress}
-                              phoneNumber={this.state.phoneNumber}
-                              address={this.state.address}
-                              onIntroChange={this.onIntroChange}
-                            />);
-                        }
-                        return (<Steps
+                    <div style={styles.container}>
+                        {this.state.currentStepIndex >= 0 ? <h1>Create Your Privacy Notice</h1> : null}
+                        {this.state.currentStepIndex >= 0 ? <Stepper
                           currentStepIndex={this.state.currentStepIndex}
-                          selections={this.state.selections}
-                          onSelectionChange={this.onSelectionChange}
-                        />);
-                    })()}
-                    <RaisedButton className="right" label="Continue" primary onClick={this.onClick} />
+                        /> : null}
+                        {(() => {
+                            console.log(this.state.currentStepIndex);
+                            if (this.state.currentStepIndex < 0) {
+                                return (<Intro />);
+                            }
+                            if (this.state.currentStepIndex === 0) {
+                                return (<Contact
+                                  entityName={this.state.entityName}
+                                  privacyPolicyLink={this.state.privacyPolicyLink}
+                                  commentLink={this.state.commentLink}
+                                  emailAddress={this.state.emailAddress}
+                                  phoneNumber={this.state.phoneNumber}
+                                  address={this.state.address}
+                                  onIntroChange={this.onIntroChange}
+                                />);
+                            }
+                            return (<Steps
+                              currentStepIndex={this.state.currentStepIndex}
+                              selections={this.state.selections}
+                              onSelectionChange={this.onSelectionChange}
+                            />);
+                        })()}
+                        <div style={{ height: '42px', margin: '30px 0%' }}>
+                            {this.state.currentStepIndex > 0 ? <RaisedButton
+                              style={styles.left}
+                              label="Back"
+                              onClick={this.previousStep}
+                            /> : null}
+                            <RaisedButton
+                              style={styles.right}
+                              label={this.state.currentStepIndex >= 0 ? 'Continue' : 'Begin'}
+                              primary
+                              onClick={this.nextStep}
+                            />
+                        </div>
+                    </div>
                 </div>
             </MuiThemeProvider>
         );
