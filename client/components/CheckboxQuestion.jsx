@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
 import Checkbox from 'material-ui/Checkbox';
+import TextField from 'material-ui/TextField';
 
 const styles = {
     checkbox: {
@@ -19,6 +20,21 @@ class MPNCheckbox extends React.Component {
         this.props.onCheck(this.props.label, isChecked);
     }
     render() {
+        if (this.props.label === 'Other:') {
+            return (<div className="other" styles={{display:'flex',flexDirection:'row'}}><Checkbox
+              label={this.props.label}
+              style={{marginBottom:'16px',fontSize:'16px',width:'auto',flex:'1'}}
+              onCheck={this.onCheck}
+              checked={this.props.checked}
+            />
+                <TextField
+                  value={this.other}
+                  onChange={this.onOther}
+                  style={{height:'36px',marginLeft:'12px',flex:'1'}}
+                />
+            </div>
+            );
+        }
         return (<Checkbox
           label={this.props.label}
           style={styles.checkbox}

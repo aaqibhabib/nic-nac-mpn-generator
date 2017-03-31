@@ -1,1 +1,8 @@
+div.other {
+    display: flex;
+    flex-direction: row;
+}
 
+div.other div input {
+    height: 24px !important
+}
