@@ -105,35 +105,6 @@ export const Questions = [
             'we do not track',
         ],
     },
-  /*  {
-        id: 's-1 g-2 q-1',
-        groupID: 1,
-        pageID: 0,
-        title: 'step 2 title',
-        type: QuestionTypes.RADIO,
-        prompt: 's-1 g-2 q-1 prompt',
-        options: [
-            'aaqib1',
-            ...COMMON_OPTIONS,
-            'other',
-            'we do not track',
-        ],
-    },
-    {
-        id: 's-1 g-2 q-1',
-        groupID: 'Hey',
-        pageID: 0,
-        title: 'Where do I show up?',
-        type: QuestionTypes.CHECKBOX,
-        prompt: 'Hello?',
-        options: [
-            'aaqib1',
-            'aaqib2',
-            'aaqib3',
-            'other',
-            'we do not track',
-        ],
-    },*/
     {
         id: 'p-2 g-1 q-1',
         groupID: 'HIPAA COVERED ENTITY',
@@ -147,21 +118,6 @@ export const Questions = [
             'None',
         ],
     },
-/*    {
-        id: 'p-2 g-2 q-1',
-        groupID: 1,
-        pageID: 1,
-        title: 'step 4 title',
-        type: QuestionTypes.CHECKBOX,
-        prompt: 'p-2 g-2 q-1 prompt',
-        options: [
-            'ish1',
-            'ish2',
-            'ish3',
-            'other',
-            'we do not track',
-        ],
-    },*/
     {
         id: 'p-3 g-1 q-1',
         groupID: 'Use: How we use your data internally',

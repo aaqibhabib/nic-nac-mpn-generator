@@ -11,6 +11,7 @@ import Stepper from './Stepper';
 import Steps from './Steps';
 import Contact from './Contact';
 import Intro from './Intro';
+import Review from './Review';
 
 const styles = {
     container: {
@@ -88,7 +89,7 @@ class App extends React.Component {
                             console.log(this.state.currentStepIndex);
                             if (this.state.currentStepIndex < 0) {
                                 return (<Intro />);
-                            }
+                            } else
                             if (this.state.currentStepIndex === 0) {
                                 return (<Contact
                                   entityName={this.state.entityName}
@@ -99,12 +100,25 @@ class App extends React.Component {
                                   address={this.state.address}
                                   onIntroChange={this.onIntroChange}
                                 />);
+                            } else
+                            if (this.state.currentStepIndex > 0 && this.state.currentStepIndex < 6) {
+                                return (<Steps
+                                  currentStepIndex={this.state.currentStepIndex}
+                                  selections={this.state.selections}
+                                  onSelectionChange={this.onSelectionChange}
+                                />);
+                            } else
+                            if (this.state.currentStepIndex === 6) {
+                                return (<Review
+                                  entityName={this.state.entityName}
+                                  privacyPolicyLink={this.state.privacyPolicyLink}
+                                  commentLink={this.state.commentLink}
+                                  emailAddress={this.state.emailAddress}
+                                  phoneNumber={this.state.phoneNumber}
+                                  address={this.state.address}
+                                  selections={this.state.selections}
+                                />);
                             }
-                            return (<Steps
-                              currentStepIndex={this.state.currentStepIndex}
-                              selections={this.state.selections}
-                              onSelectionChange={this.onSelectionChange}
-                            />);
                         })()}
                         <div style={{ height: '42px', margin: '30px 0%' }}>
                             {this.state.currentStepIndex > 0 ? <RaisedButton
