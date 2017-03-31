@@ -17,8 +17,8 @@ export default class Questions extends React.Component {
                             <h3>{questionGroup.key}</h3>
                             {questionGroup.values.map((question) => {
                                 const key = `${currentStep.key}-${questionGroup.key}-${question.id}`;
-                                const selection = _.get(this.props.selections, [key], {});
                                 if (question.type === QuestionTypes.CHECKBOX) {
+                                    const selection = _.get(this.props.selections, [key], {});
                                     return (<CheckboxQuestion
                                       {...question}
                                       key={question.id}
@@ -26,6 +26,7 @@ export default class Questions extends React.Component {
                                       onChange={this.props.onSelectionChange}
                                     />);
                                 } else if (question.type === QuestionTypes.RADIO) {
+                                    const selection = _.get(this.props.selections, [key], '');
                                     return (<RadioQuestion
                                       {...question}
                                       key={question.id}
