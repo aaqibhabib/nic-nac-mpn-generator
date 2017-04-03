@@ -43,7 +43,7 @@ export default class Policy extends React.Component {
                     <CardText>
                         <TextField
                           fullWidth
-                          multiLine 
+                          multiLine
                           floatingLabelText="Describe how/if the company will notify consumers of privacy policy changes (e.g. merger or acquisition)"
                           floatingLabelStyle={styles.floatingLabelStyle}
                           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}

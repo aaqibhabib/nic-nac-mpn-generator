@@ -52,7 +52,7 @@ class App extends React.Component {
         this.state = {
             currentStepIndex: 7,
             selections: {
-                '1-HIPAA COVERED ENTITY-p-2 g-1 q-1': "Please note that the health data we collect as part of this [insert name of technology] are not protected by HIPAA and our company's HIPAA Notice of Privacy Practices does not apply",
+                '1-HIPAA COVERED ENTITY-p-2 g-1 q-1': 'Yes',
                 '2-Use: How we use your data internally-p-3 g-1 q-1': {
                     'To provide the primary service of the app or technology': true,
                 },
@@ -72,6 +72,30 @@ class App extends React.Component {
                 '4-Deactivation: What happens to your data when your account is deactivated-p-5 g-2 q-1': 'Deleted after x years',
                 '5-Policy Changes: How we will notify you if our privacy policy changes-p-6 g-1 q-1': 'Deleted immediately',
                 '5-Breach: How we will notify you and protect your data in case of an improper disclosure-p-6 g-2 q-1': 'Permanently retained and used',
+                '1-HIPAA COVERED ENTITY-p-2 g-1 q-2': "Please note that the health data we collect as part of this [insert name of technology] are not protected by HIPAA and our company's HIPAA Notice of Privacy Practices does not apply",
+                '2-Use: How data is used internally-p-3 g-1 q-1': {
+                    'To develop marketing materials for our products': true,
+                    'To conduct scientific research': true,
+                    'For company operations (e.g., quality control or fraud detection)': true,
+                },
+                '2-Share: How data is shared externally with other companies or entities-p-3 g-2 q-1': {
+                    'For company operations (e.g., quality control or fraud detection)': true,
+                    'To conduct scientific research': true,
+                    'Other:': 'yeo',
+                },
+                '2-Share: How data is shared externally with other companies or entities-p-3 g-2 q-2': {
+                    'To conduct scientific research': true,
+                    'Other:': 'hi',
+                },
+                '2-Sell: How data is sold-p-3 g-3 q-1': 'Yes; only with permission',
+                '2-Sell: How data is sold-p-3 g-3 q-2': 'No',
+                '3-Store: How data is stored-p-4 g-1 q-1': 'Yes',
+                '3-Store: How data is stored-p-4 g-1 q-2': 'No',
+                '3-Encryption: How data is encrypted-p-4 g-2 q-1': 'Yes, by default',
+                '3-Encryption: How data is encrypted-p-4 g-2 q-2': 'Yes, by default',
+                '3-Encryption: How data is encrypted-p-4 g-2 q-3': 'Yes, by default',
+                '4-User Options: What a user can do with the data that is collected-p-5 g-1 q-1': 'Yes',
+                '4-Deactivation: What happens to data when an account is deactivated-p-5 g-2 q-1': 'Deleted after x years',
             },
             entityName: 'John Smith',
             privacyPolicyLink: 'www.google.com',

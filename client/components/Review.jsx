@@ -89,7 +89,7 @@ export default class Review extends React.Component {
                             <div style={styles.td}>Link to section in privacy policy:</div>
                             <div style={styles.td}><a href={this.props.breachSectionLink}>{this.props.breachSectionLink}</a></div>
                         </div>
-  
+
                     </CardText>
                 </Card>
             </div>

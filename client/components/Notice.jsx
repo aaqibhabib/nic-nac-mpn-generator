@@ -46,7 +46,7 @@ export default class Notice extends React.Component {
                                     if (question.type === QuestionTypes.CHECKBOX) {
                                         return (<div key={question.id} className="question-block">
                                             <h3 className="question-prompt">{question.prompt}</h3>
-                                            <div>
+                                            <div className="question-answers">
                                                 {(() => {
                                                     const items = [];
                                                     const checkBox = this.props.selections[key];
@@ -54,7 +54,7 @@ export default class Notice extends React.Component {
                                                     for (const selection in checkBox) {
                                                         if (checkBox[selection]) items.push(<li>{selection === 'Other:' ? checkBox[selection] : selection}</li>);
                                                     }
-                                                    return <ul className="question-answers">{items}</ul>;
+                                                    return <ul>{items}</ul>;
                                                 })()}
                                             </div>
                                         </div>);
