@@ -74,10 +74,10 @@ class App extends React.Component {
                       title="MPN Generator"
                       showMenuIconButton={false}
                       iconElementRight={
-                          <div style={{marginTop:"6px"}}>
-                              <FlatButton style={{color:"white"}} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Home" />
-                              <FlatButton style={{color:"white"}} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="About" />
-                              <FlatButton style={{color:"white"}} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Github" />
+                          <div style={{ marginTop: '6px' }}>
+                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Home" />
+                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="About" />
+                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Github" />
                           </div>}
                     />
                     <div style={styles.container}>
@@ -86,11 +86,9 @@ class App extends React.Component {
                           currentStepIndex={this.state.currentStepIndex}
                         /> : null}
                         {(() => {
-                            console.log(this.state.currentStepIndex);
                             if (this.state.currentStepIndex < 0) {
                                 return (<Intro />);
-                            } else
-                            if (this.state.currentStepIndex === 0) {
+                            } else if (this.state.currentStepIndex === 0) {
                                 return (<Contact
                                   entityName={this.state.entityName}
                                   privacyPolicyLink={this.state.privacyPolicyLink}
@@ -100,15 +98,13 @@ class App extends React.Component {
                                   address={this.state.address}
                                   onIntroChange={this.onIntroChange}
                                 />);
-                            } else
-                            if (this.state.currentStepIndex > 0 && this.state.currentStepIndex < 6) {
+                            } else if (this.state.currentStepIndex > 0 && this.state.currentStepIndex < 6) {
                                 return (<Steps
                                   currentStepIndex={this.state.currentStepIndex}
                                   selections={this.state.selections}
                                   onSelectionChange={this.onSelectionChange}
                                 />);
-                            } else
-                            if (this.state.currentStepIndex === 6) {
+                            } else if (this.state.currentStepIndex === 6) {
                                 return (<Review
                                   entityName={this.state.entityName}
                                   privacyPolicyLink={this.state.privacyPolicyLink}
@@ -119,6 +115,7 @@ class App extends React.Component {
                                   selections={this.state.selections}
                                 />);
                             }
+                            return null;
                         })()}
                         <div style={{ height: '42px', margin: '30px 0%' }}>
                             {this.state.currentStepIndex > 0 ? <RaisedButton

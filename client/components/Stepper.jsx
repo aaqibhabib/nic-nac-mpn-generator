@@ -4,7 +4,7 @@ import { Step, Stepper as ST, StepLabel } from 'material-ui/Stepper';
 export default class Stepper extends React.Component {
     render() {
         return (
-            <ST linear={true} activeStep={this.props.currentStepIndex}>
+            <ST linear activeStep={this.props.currentStepIndex}>
                 <Step>
                     <StepLabel>Contact Info</StepLabel>
                 </Step>
