@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
+import IconButton from 'material-ui/IconButton';
+import ModeEdit from 'material-ui/svg-icons/editor/mode-edit';
 
 import ReviewCards from './ReviewCards';
 
@@ -19,20 +21,36 @@ const styles = {
         paddingLeft: 24,
         paddingRight: 24,
     },
+    reviewCard: {
+        marginBottom: 30,
+    },
+    root: {
+        top: 0,
+        bottom: 0,
+        right: 4,
+        margin: 'auto',
+        position: 'absolute',
+    },
 };
 
 export default class Review extends React.Component {
     constructor(props) {
         super(props);
-        _.bindAll(this);
+        _.bindAll(this, 'setStep');
+    }
+
+    setStep(index) {
+        this.props.setStep(index);
     }
 
     render() {
         return (
             <div>
                 <h3>Review</h3>
-                <Card className="reviewCard">
-                    <CardTitle ><div style={{ fontSize: 20 }}>Contact Info</div></CardTitle>
+                <Card className="reviewCard" style={styles.reviewCard}>
+                    <CardTitle title="Contact Info" titleStyle={{ fontSize: 20 }} >
+                        <IconButton style={styles.root} touch tooltip="Edit" onClick={() => this.setStep(0)}><ModeEdit /></IconButton>
+                    </CardTitle>
                     <CardText>
                         <div className="tr" style={styles.tr}>
                             <div style={styles.td}>Company Name:</div>
@@ -66,12 +84,15 @@ export default class Review extends React.Component {
                         cards.push(<ReviewCards
                           currentStepIndex={i}
                           selections={this.props.selections}
+                          setStep={this.setStep}
                         />);
                     }
                     return <div>{cards}</div>;
                 })()}
                 <Card className="reviewCard">
-                    <CardTitle ><div style={{ fontSize: 20 }}>Notification</div></CardTitle>
+                    <CardTitle title="Notification" titleStyle={{ fontSize: 20 }} >
+                        <IconButton style={styles.root} touch tooltip="Edit" onClick={() => this.setStep(5)}><ModeEdit /></IconButton>
+                    </CardTitle>
                     <CardText>
                         <div className="tr" style={styles.tr}>
                             <div style={styles.td}>Describe how/if the company will notify consumers of privacy policy changes (e.g. merger or acquisition):</div>
@@ -110,4 +131,5 @@ Review.propTypes = {
     changeSectionLink: React.PropTypes.string.isRequired,
     breachText: React.PropTypes.string.isRequired,
     breachSectionLink: React.PropTypes.string.isRequired,
+    setStep: React.PropTypes.func.isRequired,
 };

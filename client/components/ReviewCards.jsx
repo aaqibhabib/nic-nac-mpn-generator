@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
-import { Card, CardTitle, CardText } from 'material-ui/Card';
+import { Card, CardTitle, CardText, CardExpandable } from 'material-ui/Card';
+import IconButton from 'material-ui/IconButton';
+import ModeEdit from 'material-ui/svg-icons/editor/mode-edit';
 
 import { Steps, QuestionTypes } from '../config';
 
@@ -20,19 +22,35 @@ const styles = {
         paddingLeft: 24,
         paddingRight: 24,
     },
+    reviewCard: {
+        marginBottom: 30,
+    },
+    root: {
+        top: 0,
+        bottom: 0,
+        right: 4,
+        margin: 'auto',
+        position: 'absolute',
+    },
 };
 
 export default class ReviewCards extends React.Component {
     constructor(props) {
         super(props);
-        _.bindAll(this);
+        _.bindAll(this, 'setStep');
+    }
+
+    setStep(index) {
+        this.props.setStep(index);
     }
 
     render() {
         const currentStep = Steps[this.props.currentStepIndex];
         return (
-            <Card className="reviewCard">
-                <CardTitle ><div style={{ fontSize: 20 }}>{titles[this.props.currentStepIndex - 1]}</div></CardTitle>
+            <Card className="reviewCard" style={styles.reviewCard}>
+                <CardTitle title={titles[this.props.currentStepIndex - 1]} titleStyle={{ fontSize: 20 }}>
+                    <IconButton style={styles.root} touch tooltip="Edit" onClick={() => this.setStep(this.props.currentStepIndex)}><ModeEdit /></IconButton>
+                </CardTitle>
                 <CardText>
                     {currentStep.values.map(questionGroup =>
                         (<div key={questionGroup.key}>
@@ -73,4 +91,5 @@ ReviewCards.propTypes = {
     // eslint-disable-next-line react/forbid-prop-types
     selections: React.PropTypes.object.isRequired,
     currentStepIndex: React.PropTypes.number.isRequired,
+    setStep: React.PropTypes.func.isRequired,
 };

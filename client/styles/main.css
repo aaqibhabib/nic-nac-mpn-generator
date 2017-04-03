@@ -7,10 +7,6 @@ div.other div input {
     height: 24px !important
 }
 
-div.reviewCard:not(:last-child) {
-    margin-bottom: 30px;
-}
-
 div.reviewCard div div div div.tr:last-child {
     border-bottom: 0px solid rgb(224, 224, 224);
 }

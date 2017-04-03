@@ -33,7 +33,7 @@ const styles = {
 class App extends React.Component {
     constructor(props) {
         super(props);
-        _.bindAll(this, 'onSelectionChange', 'onIntroChange', 'nextStep', 'previousStep');
+        _.bindAll(this, 'onSelectionChange', 'onIntroChange', 'setStep', 'nextStep', 'previousStep');
         // this.state = {
         //     currentStepIndex: -1,
         //     selections: {},
@@ -127,6 +127,10 @@ class App extends React.Component {
         });
     }
 
+    setStep(index) {
+        this.setState({ currentStepIndex: index });
+    }
+
     nextStep() {
         this.setState({ currentStepIndex: this.state.currentStepIndex + 1 });
     }
@@ -153,8 +157,10 @@ class App extends React.Component {
                         {this.state.currentStepIndex >= 0 ? <h1>Create Your Privacy Notice</h1> : null}
                         {this.state.currentStepIndex >= 0 ? <Stepper
                           currentStepIndex={this.state.currentStepIndex}
+                          setStep={this.setStep}
                         /> : null}
                         {(() => {
+                            console.log(this.state.currentStepIndex);
                             if (this.state.currentStepIndex < 0) {
                                 return (<Intro />);
                             } else if (this.state.currentStepIndex === 0) {
@@ -194,6 +200,7 @@ class App extends React.Component {
                                   changeSectionLink={this.state.changeSectionLink}
                                   breachText={this.state.breachText}
                                   breachSectionLink={this.state.breachSectionLink}
+                                  setStep={this.setStep}
                                 />);
                             } else if (this.state.currentStepIndex === 7) {
                                 return (<Notice
