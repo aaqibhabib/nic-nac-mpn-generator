@@ -4,6 +4,7 @@ import _ from 'lodash';
 import { Steps, QuestionTypes } from '../config';
 import CheckboxQuestion from './CheckboxQuestion';
 import RadioQuestion from './RadioQuestion';
+import TextQuestion from './TextQuestion';
 
 export default class Questions extends React.Component {
     render() {
@@ -29,6 +30,15 @@ export default class Questions extends React.Component {
                                   {...question}
                                   key={question.id}
                                   selection={selection}
+                                  onChange={this.props.onSelectionChange}
+                                />);
+                            } else if (question.type === QuestionTypes.TEXT) {
+                                const selection = _.get(this.props.selections, [key], '');
+                                return (<TextQuestion
+                                  {...question}
+                                  key={question.id}
+                                  selection={selection}
+                                  hintText={question.hintText}
                                   onChange={this.props.onSelectionChange}
                                 />);
                             }

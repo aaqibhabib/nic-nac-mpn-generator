@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 export const QuestionTypes = {
     RADIO: 'radio',
     CHECKBOX: 'checkbox',
+    TEXT: 'text',
 };
 
 const USE_SHARE_COMMON_OPTIONS = [
@@ -287,6 +288,16 @@ export const Questions = [
         ],
     },
     {
+        id: 'p-4 g-3 q-4',
+        groupID: 'Privacy: How this technology accesses other data ',
+        pageID: 3,
+        title: 'Privacy',
+        type: QuestionTypes.TEXT,
+        prompt: 'If yes, here is how you can check your settings,including permissions set as a default:',
+        noticeText: 'You can check your settings, including permissions set as a default ',
+        hintText: 'Ex: on your mobile device you can by going to Settings -> AppName',
+    },
+    {
         id: 'p-4 g-3 q-3',
         groupID: 'Privacy: How this technology accesses other data ',
         pageID: 3,
@@ -297,6 +308,16 @@ export const Questions = [
         options: [
             ...SELL_COMMON_OPTIONS,
         ],
+    },
+    {
+        id: 'p-4 g-3 q-5',
+        groupID: 'Privacy: How this technology accesses other data ',
+        pageID: 3,
+        title: 'Encryption',
+        type: QuestionTypes.TEXT,
+        prompt: 'If yes, here is how you can check your Share setting on your profile:',
+        noticeText: 'You can check your Share setting on your profile ',
+        hintText: 'Ex: by going to Settings -> Sharing',
     },
     {
         id: 'p-5 g-1 q-1',
@@ -324,6 +345,16 @@ export const Questions = [
             'Share data',
             'Delete data',
         ],
+    },
+    {
+        id: 'p-5 g-1 q-3',
+        groupID: 'Privacy: How this technology accesses other data ',
+        pageID: 4,
+        title: 'User Options',
+        type: QuestionTypes.TEXT,
+        prompt: 'If yes, here is how to do this:',
+        noticeText: '',
+        hintText: 'Ex: Data that you provide can be modified from your account dashboard',
     },
     {
         id: 'p-5 g-2 q-1',
