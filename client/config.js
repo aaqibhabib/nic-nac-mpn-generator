@@ -225,8 +225,8 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.RADIO,
-        prompt: 'Does the app or technology use encryption to encrypt data in the device or app?',
-        noticeText: 'Does the app or technology use encryption to encrypt your data in the device or app?',
+        prompt: 'Does the app or technology encrypt data in the device or app?',
+        noticeText: 'Does the app or technology encrypt your data in the device or app?',
         options: [
             ...ENCRYPTION_COMMON_OPTIONS,
         ],
