@@ -11,6 +11,7 @@ import Stepper from './Stepper';
 import Steps from './Steps';
 import Contact from './Contact';
 import Intro from './Intro';
+import Policy from './Policy';
 import Review from './Review';
 import Notice from './Notice';
 
@@ -42,6 +43,10 @@ class App extends React.Component {
         //     emailAddress: '',
         //     phoneNumber: '',
         //     address: '',
+        //     policyText: '',
+        //     changeSectionLink: '',
+        //     breachText: '',
+        //     breachSectionLink: '',
         // };
 
         this.state = {
@@ -74,6 +79,10 @@ class App extends React.Component {
             emailAddress: 'myemailaddress@somehwere.com',
             phoneNumber: '412-123-1234',
             address: 'Pittsburgh, PA, USA',
+            policyText: 'some text',
+            changeSectionLink: 'some text',
+            breachText: 'some text',
+            breachSectionLink: 'some text',
         };
     }
 
@@ -89,6 +98,8 @@ class App extends React.Component {
     onIntroChange(id, state) {
         this.setState({
             [id]: state,
+        }, () => {
+            console.log(this.state);
         });
     }
 
@@ -132,11 +143,19 @@ class App extends React.Component {
                                   address={this.state.address}
                                   onIntroChange={this.onIntroChange}
                                 />);
-                            } else if (this.state.currentStepIndex > 0 && this.state.currentStepIndex < 6) {
+                            } else if (this.state.currentStepIndex > 0 && this.state.currentStepIndex < 5) {
                                 return (<Steps
                                   currentStepIndex={this.state.currentStepIndex}
                                   selections={this.state.selections}
                                   onSelectionChange={this.onSelectionChange}
+                                />);
+                            } else if (this.state.currentStepIndex === 5) {
+                                return (<Policy
+                                  policyText={this.state.policyText}
+                                  changeSectionLink={this.state.changeSectionLink}
+                                  breachText={this.state.breachText}
+                                  breachSectionLink={this.state.breachSectionLink}
+                                  onIntroChange={this.onIntroChange}
                                 />);
                             } else if (this.state.currentStepIndex === 6) {
                                 return (<Review
@@ -147,6 +166,10 @@ class App extends React.Component {
                                   phoneNumber={this.state.phoneNumber}
                                   address={this.state.address}
                                   selections={this.state.selections}
+                                  policyText={this.state.policyText}
+                                  changeSectionLink={this.state.changeSectionLink}
+                                  breachText={this.state.breachText}
+                                  breachSectionLink={this.state.breachSectionLink}
                                 />);
                             } else if (this.state.currentStepIndex === 7) {
                                 return (<Notice

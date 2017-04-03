@@ -21,7 +21,7 @@ export default class Stepper extends React.Component {
                     <StepLabel>User Options</StepLabel>
                 </Step>
                 <Step>
-                    <StepLabel>Policy Changes</StepLabel>
+                    <StepLabel>Notification</StepLabel>
                 </Step>
                 <Step>
                     <StepLabel>Review</StepLabel>
