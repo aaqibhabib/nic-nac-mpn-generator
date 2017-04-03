@@ -66,7 +66,7 @@ export default class Policy extends React.Component {
                         <TextField
                           fullWidth
                           multiLine
-                          floatingLabelText="Describe how the company will protect consumers’ data in the case of a breach"
+                          floatingLabelText="Describe how the company will notify users and protect consumers’ data in the case of a breach"
                           floatingLabelStyle={styles.floatingLabelStyle}
                           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                           value={this.props.breachText}
