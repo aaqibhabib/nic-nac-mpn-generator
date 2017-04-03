@@ -111,11 +111,22 @@ export const Questions = [
         pageID: 1,
         title: 'HIPAA',
         type: QuestionTypes.RADIO,
-        prompt: 'Select one of the following statements to be inserted into the privacy notice:',
+        prompt: 'Is the company a HIPAA covered entity?',
+        options: [
+            ...YES_NO_OPTIONS,
+        ],
+    },
+    {
+        id: 'p-2 g-1 q-2',
+        groupID: 'HIPAA COVERED ENTITY',
+        pageID: 1,
+        title: 'HIPAA',
+        type: QuestionTypes.RADIO,
+        prompt: 'If yes, select one of the following statements to be inserted into the privacy notice:',
         options: [
             'Please note that the health data we collect as part of this [insert name of technology] are not protected by HIPAA and our company\'s HIPAA Notice of Privacy Practices does not apply',
             'Some of the health data we collect as part of this [insert name of technology product] also are protected by HIPAA. Read our HIPAA Notice of Privacy Practices [embed link or popup] for more information.',
-            'None',
+            'Not a HIPAA covered entity',
         ],
     },
     {
