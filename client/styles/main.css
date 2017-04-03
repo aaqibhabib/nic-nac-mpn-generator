@@ -14,3 +14,33 @@ div.reviewCard:not(:last-child) {
 div.reviewCard div div div div.tr:last-child {
     border-bottom: 0px solid rgb(224, 224, 224);
 }
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+
+.question-block {
+    display: flex;
+    align-items: center;
+}
+
+.question-prompt, .question-answers {
+    width: 50%;
+}
+
+.question-prompt {
+    padding-right: 5%;
+}
+
+.question-answers {
+    padding-left: 5%;
+}

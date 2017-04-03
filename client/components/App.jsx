@@ -12,12 +12,14 @@ import Steps from './Steps';
 import Contact from './Contact';
 import Intro from './Intro';
 import Review from './Review';
+import Notice from './Notice';
 
 const styles = {
     container: {
-        maxWidth: '900px',
+        maxWidth: '1200px',
         marginRight: 'auto',
         marginLeft: 'auto',
+        // padding: '0 24px',
     },
     right: {
         float: 'right',
@@ -31,15 +33,47 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         _.bindAll(this, 'onSelectionChange', 'onIntroChange', 'nextStep', 'previousStep');
+        // this.state = {
+        //     currentStepIndex: -1,
+        //     selections: {},
+        //     entityName: '',
+        //     privacyPolicyLink: '',
+        //     commentLink: '',
+        //     emailAddress: '',
+        //     phoneNumber: '',
+        //     address: '',
+        // };
+
         this.state = {
-            currentStepIndex: -1,
-            selections: {},
-            entityName: '',
-            privacyPolicyLink: '',
-            commentLink: '',
-            emailAddress: '',
-            phoneNumber: '',
-            address: '',
+            currentStepIndex: 7,
+            selections: {
+                '1-HIPAA COVERED ENTITY-p-2 g-1 q-1': "Please note that the health data we collect as part of this [insert name of technology] are not protected by HIPAA and our company's HIPAA Notice of Privacy Practices does not apply",
+                '2-Use: How we use your data internally-p-3 g-1 q-1': {
+                    'To provide the primary service of the app or technology': true,
+                },
+                '2-Share: How we share your data externally with other companies or entities-p-3 g-2 q-2': {
+                    'To provide the primary service of the app or technology': true,
+                    'To develop marketing materials for our products': true,
+                },
+                '2-Sell: Who we sell your data to-p-3 g-3 q-1': 'Yes; only with your permission',
+                '2-Sell: Who we sell your data to-p-3 g-3 q-2': 'Yes',
+                '3-Store: How we store your data-p-4 g-1 q-1': 'Yes',
+                '3-Store: How we store your data-p-4 g-1 q-2': 'No',
+                '3-Encryption: How we encrypt your data-p-4 g-2 q-1': 'Yes, by default',
+                '3-Encryption: How we encrypt your data-p-4 g-2 q-2': 'Yes, when you take certain steps (click to learn how)',
+                '3-Privacy: How this technology accesses other data -p-4 g-3 q-1': 'No',
+                '3-Privacy: How this technology accesses other data -p-4 g-3 q-2': 'Yes',
+                '4-User Options: What you can do with the data that we collect-p-5 g-1 q-1': 'Yes',
+                '4-Deactivation: What happens to your data when your account is deactivated-p-5 g-2 q-1': 'Deleted after x years',
+                '5-Policy Changes: How we will notify you if our privacy policy changes-p-6 g-1 q-1': 'Deleted immediately',
+                '5-Breach: How we will notify you and protect your data in case of an improper disclosure-p-6 g-2 q-1': 'Permanently retained and used',
+            },
+            entityName: 'John Smith',
+            privacyPolicyLink: 'www.google.com',
+            commentLink: 'aaqib.com',
+            emailAddress: 'myemailaddress@somehwere.com',
+            phoneNumber: '412-123-1234',
+            address: 'Pittsburgh, PA, USA',
         };
     }
 
@@ -114,6 +148,16 @@ class App extends React.Component {
                                   address={this.state.address}
                                   selections={this.state.selections}
                                 />);
+                            } else if (this.state.currentStepIndex === 7) {
+                                return (<Notice
+                                  entityName={this.state.entityName}
+                                  privacyPolicyLink={this.state.privacyPolicyLink}
+                                  commentLink={this.state.commentLink}
+                                  emailAddress={this.state.emailAddress}
+                                  phoneNumber={this.state.phoneNumber}
+                                  address={this.state.address}
+                                  selections={this.state.selections}
+                                />);
                             }
                             return null;
                         })()}
@@ -123,12 +167,12 @@ class App extends React.Component {
                               label="Back"
                               onClick={this.previousStep}
                             /> : null}
-                            <RaisedButton
+                            {this.state.currentStepIndex === 7 ? null : <RaisedButton
                               style={styles.right}
                               label={this.state.currentStepIndex >= 0 ? 'Continue' : 'Begin'}
                               primary
                               onClick={this.nextStep}
-                            />
+                            />}
                         </div>
                     </div>
                 </div>
