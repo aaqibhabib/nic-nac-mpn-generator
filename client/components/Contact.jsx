@@ -94,7 +94,7 @@ export default class Contact extends React.Component {
                         />
                         <TextField
                           fullWidth
-                          floatingLabelText="Address, Country"
+                          floatingLabelText="Address (country at minimum)"
                           floatingLabelStyle={styles.floatingLabelStyle}
                           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                           value={this.props.address}
