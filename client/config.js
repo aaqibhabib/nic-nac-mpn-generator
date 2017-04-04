@@ -28,7 +28,7 @@ const YES_NO_OPTIONS = [
 
 const ENCRYPTION_COMMON_OPTIONS = [
     'Yes, by default',
-    'Yes, when certain steps are taken (click to learn how)',
+    'Yes, when certain steps are taken',
     'No',
     'N/A',
 ];
@@ -108,7 +108,7 @@ export const Questions = [
     },
     {
         id: 'p-2 g-1 q-1',
-        groupID: 'HIPAA COVERED ENTITY',
+        groupID: 'HIPAA Covered Entity',
         pageID: 1,
         title: 'HIPAA',
         type: QuestionTypes.RADIO,
@@ -117,18 +117,36 @@ export const Questions = [
             ...YES_NO_OPTIONS,
         ],
     },
-    {
+        {
         id: 'p-2 g-1 q-2',
-        groupID: 'HIPAA COVERED ENTITY',
+        groupID: 'HIPAA Covered Entity',
+        pageID: 1,
+        title: 'HIPAA',
+        type: QuestionTypes.TEXT,
+        prompt: 'What is the name of the technology or product this notice is for?',
+        hintText: 'name of app or product'
+    },
+    {
+        id: 'p-2 g-1 q-3',
+        groupID: 'HIPAA Covered Entity',
         pageID: 1,
         title: 'HIPAA',
         type: QuestionTypes.RADIO,
-        prompt: 'If yes, select one of the following statements to be inserted into the privacy notice:',
+        prompt: 'If the company is a covered entity, select one of the following statements to be inserted into the privacy notice:',
         options: [
-            'Please note that the health data we collect as part of this [insert name of technology] are not protected by HIPAA and our company\'s HIPAA Notice of Privacy Practices does not apply',
+            'Please note that the health data we collect as part of this [insert name of technology] are not protected by HIPAA and our company\'s HIPAA Notice of Privacy Practices does not apply.',
             'Some of the health data we collect as part of this [insert name of technology product] also are protected by HIPAA. Read our HIPAA Notice of Privacy Practices [embed link or popup] for more information.',
             'Not a HIPAA covered entity',
         ],
+    },  
+    {
+        id: 'p-2 g-1 q-4',
+        groupID: 'HIPAA Covered Entity',
+        pageID: 1,
+        title: 'HIPAA',
+        type: QuestionTypes.TEXT,
+        prompt: 'What is the link to the company\'s HIPAA Notice of Privacy Practices?',
+        hintText: 'https://'
     },
     {
         id: 'p-3 g-1 q-1',
@@ -173,6 +191,16 @@ export const Questions = [
         ],
     },
     {
+        id: 'p-3 g-2 q-3',
+        groupID: 'Share: How data is shared externally with other companies or entities',
+        pageID: 2,
+        title: 'Share',
+        type: QuestionTypes.TEXT,
+        prompt: 'If not obvious, what is the primary service of the app or technology?',
+        noticeText: 'The primary service of this app or technology is:',
+        hintText: 'E.g. Recording your fitness activity to help meet fitness goals'
+    },
+    {
         id: 'p-3 g-3 q-1',
         groupID: 'Sell: How data is sold',
         pageID: 2,
@@ -189,12 +217,32 @@ export const Questions = [
         groupID: 'Sell: How data is sold',
         pageID: 2,
         title: 'Sell',
+        type: QuestionTypes.TEXT,
+        prompt: 'How can users adjust this permission?',
+        noticeText: 'You can adjust this permission by:',
+        hintText: 'E.g. Share settings in user dashboard'
+    },
+    {
+        id: 'p-3 g-3 q-3',
+        groupID: 'Sell: How data is sold',
+        pageID: 2,
+        title: 'Sell',
         type: QuestionTypes.RADIO,
         prompt: 'Does the company sell data AFTER removing identifiers to data brokers, marketing, advertising networks, or analytics firms?',
         noticeText: 'We sell your data AFTER removing identifiers (note that remaining data may not be anonymous) to data brokers, marketing, advertising networks, or analytics firms.',
         options: [
             ...SELL_COMMON_OPTIONS,
         ],
+    },
+    {
+        id: 'p-3 g-3 q-4',
+        groupID: 'Sell: How data is sold',
+        pageID: 2,
+        title: 'Sell',
+        type: QuestionTypes.TEXT,
+        prompt: 'How can users adjust this permission?',
+        noticeText: 'You can adjust this permission by:',
+        hintText: 'E.g. Share settings in user dashboard'
     },
     {
         id: 'p-4 g-1 q-1',
@@ -237,6 +285,16 @@ export const Questions = [
         groupID: 'Encryption: How data is encrypted',
         pageID: 3,
         title: 'Encryption',
+        type: QuestionTypes.TEXT,
+        prompt: 'What steps does a user need to perform to enable encryption in the device or app?',
+        noticeText: 'To enable encryption in the device or app... ',
+        hintText: 'E.g. By going to Settings -> Encryption on user profile page'
+    },
+    {
+        id: 'p-4 g-2 q-3',
+        groupID: 'Encryption: How data is encrypted',
+        pageID: 3,
+        title: 'Encryption',
         type: QuestionTypes.RADIO,
         prompt: 'Does the app or technology encrypt data when stored on company servers or with an outside cloud computing services provider? ',
         noticeText: 'Does the app or technology encrypt your data when stored on our company servers or with an outside cloud computing services provider? ',
@@ -245,7 +303,17 @@ export const Questions = [
         ],
     },
     {
-        id: 'p-4 g-2 q-3',
+        id: 'p-4 g-2 q-4',
+        groupID: 'Encryption: How data is encrypted',
+        pageID: 3,
+        title: 'Encryption',
+        type: QuestionTypes.TEXT,
+        prompt: 'What steps does a user need to perform to enable encryption of data stored on company servers or with an outside cloud computing services provider?',
+        noticeText: 'To enable encryption of data stored on company servers or with an outside cloud computing services provider... ',
+        hintText: 'E.g. By going to Settings -> Encryption on user profile page'
+    },
+    {
+        id: 'p-4 g-2 q-5',
         groupID: 'Encryption: How data is encrypted',
         pageID: 3,
         title: 'Encryption',
@@ -255,6 +323,16 @@ export const Questions = [
         options: [
             ...ENCRYPTION_COMMON_OPTIONS,
         ],
+    },
+    {
+        id: 'p-4 g-2 q-6',
+        groupID: 'Encryption: How data is encrypted',
+        pageID: 3,
+        title: 'Encryption',
+        type: QuestionTypes.TEXT,
+        prompt: 'What steps does a user need to perform to enable encryption of data while it is transmitted?',
+        noticeText: 'To enable encryption of data while it is transmitted... ',
+        hintText: 'E.g. By going to Settings -> Encryption on user profile page'
     },
     {
         id: 'p-4 g-3 q-1',
@@ -293,9 +371,9 @@ export const Questions = [
         pageID: 3,
         title: 'Privacy',
         type: QuestionTypes.TEXT,
-        prompt: 'If yes, here is how you can check your settings,including permissions set as a default:',
-        noticeText: 'You can check your settings, including permissions set as a default ',
-        hintText: 'Ex: on your mobile device you can by going to Settings -> AppName',
+        prompt: 'If yes, how can users check their settings, including permissions set as a default?',
+        noticeText: 'You can check your settings, including permissions set as a default by: ',
+        hintText: 'E.g. Managing mobile device permissions by going to Settings -> AppName',
     },
     {
         id: 'p-4 g-3 q-3',
@@ -315,9 +393,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        prompt: 'If yes, here is how you can check your Share setting on your profile:',
-        noticeText: 'You can check your Share setting on your profile ',
-        hintText: 'Ex: by going to Settings -> Sharing',
+        prompt: 'If yes, how can users check their social media sharing settings?',
+        noticeText: 'You can check your social media sharing settings by: ',
+        hintText: 'E.g. Going to Settings -> Sharing in your user profile',
     },
     {
         id: 'p-5 g-1 q-1',
@@ -348,13 +426,13 @@ export const Questions = [
     },
     {
         id: 'p-5 g-1 q-3',
-        groupID: 'Privacy: How this technology accesses other data ',
+        groupID: 'User Options: What a user can do with the data that is collected',
         pageID: 4,
         title: 'User Options',
         type: QuestionTypes.TEXT,
-        prompt: 'If yes, here is how to do this:',
-        noticeText: '',
-        hintText: 'Ex: Data that you provide can be modified from your account dashboard',
+        prompt: 'If yes, how can the user interact with their data?',
+        noticeText: 'Here\'s how:',
+        hintText: 'E.g. Data that you provide can be modified from your account dashboard',
     },
     {
         id: 'p-5 g-2 q-1',
@@ -370,6 +448,16 @@ export const Questions = [
             'Permanently retained and used',
             'Retained and used until deletion is requested',
         ],
+    },
+    {
+        id: 'p-5 g-2 q-2',
+        groupID: 'Deactivation: What happens to data when an account is deactivated',
+        pageID: 4,
+        title: 'Deactivation',
+        type: QuestionTypes.TEXT,
+        prompt: 'How long after deactivation will the data be deleted?',
+        noticeText: 'Data will be deleted after',
+        hintText: 'E.g. 2 years',
     },
     {
         id: 'p-6 g-1 q-1',
