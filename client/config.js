@@ -12,7 +12,7 @@ const USE_SHARE_COMMON_OPTIONS = [
     'To conduct scientific research',
     'For company operations (e.g., quality control or fraud detection)',
     'To develop and improve new and current products and services (e.g., analytics)',
-    'Other:', 
+    'Other:',
 ];
 
 const SELL_COMMON_OPTIONS = [
@@ -132,13 +132,14 @@ export const Questions = [
     },
     {
         id: 'p-3 g-1 q-1',
-        groupID: 'Use: How data is used internally', 
+        groupID: 'Use: How data is used internally',
         // 'Use: How we use your data internally',
         pageID: 2,
         title: 'Use',
         type: QuestionTypes.CHECKBOX,
         prompt: 'The company collects and uses identifiable data:',
         noticeText: 'We collect and use your identifiable data:',
+        helpText: 'Identifiable data means: data, such as your name, phone number, email, address, health services, information on your physical or mental health conditions, or your social security number, that can be used on its own or with other information to identify you.',
         options: [
             ...USE_SHARE_COMMON_OPTIONS,
         ],
@@ -152,6 +153,7 @@ export const Questions = [
         type: QuestionTypes.CHECKBOX,
         prompt: 'The company shares identifiable data:',
         noticeText: 'We share your identifiable data:',
+        helpText: 'Identifiable data means: data, such as your name, phone number, email, address, health services, information on your physical or mental health conditions, or your social security number, that can be used on its own or with other information to identify you.',
         options: [
             ...USE_SHARE_COMMON_OPTIONS,
             'We DO NOT share identifiable data',
@@ -180,6 +182,7 @@ export const Questions = [
         type: QuestionTypes.RADIO,
         prompt: 'Does the company sell identifiable data to data brokers, marketing, advertising networks, or analytics firms?',
         noticeText: 'We sell your identifiable data to data brokers, marketing, advertising networks, or analytics firms.',
+        helpText: 'Identifiable data means: data, such as your name, phone number, email, address, health services, information on your physical or mental health conditions, or your social security number, that can be used on its own or with other information to identify you.',
         options: [
             ...SELL_COMMON_OPTIONS,
         ],
@@ -192,6 +195,7 @@ export const Questions = [
         type: QuestionTypes.RADIO,
         prompt: 'Does the company sell data AFTER removing identifiers to data brokers, marketing, advertising networks, or analytics firms?',
         noticeText: 'We sell your data AFTER removing identifiers (note that remaining data may not be anonymous) to data brokers, marketing, advertising networks, or analytics firms.',
+        helpText: 'Data broker means: companies that collect personal information about consumers from a variety of public and non-public sources and resell the information to other companies.',
         options: [
             ...SELL_COMMON_OPTIONS,
         ],
@@ -228,6 +232,7 @@ export const Questions = [
         type: QuestionTypes.RADIO,
         prompt: 'Does the app or technology encrypt data in the device or app?',
         noticeText: 'Does the app or technology encrypt your data in the device or app?',
+        helpText: 'Encryption means: a method of converting an original message of regular text into encoded text in such a way that only authorized parties can read it. Alternatively, a more consumer friendly definition may be substituted as a result of the Challenge, including based on consumer testing feedback',
         options: [
             ...ENCRYPTION_COMMON_OPTIONS,
         ],
@@ -240,6 +245,7 @@ export const Questions = [
         type: QuestionTypes.RADIO,
         prompt: 'Does the app or technology encrypt data when stored on company servers or with an outside cloud computing services provider? ',
         noticeText: 'Does the app or technology encrypt your data when stored on our company servers or with an outside cloud computing services provider? ',
+        helpText: ' Cloud computing means: a kind of Internet-based computing that provides shared processing resources and data to computers and other devices on demand',
         options: [
             ...ENCRYPTION_COMMON_OPTIONS,
         ],
@@ -364,6 +370,7 @@ export const Questions = [
         type: QuestionTypes.RADIO,
         prompt: 'When an account is deactivated/terminated by the user or the company, the data is…',
         noticeText: 'When your account is deactivated/terminated by you or the company, your data are…',
+        helpText: 'Deactivation means: an individual takes action or a company ceases operation or deactivates an individual’s account due to inactivity.',
         options: [
             'Deleted immediately',
             'Deleted after x years',
@@ -392,6 +399,7 @@ export const Questions = [
         title: 'Breach',
         type: QuestionTypes.RADIO,
         prompt: '[Company name] complies with all applicable laws regarding breaches. Describe how the company will protect consumers’ data in the case of a breach and provide link to section in privacy policy.',
+        helpText: 'Breach means: an unauthorized disclosure',
         options: [
             'Deleted immediately',
             'Deleted after x years',
@@ -405,3 +413,9 @@ export const Steps = d3.nest()
     .key(question => question.pageID)
     .key(question => question.groupID)
     .entries(Questions);
+
+
+export const HelpText = {
+    'We collect and use your identifiable data:': 'Identifiable data means: data, such as your name, phone number, email, address, health services, information on your physical or mental health conditions, or your social security number, that can be used on its own or with other information to identify you.',
+
+}

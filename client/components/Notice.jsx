@@ -45,7 +45,7 @@ export default class Notice extends React.Component {
                                     const key = `${Steps[i].key}-${questionGroup.key}-${question.id}`;
                                     if (question.type === QuestionTypes.CHECKBOX) {
                                         return (<div key={question.id} className="question-block">
-                                            <h3 className="question-prompt">{question.noticeText}</h3>
+                                            <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText}</abbr> : question.noticeText}</h3>
                                             <div className="question-answers">
                                                 {(() => {
                                                     const items = [];
@@ -60,7 +60,7 @@ export default class Notice extends React.Component {
                                         </div>);
                                     } else if (question.type === QuestionTypes.RADIO) {
                                         return (<div key={question.id} className="question-block">
-                                            <h3 className="question-prompt">{question.noticeText}</h3>
+                                            <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText}</abbr> : question.noticeText}</h3>
                                             <div className="question-answers">{this.props.selections[key]}</div>
                                         </div>);
                                     } else if (question.type === QuestionTypes.TEXT) {
