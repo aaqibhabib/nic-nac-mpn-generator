@@ -45,3 +45,10 @@ p {
 	background: linear-gradient(135deg, #228ed5 0%,#0ebacf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228ed5', endColorstr='#0ebacf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #777777;
+  text-decoration: none;
+}
