@@ -154,7 +154,7 @@ class App extends React.Component {
                           </div>}
                     />
                     <div style={styles.container}>
-                        {this.state.currentStepIndex >= 0 ? <h1>Create Your Privacy Notice</h1> : null}
+                        {this.state.currentStepIndex >= 0 ? <h2>Privacy Notice Generator</h2> : null}
                         {this.state.currentStepIndex >= 0 ? <Stepper
                           currentStepIndex={this.state.currentStepIndex}
                           setStep={this.setStep}
