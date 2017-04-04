@@ -24,6 +24,7 @@
 #mpn-notice .question-prompt {
     padding-right: 5%;
     font-weight: 300;
+    line-height: 1.5em;
 }
 
 #mpn-notice .question-answers {
