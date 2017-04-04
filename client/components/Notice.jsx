@@ -60,7 +60,7 @@ export default class Notice extends React.Component {
                                         </div>);
                                     } else if (question.type === QuestionTypes.RADIO) {
                                         return (<div key={question.id} className="question-block">
-                                            <h3 className="question-prompt">{question.noticeText}</h3>
+                                            <h3 className="question-prompt">{question.noticeText || question.prompt}</h3>
                                             <div className="question-answers">{this.props.selections[key]}</div>
                                         </div>);
                                     } else if (question.type === QuestionTypes.TEXT) {
@@ -77,12 +77,16 @@ export default class Notice extends React.Component {
                         })()}
 
                         <div className="footer">
-                            <h3>Privacy Officer, {this.props.entityName}</h3>
-                            <h3>{this.props.privacyPolicyLink}</h3>
-                            <h3>{this.props.commentLink}</h3>
-                            <h3>{this.props.emailAddress}</h3>
-                            <h3>{this.props.phoneNumber}</h3>
-                            <h3>{this.props.address}</h3>
+                            <h1 className='text-center'>Contact Us</h1>
+                            <div>
+                                <h3>Privacy Officer, {this.props.entityName}</h3>
+                                <h3>{this.props.privacyPolicyLink}</h3>
+                                <h3>{this.props.commentLink}</h3>
+                                <h3>{this.props.emailAddress}</h3>
+                                <h3>{this.props.phoneNumber}</h3>
+                                <h3>{this.props.address}</h3>
+                            </div>
+                            
                         </div>
                     </div>
                 </CodeExample>
