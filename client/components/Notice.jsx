@@ -84,7 +84,7 @@ export default class Notice extends React.Component {
                         })()}
 
                         <div className="footer">
-                            <h1 className='text-center'>Contact Us</h1>
+                            <h1 className="text-center">Contact Us</h1>
                             <div>
                                 <h4>Privacy Officer, {this.props.entityName}</h4>
                                 <h4>{this.props.privacyPolicyLink}</h4>
@@ -93,7 +93,7 @@ export default class Notice extends React.Component {
                                 <h4>{this.props.phoneNumber}</h4>
                                 <h4>{this.props.address}</h4>
                             </div>
-                            
+
                         </div>
                     </div>
                 </CodeExample>
