@@ -5,8 +5,10 @@ import TextField from 'material-ui/TextField';
 
 const styles = {
     radio: {
-        marginBottom: '16px',
-        fontSize: '16px',
+        marginBottom: '24px',
+        fontSize: '1.4em',
+        fontWeight: 'lighter',
+        color: '#546E7A'
     },
 };
 
@@ -23,7 +25,8 @@ export default class TextQuestion extends React.Component {
     render() {
         return (
             <Card title={this.props.prompt}>
-                <CardTitle ><div style={{ fontSize: 20 }}>{this.props.prompt}</div></CardTitle>
+                <div className ='cardPadding'>
+                <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>
                 <CardText>
                     <TextField
                       id={this.props.id}
@@ -33,6 +36,7 @@ export default class TextQuestion extends React.Component {
                       fullWidth
                     />
                 </CardText>
+                </div>
             </Card>
         );
     }

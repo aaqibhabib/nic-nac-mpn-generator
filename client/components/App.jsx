@@ -20,6 +20,7 @@ const styles = {
         maxWidth: '1200px',
         marginRight: 'auto',
         marginLeft: 'auto',
+        background:'#fdfdfd',
         // padding: '0 24px',
     },
     right: {

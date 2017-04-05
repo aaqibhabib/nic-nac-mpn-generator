@@ -23,8 +23,9 @@ h2 {
 	font-weight: lighter;
 	color: #0ebacf;
 	font-size: 1.5em;
-	padding-top: 50px;
-	text-align: center;
+/*	padding-top: 50px;
+*/	
+  text-align: center;
 	margin: auto;
 }
 
@@ -36,7 +37,16 @@ p {
     padding-right: 100px;
     text-align: center;
 }
+div.questionTitleText {
+  font-size: 1.2em;
+  font-weight: normal;
+  padding: 15px 0px 0px 0px;
+  color: #546E7A;
+}
 
+div.cardPadding{
+  margin: 0px 2em;
+}
 .grad {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#228ed5+0,0ebacf+100 */
 	background: #228ed5; /* Old browsers */
@@ -55,10 +65,10 @@ h3{
   background: -webkit-linear-gradient(-45deg, #228ed5 0%,#0ebacf 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg, #228ed5 0%,#0ebacf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228ed5', endColorstr='#0ebacf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   text-align: center;
-  margin:0px;
+  margin:20px 0px 0px 0px;
 }
 
 abbr[title],

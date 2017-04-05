@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import { Step, Stepper as ST, StepButton, StepLabel } from 'material-ui/Stepper';
 
+
 export default class Stepper extends React.Component {
     constructor(props) {
         super(props);
@@ -16,7 +17,7 @@ export default class Stepper extends React.Component {
         return (
             <ST linear={false} activeStep={this.props.currentStepIndex}>
                 <Step>
-                    <StepButton onClick={() => this.setStep(0)}>Contact Info</StepButton>
+                    <StepLabel onClick={() => this.setStep(0)}>Contact Info</StepLabel>
                 </Step>
                 <Step>
                     <StepButton onClick={() => this.setStep(1)}>HIPPA Policy</StepButton>

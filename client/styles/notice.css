@@ -11,6 +11,10 @@
   text-align: justify;
 }
 
+/*div #mpn-notice{
+    margin-left: 15%;
+    margin-right: 15%;
+}*/
 #mpn-notice .question-block {
     display: flex;
     align-items: center;
@@ -22,48 +26,62 @@
 }
 
 #mpn-notice .question-prompt {
-    padding-right: 5%;
+    padding-right: 3%;
+    padding-left: 12%;
     font-weight: 300;
     line-height: 1.5em;
+    font-size: 18px;
 }
 
+
 #mpn-notice .question-answers {
-    padding-left: 5%;
+    padding-left: 3%;
+    padding-right: 12%;
+    font-size: 18px;
+    font-weight:normal;
 }
 
 #mpn-notice .question-answers > ul {
     padding-left: 20px;
+    font-size: 18px;
+    font-weight:normal;
 }
 
 #mpn-notice .question-answers li {
     padding: 0.4em 0;
+    font-size: 18px;
+    font-weight:normal;
 }
 
 #mpn-notice .intro {
     background-color: #0f2429;
-    padding: 2em 1em;
+    padding: 3em 10em;
 }
 #mpn-notice .intro > h1 {
-    color: #46cccb;
+    font-size: 2.2em;
+    color: #4378C2;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: normal;
 }
 #mpn-notice .intro > h2 {
-    color: #FFF;
-    font-weight: 300;
+    font-size: 1.5em;
+    padding: 1.5em 0em;
+    color: #FFFFFF;
+    font-weight: normal;
 }
 #mpn-notice .intro > h4 {
-    color: #FFF;
-    font-weight: 300;
+    font-size: 1em;
+    color: #FFFFFF;
+    font-weight: lighter;
 }
 
 #mpn-notice section > h1 {
     background-color: #99dccf;
     color: #FFF;
-    padding: 1em 0;
+    padding: 1.5em 10em;
     margin: 0;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: normal;
     font-size: 1.5em;
 }
 

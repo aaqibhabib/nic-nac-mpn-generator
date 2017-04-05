@@ -2,11 +2,11 @@ import React from 'react';
 import _ from 'lodash';
 import { Card, CardText } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
-import { black, cyan500 } from 'material-ui/styles/colors';
+import { grey700, cyan500 } from 'material-ui/styles/colors';
 
 const styles = {
     floatingLabelStyle: {
-        color: black,
+        color: grey700,
     },
     floatingLabelFocusStyle: {
         color: cyan500, // change to pramry theme color

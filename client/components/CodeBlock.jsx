@@ -21,7 +21,7 @@ const styles = {
   description: {
     background: '#ffffff',
     overflow: 'auto',
-    padding: '10px 20px 0',
+    padding: '10px 20px',
     marginTop: 0,
     marginBottom: 0,
   },
@@ -53,12 +53,12 @@ ${this.props.children}
     \`\`\``;
 
     const descriptionStyle = styles.description;
-    let codeStyle = Object.assign({}, styles.markdown, styles.markdownRetracted);
-    let tooltip = 'Show source';
+    let codeStyle = styles.markdown;
+    let tooltip = 'Hide source';
 
     if (this.state.expand) {
-      codeStyle = styles.markdown;
-      tooltip = 'Hide source';
+      codeStyle = Object.assign({}, styles.markdown, styles.markdownRetracted);
+      tooltip = 'Show source';
     }
 
     return (

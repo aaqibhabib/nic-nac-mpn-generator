@@ -5,8 +5,10 @@ import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 
 const styles = {
     radio: {
-        marginBottom: '16px',
-        fontSize: '16px',
+        marginBottom: '24px',
+        fontSize: '1.4em',
+        fontWeight: 'lighter',
+        color: '#546E7A'
     },
 };
 
@@ -21,8 +23,10 @@ export default class RadioQuestion extends React.Component {
     }
     render() {
         return (
-            <Card title={this.props.prompt}>
-                <CardTitle ><div style={{ fontSize: 20 }}>{this.props.prompt}</div></CardTitle>
+            <Card title={this.props.prompt} >
+                <div className ="cardPadding">
+
+                <CardTitle ><div className ="questionTitleText">{this.props.prompt}</div></CardTitle>
                 <CardText>
                     <RadioButtonGroup name={this.props.id} onChange={this.onChange} valueSelected={this.props.selection}>
                         {this.props.options.map(option => (
@@ -35,6 +39,7 @@ export default class RadioQuestion extends React.Component {
                             ))}
                     </RadioButtonGroup>
                 </CardText>
+                </div>
             </Card>
         );
     }

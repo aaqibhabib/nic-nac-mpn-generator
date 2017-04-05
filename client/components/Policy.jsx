@@ -40,6 +40,7 @@ export default class Policy extends React.Component {
             <div>
                 <h3>Policy Changes: How the company will notify users if the privacy policy changes</h3>
                 <Card>
+                   <div className='cardPadding'>
                     <CardText>
                         <TextField
                           fullWidth
@@ -59,9 +60,11 @@ export default class Policy extends React.Component {
                           onChange={this.onChangeSectionLinkChange}
                         />
                     </CardText>
+                    </div>
                 </Card>
                 <h3>Breach: How the company will notify users and protect data in case of an improper disclosure</h3>
                 <Card>
+                  <div className='cardPadding'>
                     <CardText>
                         <TextField
                           fullWidth
@@ -81,6 +84,7 @@ export default class Policy extends React.Component {
                           onChange={this.onBreachSectionLinkChange}
                         />
                     </CardText>
+                    </div>
                 </Card>
             </div>
         );

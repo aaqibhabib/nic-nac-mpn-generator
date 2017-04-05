@@ -6,8 +6,10 @@ import TextField from 'material-ui/TextField';
 
 const styles = {
     checkbox: {
-        marginBottom: '16px',
-        fontSize: '16px',
+        marginBottom: '24px',
+        fontSize: '1.4em',
+        fontWeight: 'lighter',
+        color: '#546E7A'
     },
 };
 
@@ -25,9 +27,10 @@ class MPNCheckbox extends React.Component {
     }
     render() {
         if (this.props.label === 'Other:') {
-            return (<div className="other" style={{ display: 'flex', flexDirection: 'row' }}><Checkbox
+            return (<div className="other" style={{ display: 'flex', flexDirection: 'row' }}>
+            <Checkbox
               label={this.props.label}
-              style={{ marginBottom: '16px', fontSize: '16px', width: 'auto', flex: '1' }}
+              style={{ marginBottom: '24px', fontSize: '1.4em', fontWeight: 'lighter', color: '#546E7A', width: 'auto', flex: '1' }}
               checked={!!this.props.checked}
             />
                 <TextField
@@ -75,7 +78,8 @@ export default class CheckboxQuestion extends React.Component {
     render() {
         return (
             <Card>
-                <CardTitle ><div style={{ fontSize: 20 }}>{this.props.prompt}</div></CardTitle>
+                <div className ="cardPadding">
+                <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>
                 <CardText>
                     {this.props.options.map(option => (<MPNCheckbox
                       key={option}
@@ -86,6 +90,7 @@ export default class CheckboxQuestion extends React.Component {
                     />),
                     )}
                 </CardText>
+                </div>
             </Card>
         );
     }
