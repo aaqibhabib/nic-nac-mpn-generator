@@ -43,70 +43,64 @@ class App extends React.Component {
         //     emailAddress: '',
         //     phoneNumber: '',
         //     address: '',
-        //     policyText: '',
-        //     changeSectionLink: '',
-        //     breachText: '',
-        //     breachSectionLink: '',
         // };
 
         this.state = {
-            currentStepIndex: 7,
-            selections: {
-                '1-HIPAA COVERED ENTITY-p-2 g-1 q-1': 'Yes',
-                '2-Use: How we use your data internally-p-3 g-1 q-1': {
-                    'To provide the primary service of the app or technology': true,
+            "currentStepIndex": 7,
+            "selections": {
+                "1-HIPAA COVERED ENTITY-p-2 g-1 q-1": "Yes",
+                "2-Use: How we use your data internally-p-3 g-1 q-1": {
+                "To provide the primary service of the app or technology": true
                 },
-                '2-Share: How we share your data externally with other companies or entities-p-3 g-2 q-2': {
-                    'To provide the primary service of the app or technology': true,
-                    'To develop marketing materials for our products': true,
+                "2-Share: How we share your data externally with other companies or entities-p-3 g-2 q-2": {
+                "To provide the primary service of the app or technology": true,
+                "To develop marketing materials for our products": true
                 },
-                '2-Sell: Who we sell your data to-p-3 g-3 q-1': 'Yes; only with your permission',
-                '2-Sell: Who we sell your data to-p-3 g-3 q-2': 'Yes',
-                '3-Store: How we store your data-p-4 g-1 q-1': 'Yes',
-                '3-Store: How we store your data-p-4 g-1 q-2': 'No',
-                '3-Encryption: How we encrypt your data-p-4 g-2 q-1': 'Yes, by default',
-                '3-Encryption: How we encrypt your data-p-4 g-2 q-2': 'Yes, when you take certain steps (click to learn how)',
-                '3-Privacy: How this technology accesses other data -p-4 g-3 q-1': 'No',
-                '3-Privacy: How this technology accesses other data -p-4 g-3 q-2': 'Yes',
-                '4-User Options: What you can do with the data that we collect-p-5 g-1 q-1': 'Yes',
-                '4-Deactivation: What happens to your data when your account is deactivated-p-5 g-2 q-1': 'Deleted after x years',
-                '5-Policy Changes: How we will notify you if our privacy policy changes-p-6 g-1 q-1': 'Deleted immediately',
-                '5-Breach: How we will notify you and protect your data in case of an improper disclosure-p-6 g-2 q-1': 'Permanently retained and used',
-                '1-HIPAA COVERED ENTITY-p-2 g-1 q-2': "Please note that the health data we collect as part of this [insert name of technology] are not protected by HIPAA and our company's HIPAA Notice of Privacy Practices does not apply",
-                '2-Use: How data is used internally-p-3 g-1 q-1': {
-                    'To develop marketing materials for our products': true,
-                    'To conduct scientific research': true,
-                    'For company operations (e.g., quality control or fraud detection)': true,
+                "2-Sell: Who we sell your data to-p-3 g-3 q-1": "Yes; only with your permission",
+                "2-Sell: Who we sell your data to-p-3 g-3 q-2": "Yes",
+                "3-Store: How we store your data-p-4 g-1 q-1": "Yes",
+                "3-Store: How we store your data-p-4 g-1 q-2": "No",
+                "3-Encryption: How we encrypt your data-p-4 g-2 q-1": "Yes, by default",
+                "3-Encryption: How we encrypt your data-p-4 g-2 q-2": "Yes, when you take certain steps (click to learn how)",
+                "3-Privacy: How this technology accesses other data -p-4 g-3 q-1": "No",
+                "3-Privacy: How this technology accesses other data -p-4 g-3 q-2": "Yes",
+                "4-User Options: What you can do with the data that we collect-p-5 g-1 q-1": "Yes",
+                "4-Deactivation: What happens to your data when your account is deactivated-p-5 g-2 q-1": "Deleted after x years",
+                "5-Policy Changes: How we will notify you if our privacy policy changes-p-6 g-1 q-1": "Deleted immediately",
+                "5-Breach: How we will notify you and protect your data in case of an improper disclosure-p-6 g-2 q-1": "Permanently retained and used",
+                "1-HIPAA COVERED ENTITY-p-2 g-1 q-2": "Please note that the health data we collect as part of this [insert name of technology] are not protected by HIPAA and our company's HIPAA Notice of Privacy Practices does not apply",
+                "2-Use: How data is used internally-p-3 g-1 q-1": {
+                "To develop marketing materials for our products": true,
+                "To conduct scientific research": true,
+                "For company operations (e.g., quality control or fraud detection)": true
                 },
-                '2-Share: How data is shared externally with other companies or entities-p-3 g-2 q-1': {
-                    'For company operations (e.g., quality control or fraud detection)': true,
-                    'To conduct scientific research': true,
-                    'Other:': 'yeo',
+                "2-Share: How data is shared externally with other companies or entities-p-3 g-2 q-1": {
+                "For company operations (e.g., quality control or fraud detection)": true,
+                "To conduct scientific research": true,
+                "Other:": "yeo"
                 },
-                '2-Share: How data is shared externally with other companies or entities-p-3 g-2 q-2': {
-                    'To conduct scientific research': true,
-                    'Other:': 'hi',
+                "2-Share: How data is shared externally with other companies or entities-p-3 g-2 q-2": {
+                "To conduct scientific research": true,
+                "Other:": "hi"
                 },
-                '2-Sell: How data is sold-p-3 g-3 q-1': 'Yes; only with permission',
-                '2-Sell: How data is sold-p-3 g-3 q-2': 'No',
-                '3-Store: How data is stored-p-4 g-1 q-1': 'Yes',
-                '3-Store: How data is stored-p-4 g-1 q-2': 'No',
-                '3-Encryption: How data is encrypted-p-4 g-2 q-1': 'Yes, by default',
-                '3-Encryption: How data is encrypted-p-4 g-2 q-2': 'Yes, by default',
-                '3-Encryption: How data is encrypted-p-4 g-2 q-3': 'Yes, by default',
-                '4-User Options: What a user can do with the data that is collected-p-5 g-1 q-1': 'Yes',
-                '4-Deactivation: What happens to data when an account is deactivated-p-5 g-2 q-1': 'Deleted after x years',
+                "2-Sell: How data is sold-p-3 g-3 q-1": "Yes; only with permission",
+                "2-Sell: How data is sold-p-3 g-3 q-2": "No",
+                "3-Store: How data is stored-p-4 g-1 q-1": "Yes",
+                "3-Store: How data is stored-p-4 g-1 q-2": "No",
+                "3-Encryption: How data is encrypted-p-4 g-2 q-1": "Yes, by default",
+                "3-Encryption: How data is encrypted-p-4 g-2 q-2": "Yes, by default",
+                "3-Encryption: How data is encrypted-p-4 g-2 q-3": "Yes, by default",
+                "4-User Options: What a user can do with the data that is collected-p-5 g-1 q-1": "Yes",
+                "4-Deactivation: What happens to data when an account is deactivated-p-5 g-2 q-1": "Deleted after x years",
+                "5-Policy Changes: How the company will notify users if the privacy policy changes-p-6 g-1 q-1": "hey there",
+                "5-Policy Changes: How the company will notify users if the privacy policy changes-p-6 g-1 q-2": "alink.com"
             },
-            entityName: 'John Smith',
-            privacyPolicyLink: 'www.google.com',
-            commentLink: 'aaqib.com',
-            emailAddress: 'myemailaddress@somehwere.com',
-            phoneNumber: '412-123-1234',
-            address: 'Pittsburgh, PA, USA',
-            policyText: 'some text',
-            changeSectionLink: 'some text',
-            breachText: 'some text',
-            breachSectionLink: 'some text',
+            "entityName": "John Smith",
+            "privacyPolicyLink": "www.google.com",
+            "commentLink": "aaqib.com",
+            "emailAddress": "myemailaddress@somehwere.com",
+            "phoneNumber": "412-123-1234",
+            "address": "Pittsburgh, PA, USA",
         };
     }
 
@@ -179,7 +173,7 @@ class App extends React.Component {
                                   selections={this.state.selections}
                                   onSelectionChange={this.onSelectionChange}
                                 />);
-                                
+
                             } else if (this.state.currentStepIndex === 6) {
                                 return (<Review
                                   entityName={this.state.entityName}
