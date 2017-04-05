@@ -48,7 +48,8 @@ export default class ReviewCards extends React.Component {
         const currentStep = Steps[this.props.currentStepIndex];
         return (
             <Card className="reviewCard" style={styles.reviewCard}>
-                <CardTitle title={titles[this.props.currentStepIndex - 1]} titleStyle={{ fontSize: 20 }}>
+                <div className = "cardPadding">
+                <CardTitle title={titles[this.props.currentStepIndex - 1]} className="questionTitleText">
                     <IconButton style={styles.root} touch tooltip="Edit" onClick={() => this.setStep(this.props.currentStepIndex)}><ModeEdit /></IconButton>
                 </CardTitle>
                 <CardText>
@@ -87,6 +88,7 @@ export default class ReviewCards extends React.Component {
                         </div>))
                     }
                 </CardText>
+                </div>
             </Card>
         );
     }
