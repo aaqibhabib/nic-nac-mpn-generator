@@ -26,11 +26,13 @@ export default class TextQuestion extends React.Component {
                 <CardTitle ><div style={{ fontSize: 20 }}>{this.props.prompt}</div></CardTitle>
                 <CardText>
                     <TextField
+                      fullWidth
                       id={this.props.id}
+                      floatingLabelText={this.props.floatingLabelText}
                       hintText={this.props.hintText}
                       value={this.props.selection}
                       onChange={this.onChange}
-                      fullWidth
+                      multiLine={!!this.props.multiLine}
                     />
                 </CardText>
             </Card>

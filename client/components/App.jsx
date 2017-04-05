@@ -173,20 +173,13 @@ class App extends React.Component {
                                   address={this.state.address}
                                   onIntroChange={this.onIntroChange}
                                 />);
-                            } else if (this.state.currentStepIndex > 0 && this.state.currentStepIndex < 5) {
+                            } else if (this.state.currentStepIndex > 0 && this.state.currentStepIndex < 6) {
                                 return (<Steps
                                   currentStepIndex={this.state.currentStepIndex}
                                   selections={this.state.selections}
                                   onSelectionChange={this.onSelectionChange}
                                 />);
-                            } else if (this.state.currentStepIndex === 5) {
-                                return (<Policy
-                                  policyText={this.state.policyText}
-                                  changeSectionLink={this.state.changeSectionLink}
-                                  breachText={this.state.breachText}
-                                  breachSectionLink={this.state.breachSectionLink}
-                                  onIntroChange={this.onIntroChange}
-                                />);
+                                
                             } else if (this.state.currentStepIndex === 6) {
                                 return (<Review
                                   entityName={this.state.entityName}
@@ -196,10 +189,7 @@ class App extends React.Component {
                                   phoneNumber={this.state.phoneNumber}
                                   address={this.state.address}
                                   selections={this.state.selections}
-                                  policyText={this.state.policyText}
-                                  changeSectionLink={this.state.changeSectionLink}
-                                  breachText={this.state.breachText}
-                                  breachSectionLink={this.state.breachSectionLink}
+
                                   setStep={this.setStep}
                                 />);
                             } else if (this.state.currentStepIndex === 7) {

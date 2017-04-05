@@ -78,7 +78,7 @@ export default class ReviewCards extends React.Component {
                                     </div>);
                                 } else if (question.type === QuestionTypes.TEXT) {
                                     return (<div key={question.id} className="tr" style={styles.tr}>
-                                        <div style={styles.td}>{question.prompt}</div>
+                                        <div style={styles.td}>{question.prompt || question.floatingLabelText}</div>
                                         <div style={styles.td}>{this.props.selections[key]}</div>
                                     </div>);
                                 }

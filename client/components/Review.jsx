@@ -80,7 +80,7 @@ export default class Review extends React.Component {
                 </Card>
                 {(() => {
                     const cards = [];
-                    for (let i = 1; i < 5; i++) {
+                    for (let i = 1; i < 6; i++) {
                         cards.push(<ReviewCards
                           currentStepIndex={i}
                           selections={this.props.selections}
@@ -89,30 +89,6 @@ export default class Review extends React.Component {
                     }
                     return <div>{cards}</div>;
                 })()}
-                <Card className="reviewCard">
-                    <CardTitle title="Notification" titleStyle={{ fontSize: 20 }} >
-                        <IconButton style={styles.root} touch tooltip="Edit" onClick={() => this.setStep(5)}><ModeEdit /></IconButton>
-                    </CardTitle>
-                    <CardText>
-                        <div className="tr" style={styles.tr}>
-                            <div style={styles.td}>Describe how/if the company will notify consumers of privacy policy changes (e.g. merger or acquisition):</div>
-                            <div style={styles.td}>{this.props.policyText}</div>
-                        </div>
-                        <div className="tr" style={styles.tr}>
-                            <div style={styles.td}>Link to section in privacy policy:</div>
-                            <div style={styles.td}><a href={this.props.changeSectionLink}>{this.props.changeSectionLink}</a></div>
-                        </div>
-                        <div className="tr" style={styles.tr}>
-                            <div style={styles.td}>Describe how the company will protect consumers’ data in the case of a breach:</div>
-                            <div style={styles.td}>{this.props.breachText}</div>
-                        </div>
-                        <div className="tr" style={styles.tr}>
-                            <div style={styles.td}>Link to section in privacy policy:</div>
-                            <div style={styles.td}><a href={this.props.breachSectionLink}>{this.props.breachSectionLink}</a></div>
-                        </div>
-
-                    </CardText>
-                </Card>
             </div>
         );
     }
