@@ -19,11 +19,8 @@ const styles = {
         maxWidth: '1200px',
         marginRight: 'auto',
         marginLeft: 'auto',
-<<<<<<< HEAD
         background:'#fdfdfd',
         // padding: '0 24px',
-=======
->>>>>>> origin/master
     },
     right: {
         float: 'right',

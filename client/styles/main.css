@@ -1,4 +1,5 @@
 
+
 div.other {
     display: flex;
     flex-direction: row;
@@ -89,46 +90,4 @@ div.other div input {
 
 div.reviewCard div div div div.tr:last-child {
     border-bottom: 0px solid rgb(224, 224, 224);
-}
-
-
-html *
-{
-   /*font-size: 1em !important;*/
-   /*color: #000 !important;*/
-   /*font-family: Source Sans Pro !important;*/
-}
-
-h2 {
-	font-weight: lighter;
-	color: #0ebacf;
-	font-size: 1.5em;
-	padding-top: 50px;
-	text-align: center;
-	margin: auto;
-}
-
-p {
-	font-size: 1.25rem;
-    font-weight: 300;
-    margin-bottom: 30px;
-    padding-left: 100px;
-    padding-right: 100px;
-    text-align: center;
-}
-
-.grad {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#228ed5+0,0ebacf+100 */
-	background: #228ed5; /* Old browsers */
-	background: -moz-linear-gradient(-45deg, #228ed5 0%, #0ebacf 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(-45deg, #228ed5 0%,#0ebacf 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(135deg, #228ed5 0%,#0ebacf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228ed5', endColorstr='#0ebacf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-
-abbr[title],
-abbr[data-original-title] {
-  cursor: help;
-  border-bottom: 1px dotted #777777;
-  text-decoration: none;
 }
