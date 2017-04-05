@@ -37,7 +37,7 @@ export default class Stepper extends React.Component {
                     <StepButton onClick={() => this.setStep(6)}>Review</StepButton>
                 </Step>
                 <Step>
-                    <StepLabel>Export Notice</StepLabel>
+                    <StepButton onClick={() => this.setStep(7)}>Export Notice</StepButton>
                 </Step>
             </ST>
         );
