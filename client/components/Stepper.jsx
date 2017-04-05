@@ -17,7 +17,7 @@ export default class Stepper extends React.Component {
         return (
             <ST linear={false} activeStep={this.props.currentStepIndex}>
                 <Step>
-                    <StepLabel onClick={() => this.setStep(0)}>Contact Info</StepLabel>
+                    <StepButton onClick={() => this.setStep(0)}>Contact Info</StepButton>
                 </Step>
                 <Step>
                     <StepButton onClick={() => this.setStep(1)}>HIPPA Policy</StepButton>
