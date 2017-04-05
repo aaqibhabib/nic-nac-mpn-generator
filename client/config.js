@@ -483,6 +483,7 @@ export const Questions = [
         type: QuestionTypes.TEXT,
         prompt: 'Describe how/if the company will notify consumers of privacy policy changes (e.g. merger or acquisition).',
         noticeText: "The company will notify consumers of privacy policy changes by...",
+        // hintText: "The company will notify consumers of privacy policy changes by...",
         multiLine: true,
         rows: 5,
         textareaStyle: textFieldStyles.multiLineStyle
@@ -503,7 +504,8 @@ export const Questions = [
         title: 'Breach',
         type: QuestionTypes.TEXT,
         prompt: "Describe how the company will notify users and protect consumers’ data in the case of a breach.",
-        noticeText: 'In case of a breach:',
+        noticeText: 'The company complies with all applicable laws regarding breaches. In case of a breach...',
+        // hintText: 'In case of a breach...',
         helpText: 'Breach means: an unauthorized disclosure',
         multiLine: true,
         rows: 5,
