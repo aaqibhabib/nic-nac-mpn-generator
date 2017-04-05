@@ -25,15 +25,21 @@ export default class TextQuestion extends React.Component {
     render() {
         return (
             <Card title={this.props.prompt}>
+<<<<<<< HEAD
                 <div className ='cardPadding'>
                 <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>
+=======
+                {this.props.prompt ? <CardTitle ><div style={{ fontSize: 20 }}>{this.props.prompt}</div></CardTitle> : null}
+>>>>>>> origin/master
                 <CardText>
                     <TextField
+                      fullWidth
                       id={this.props.id}
+                      floatingLabelText={this.props.floatingLabelText}
                       hintText={this.props.hintText}
                       value={this.props.selection}
                       onChange={this.onChange}
-                      fullWidth
+                      multiLine={!!this.props.multiLine}
                     />
                 </CardText>
                 </div>
