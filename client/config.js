@@ -117,14 +117,13 @@ export const Questions = [
             ...YES_NO_OPTIONS,
         ],
     },
-        {
+    {
         id: 'p-2 g-1 q-2',
         groupID: 'HIPAA Covered Entity',
         pageID: 1,
         title: 'HIPAA',
         type: QuestionTypes.TEXT,
-        prompt: 'What is the name of the technology or product this notice is for?',
-        hintText: 'name of app or product'
+        floatingLabelText: 'What is the name of the technology or product this notice is for?',
     },
     {
         id: 'p-2 g-1 q-3',
@@ -145,8 +144,8 @@ export const Questions = [
         pageID: 1,
         title: 'HIPAA',
         type: QuestionTypes.TEXT,
-        prompt: 'What is the link to the company\'s HIPAA Notice of Privacy Practices?',
-        hintText: 'https://'
+        floatingLabelText: 'What is the link to the company\'s HIPAA Notice of Privacy Practices?',
+        // hintText: 'https://'
     },
     {
         id: 'p-3 g-1 q-1',
@@ -198,9 +197,9 @@ export const Questions = [
         pageID: 2,
         title: 'Share',
         type: QuestionTypes.TEXT,
-        prompt: 'If not obvious, what is the primary service of the app or technology?',
+        floatingLabelText: 'If not obvious, what is the primary service of the app or technology?',
         noticeText: 'The primary service of this app or technology is:',
-        hintText: 'E.g. Recording your fitness activity to help meet fitness goals'
+        // hintText: 'E.g. Recording your fitness activity to help meet fitness goals'
     },
     {
         id: 'p-3 g-3 q-1',
@@ -221,9 +220,9 @@ export const Questions = [
         pageID: 2,
         title: 'Sell',
         type: QuestionTypes.TEXT,
-        prompt: 'How can users adjust this permission?',
+        floatingLabelText: 'How can users adjust this permission?',
         noticeText: 'You can adjust this permission by:',
-        hintText: 'E.g. Share settings in user dashboard'
+        // hintText: 'E.g. Share settings in user dashboard'
     },
     {
         id: 'p-3 g-3 q-3',
@@ -244,9 +243,9 @@ export const Questions = [
         pageID: 2,
         title: 'Sell',
         type: QuestionTypes.TEXT,
-        prompt: 'How can users adjust this permission?',
+        floatingLabelText: 'How can users adjust this permission?',
         noticeText: 'You can adjust this permission by:',
-        hintText: 'E.g. Share settings in user dashboard'
+        // hintText: 'E.g. Share settings in user dashboard'
     },
     {
         id: 'p-4 g-1 q-1',
@@ -291,9 +290,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        prompt: 'What steps does a user need to perform to enable encryption in the device or app?',
+        floatingLabelText: 'What steps does a user need to perform to enable encryption in the device or app?',
         noticeText: 'To enable encryption in the device or app... ',
-        hintText: 'E.g. By going to Settings -> Encryption on user profile page'
+        // hintText: 'E.g. By going to Settings -> Encryption on user profile page'
     },
     {
         id: 'p-4 g-2 q-3',
@@ -314,9 +313,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        prompt: 'What steps does a user need to perform to enable encryption of data stored on company servers or with an outside cloud computing services provider?',
+        floatingLabelText: 'What steps does a user need to perform to enable encryption of data stored on company servers or with an outside cloud computing services provider?',
         noticeText: 'To enable encryption of data stored on company servers or with an outside cloud computing services provider... ',
-        hintText: 'E.g. By going to Settings -> Encryption on user profile page'
+        // hintText: 'E.g. By going to Settings -> Encryption on user profile page'
     },
     {
         id: 'p-4 g-2 q-5',
@@ -336,9 +335,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        prompt: 'What steps does a user need to perform to enable encryption of data while it is transmitted?',
+        floatingLabelText: 'What steps does a user need to perform to enable encryption of data while it is transmitted?',
         noticeText: 'To enable encryption of data while it is transmitted... ',
-        hintText: 'E.g. By going to Settings -> Encryption on user profile page'
+        // hintText: 'E.g. By going to Settings -> Encryption on user profile page'
     },
     {
         id: 'p-4 g-3 q-1',
@@ -377,9 +376,9 @@ export const Questions = [
         pageID: 3,
         title: 'Privacy',
         type: QuestionTypes.TEXT,
-        prompt: 'If yes, how can users check their settings, including permissions set as a default?',
+        floatingLabelText: 'If yes, how can users check their settings, including permissions set as a default?',
         noticeText: 'You can check your settings, including permissions set as a default by: ',
-        hintText: 'E.g. Managing mobile device permissions by going to Settings -> AppName',
+        // hintText: 'E.g. Managing mobile device permissions by going to Settings -> AppName',
     },
     {
         id: 'p-4 g-3 q-3',
@@ -399,9 +398,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        prompt: 'If yes, how can users check their social media sharing settings?',
+        floatingLabelText: 'If yes, how can users check their social media sharing settings?',
         noticeText: 'You can check your social media sharing settings by: ',
-        hintText: 'E.g. Going to Settings -> Sharing in your user profile',
+        // hintText: 'E.g. Going to Settings -> Sharing in your user profile',
     },
     {
         id: 'p-5 g-1 q-1',
@@ -436,9 +435,9 @@ export const Questions = [
         pageID: 4,
         title: 'User Options',
         type: QuestionTypes.TEXT,
-        prompt: 'If yes, how can the user interact with their data?',
+        floatingLabelText: 'If yes, how can a user interact with their data?',
         noticeText: 'Here\'s how:',
-        hintText: 'E.g. Data that you provide can be modified from your account dashboard',
+        // hintText: 'E.g. Data that you provide can be modified from your account dashboard',
     },
     {
         id: 'p-5 g-2 q-1',
@@ -462,7 +461,7 @@ export const Questions = [
         pageID: 4,
         title: 'Deactivation',
         type: QuestionTypes.TEXT,
-        prompt: 'How long after deactivation will the data be deleted?',
+        floatingLabelText: 'If not specified above, how long after deactivation will the data be deleted?',
         noticeText: 'Data will be deleted after',
         hintText: 'E.g. 2 years',
     },
