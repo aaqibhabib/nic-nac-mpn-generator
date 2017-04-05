@@ -57,7 +57,10 @@ div.cardPadding{
 	background: linear-gradient(135deg, #228ed5 0%,#0ebacf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228ed5', endColorstr='#0ebacf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-
+h2.NoticeTitle {
+  padding-top:50px;
+  padding-bottom: 25px
+}
 h3{
   color: white;
   font-size: 28;
