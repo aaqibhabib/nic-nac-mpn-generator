@@ -1,4 +1,6 @@
 import * as d3 from 'd3';
+import {groove} from 'material-ui/styles/';
+import {grey400} from 'material-ui/styles/colors';
 
 export const QuestionTypes = {
     RADIO: 'radio',
@@ -32,6 +34,13 @@ const ENCRYPTION_COMMON_OPTIONS = [
     'No',
     'N/A',
 ];
+
+const textFieldStyles = {
+  multiLineStyle: {
+    border: groove, 
+    borderColor: grey400,
+  },
+};
 
 export const Questions = [
     {
@@ -123,7 +132,8 @@ export const Questions = [
         pageID: 1,
         title: 'HIPAA',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'What is the name of the technology or product this notice is for?',
+        prompt: 'What is the name of the technology or product this notice is for?',
+        hintText: 'name of app or product',
     },
     {
         id: 'p-2 g-1 q-3',
@@ -133,8 +143,8 @@ export const Questions = [
         type: QuestionTypes.RADIO,
         prompt: 'If the company is a covered entity, select one of the following statements to be inserted into the privacy notice:',
         options: [
-            'Please note that the health data we collect as part of this [insert name of technology] are not protected by HIPAA and our company\'s HIPAA Notice of Privacy Practices does not apply.',
-            'Some of the health data we collect as part of this [insert name of technology product] also are protected by HIPAA. Read our HIPAA Notice of Privacy Practices [embed link or popup] for more information.',
+            'Please note that the health data we collect as part of this [name of technology] are not protected by HIPAA and our company\'s HIPAA Notice of Privacy Practices does not apply.',
+            'Some of the health data we collect as part of this [name of technology product] also are protected by HIPAA. Read our HIPAA Notice of Privacy Practices [link to HIPAA Notice] for more information.',
             'Not a HIPAA covered entity',
         ],
     },  
@@ -144,8 +154,8 @@ export const Questions = [
         pageID: 1,
         title: 'HIPAA',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'What is the link to the company\'s HIPAA Notice of Privacy Practices?',
-        // hintText: 'https://'
+        prompt: 'What is the link to the company\'s HIPAA Notice of Privacy Practices?',
+        hintText: 'https://'
     },
     {
         id: 'p-3 g-1 q-1',
@@ -471,9 +481,11 @@ export const Questions = [
         pageID: 5,
         title: 'Policy Changes',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'Describe how/if the company will notify consumers of privacy policy changes (e.g. merger or acquisition).',
+        prompt: 'Describe how/if the company will notify consumers of privacy policy changes (e.g. merger or acquisition).',
         noticeText: "The company will notify consumers of privacy policy changes by...",
         multiLine: true,
+        rows: 5,
+        textareaStyle: textFieldStyles.multiLineStyle
     },
     {
         id: 'p-6 g-1 q-2',
@@ -490,9 +502,12 @@ export const Questions = [
         pageID: 5,
         title: 'Breach',
         type: QuestionTypes.TEXT,
-        floatingLabelText: "Describe how the company will protect consumers’ data in the case of a breach.",
+        prompt: "Describe how the company will notify users and protect consumers’ data in the case of a breach.",
         noticeText: 'In case of a breach:',
         helpText: 'Breach means: an unauthorized disclosure',
+        multiLine: true,
+        rows: 5,
+        textareaStyle: textFieldStyles.multiLineStyle
     },
     {
         id: 'p-6 g-2 q-2',

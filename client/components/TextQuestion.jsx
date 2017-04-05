@@ -36,6 +36,8 @@ export default class TextQuestion extends React.Component {
                       value={this.props.selection}
                       onChange={this.onChange}
                       multiLine={!!this.props.multiLine}
+                      rows={this.props.rows}
+                      textareaStyle={this.props.textareaStyle}
                     />
                 </CardText>
                 </div>
