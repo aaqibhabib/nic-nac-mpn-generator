@@ -41,6 +41,7 @@ class App extends React.Component {
         _.bindAll(this, 'onSelectionChange', 'onIntroChange', 'setStep', 'nextStep', 'previousStep');
         this.state = {
             currentStepIndex: -1,
+            visited: [],
             selections: {},
             entityName: '',
             privacyPolicyLink: '',
@@ -67,15 +68,15 @@ class App extends React.Component {
     }
 
     setStep(index) {
-        this.setState({ currentStepIndex: index });
+        this.setState({ currentStepIndex: index, visited: _.uniq(this.state.visited.concat(this.state.currentStepIndex)) });
     }
 
     nextStep() {
-        this.setState({ currentStepIndex: this.state.currentStepIndex + 1 });
+        this.setState({ currentStepIndex: this.state.currentStepIndex + 1, visited: _.uniq(this.state.visited.concat(this.state.currentStepIndex)) });
     }
 
     previousStep() {
-        this.setState({ currentStepIndex: this.state.currentStepIndex - 1 });
+        this.setState({ currentStepIndex: this.state.currentStepIndex - 1, vistied: _.uniq(this.state.visited.concat(this.state.currentStepIndex)) });
     }
 
     render() {
@@ -96,6 +97,7 @@ class App extends React.Component {
                         {this.state.currentStepIndex >= 0 ? <h2 className="NoticeTitle">Privacy Notice Generator</h2> : null}
                         {this.state.currentStepIndex >= 0 ? <Stepper
                           currentStepIndex={this.state.currentStepIndex}
+                          visited={this.state.visited}
                           setStep={this.setStep}
                         /> : null}
                         <div style={this.state.currentStepIndex >= 0 && this.state.currentStepIndex !== 7 ? { display: 'flex' } : {}}>
@@ -154,14 +156,12 @@ class App extends React.Component {
                                 return null;
                             })()}
                         </div>
-                        <div style={{ height: '42px', margin: '30px 0%' }}>
+                        <div style={{ height: '42px', margin: '30px 0%', float: 'right' }}>
                             {this.state.currentStepIndex > 0 ? <RaisedButton
-                              style={styles.left}
                               label="Back"
                               onClick={this.previousStep}
                             /> : null}
                             {this.state.currentStepIndex === 7 ? null : <RaisedButton
-                              style={styles.right}
                               label={this.state.currentStepIndex >= 0 ? 'Continue' : 'Begin'}
                               primary
                               onClick={this.nextStep}
