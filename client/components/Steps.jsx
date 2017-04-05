@@ -10,7 +10,7 @@ export default class Questions extends React.Component {
     render() {
         const currentStep = Steps[this.props.currentStepIndex];
         return (
-            <div>
+            <div style={{ flex: 3 }}>
                 {currentStep.values.map(questionGroup =>
                     (<div key={questionGroup.key}>
                         <h3>{questionGroup.key}</h3>

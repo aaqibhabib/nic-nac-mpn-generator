@@ -6,6 +6,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import { Card, CardText } from 'material-ui/Card';
+import { Toolbar, ToolbarTitle } from 'material-ui/Toolbar';
+
 
 import Stepper from './Stepper';
 import Steps from './Steps';
@@ -19,7 +22,7 @@ const styles = {
         maxWidth: '1200px',
         marginRight: 'auto',
         marginLeft: 'auto',
-        background:'#fdfdfd',
+        background: '#fdfdfd',
         // padding: '0 24px',
     },
     right: {
@@ -29,6 +32,8 @@ const styles = {
         float: 'left',
     },
 };
+
+const helpText = ['Help Page 1', 'Help Page 2', 'Help Page 3', 'Help Page 4', 'Help Page 5', 'Help Page 6', 'Help Page 7'];
 
 class App extends React.Component {
     constructor(props) {
@@ -47,10 +52,12 @@ class App extends React.Component {
     }
 
     onSelectionChange(id, state) {
-        this.setState({ selections: {
-            ...this.state.selections,
-            [id]: state,
-        } });
+        this.setState({
+            selections: {
+                ...this.state.selections,
+                [id]: state,
+            },
+        });
     }
 
     onIntroChange(id, state) {
@@ -91,51 +98,62 @@ class App extends React.Component {
                           currentStepIndex={this.state.currentStepIndex}
                           setStep={this.setStep}
                         /> : null}
-                        {(() => {
-                            console.log(this.state.currentStepIndex);
-                            if (this.state.currentStepIndex < 0) {
-                                return (<Intro />);
-                            } else if (this.state.currentStepIndex === 0) {
-                                return (<Contact
-                                  entityName={this.state.entityName}
-                                  privacyPolicyLink={this.state.privacyPolicyLink}
-                                  commentLink={this.state.commentLink}
-                                  emailAddress={this.state.emailAddress}
-                                  phoneNumber={this.state.phoneNumber}
-                                  address={this.state.address}
-                                  onIntroChange={this.onIntroChange}
-                                />);
-                            } else if (this.state.currentStepIndex > 0 && this.state.currentStepIndex < 6) {
-                                return (<Steps
-                                  currentStepIndex={this.state.currentStepIndex}
-                                  selections={this.state.selections}
-                                  onSelectionChange={this.onSelectionChange}
-                                />);
-                            } else if (this.state.currentStepIndex === 6) {
-                                return (<Review
-                                  entityName={this.state.entityName}
-                                  privacyPolicyLink={this.state.privacyPolicyLink}
-                                  commentLink={this.state.commentLink}
-                                  emailAddress={this.state.emailAddress}
-                                  phoneNumber={this.state.phoneNumber}
-                                  address={this.state.address}
-                                  selections={this.state.selections}
-
-                                  setStep={this.setStep}
-                                />);
-                            } else if (this.state.currentStepIndex === 7) {
-                                return (<Notice
-                                  entityName={this.state.entityName}
-                                  privacyPolicyLink={this.state.privacyPolicyLink}
-                                  commentLink={this.state.commentLink}
-                                  emailAddress={this.state.emailAddress}
-                                  phoneNumber={this.state.phoneNumber}
-                                  address={this.state.address}
-                                  selections={this.state.selections}
-                                />);
-                            }
-                            return null;
-                        })()}
+                        <div style={this.state.currentStepIndex >= 0 && this.state.currentStepIndex !== 7 ? { display: 'flex' } : {}}>
+                            {this.state.currentStepIndex >= 0 && this.state.currentStepIndex !== 7 ? <div style={{ flex: 1, marginRight: '15px', marginTop: '20px' }}>
+                                <Card>
+                                    <Toolbar>
+                                        <ToolbarTitle style={{ margin: '0px auto' }} text="INSTRUCTIONS" />
+                                    </Toolbar>
+                                    <CardText>
+                                        {helpText[this.state.currentStepIndex]}
+                                    </CardText>
+                                </Card>
+                            </div> : null}
+                            {(() => {
+                                console.log(this.state.currentStepIndex);
+                                if (this.state.currentStepIndex < 0) {
+                                    return (<Intro />);
+                                } else if (this.state.currentStepIndex === 0) {
+                                    return (<Contact
+                                      entityName={this.state.entityName}
+                                      privacyPolicyLink={this.state.privacyPolicyLink}
+                                      commentLink={this.state.commentLink}
+                                      emailAddress={this.state.emailAddress}
+                                      phoneNumber={this.state.phoneNumber}
+                                      address={this.state.address}
+                                      onIntroChange={this.onIntroChange}
+                                    />);
+                                } else if (this.state.currentStepIndex > 0 && this.state.currentStepIndex < 6) {
+                                    return (<Steps
+                                      currentStepIndex={this.state.currentStepIndex}
+                                      selections={this.state.selections}
+                                      onSelectionChange={this.onSelectionChange}
+                                    />);
+                                } else if (this.state.currentStepIndex === 6) {
+                                    return (<Review
+                                      entityName={this.state.entityName}
+                                      privacyPolicyLink={this.state.privacyPolicyLink}
+                                      commentLink={this.state.commentLink}
+                                      emailAddress={this.state.emailAddress}
+                                      phoneNumber={this.state.phoneNumber}
+                                      address={this.state.address}
+                                      selections={this.state.selections}
+                                      setStep={this.setStep}
+                                    />);
+                                } else if (this.state.currentStepIndex === 7) {
+                                    return (<Notice
+                                      entityName={this.state.entityName}
+                                      privacyPolicyLink={this.state.privacyPolicyLink}
+                                      commentLink={this.state.commentLink}
+                                      emailAddress={this.state.emailAddress}
+                                      phoneNumber={this.state.phoneNumber}
+                                      address={this.state.address}
+                                      selections={this.state.selections}
+                                    />);
+                                }
+                                return null;
+                            })()}
+                        </div>
                         <div style={{ height: '42px', margin: '30px 0%' }}>
                             {this.state.currentStepIndex > 0 ? <RaisedButton
                               style={styles.left}

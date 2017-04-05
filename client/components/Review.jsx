@@ -45,7 +45,7 @@ export default class Review extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{ flex: 3 }}>
                 <h3>Review</h3>
                 <Card className="reviewCard" style={styles.reviewCard}>
                     <CardTitle title="Contact Info" titleStyle={{ fontSize: 20 }} >
