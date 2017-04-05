@@ -45,7 +45,7 @@ export default class Notice extends React.Component {
                                     const key = `${Steps[i].key}-${questionGroup.key}-${question.id}`;
                                     if (question.type === QuestionTypes.CHECKBOX) {
                                         return (<div key={question.id} className="question-block">
-                                            <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
+                                            <h4 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h4>
                                             <div className="question-answers">
                                                 {(() => {
                                                     const items = [];
@@ -60,12 +60,12 @@ export default class Notice extends React.Component {
                                         </div>);
                                     } else if (question.type === QuestionTypes.RADIO) {
                                         return (<div key={question.id} className="question-block">
-                                            <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
+                                            <h4 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h4>
                                             <div className="question-answers">{this.props.selections[key]}</div>
                                         </div>);
                                     } else if (question.type === QuestionTypes.TEXT) {
                                         return (<div key={question.id} className="question-block">
-                                            <h3 className="question-prompt">{question.noticeText || question.prompt}</h3>
+                                            <h4 className="question-prompt">{question.noticeText || question.prompt}</h4>
                                             <div className="question-answers">{this.props.selections[key]}</div>
                                         </div>);
                                     }
@@ -79,12 +79,12 @@ export default class Notice extends React.Component {
                         <div className="footer">
                             <h1 className='text-center'>Contact Us</h1>
                             <div>
-                                <h3>Privacy Officer, {this.props.entityName}</h3>
-                                <h3>{this.props.privacyPolicyLink}</h3>
-                                <h3>{this.props.commentLink}</h3>
-                                <h3>{this.props.emailAddress}</h3>
-                                <h3>{this.props.phoneNumber}</h3>
-                                <h3>{this.props.address}</h3>
+                                <h4>Privacy Officer, {this.props.entityName}</h4>
+                                <h4>{this.props.privacyPolicyLink}</h4>
+                                <h4>{this.props.commentLink}</h4>
+                                <h4>{this.props.emailAddress}</h4>
+                                <h4>{this.props.phoneNumber}</h4>
+                                <h4>{this.props.address}</h4>
                             </div>
                             
                         </div>

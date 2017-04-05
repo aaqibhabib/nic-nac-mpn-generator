@@ -17,7 +17,7 @@ const styles = {
     },
     td: {
         flex: 1,
-        fontSize: 13,
+        fontSize: 16,
         paddingLeft: 24,
         paddingRight: 24,
     },
