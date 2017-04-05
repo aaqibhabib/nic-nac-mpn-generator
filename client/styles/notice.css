@@ -14,7 +14,7 @@
 #mpn-notice .question-block {
     display: flex;
     align-items: center;
-    padding: 2em 2em;
+    padding: 0.5em 2em;
 }
 
 #mpn-notice .question-prompt, #mpn-notice .question-answers {
