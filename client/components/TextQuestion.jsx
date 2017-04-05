@@ -23,7 +23,7 @@ export default class TextQuestion extends React.Component {
     render() {
         return (
             <Card title={this.props.prompt}>
-                <CardTitle ><div style={{ fontSize: 20 }}>{this.props.prompt}</div></CardTitle>
+                {this.props.prompt ? <CardTitle ><div style={{ fontSize: 20 }}>{this.props.prompt}</div></CardTitle> : null}
                 <CardText>
                     <TextField
                       fullWidth
