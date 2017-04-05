@@ -44,7 +44,7 @@ export default class Notice extends React.Component {
                                 {questionGroup.values.map((question) => {
                                     const key = `${Steps[i].key}-${questionGroup.key}-${question.id}`;
                                     const values = this.props.selections[key];
-                                    if (!values || !values.length > 0) return null; // skip questions with no answers
+                                    if (!values || _.isEmpty(values)) return null; // skip questions with no answers
                                     if (question.type === QuestionTypes.CHECKBOX) {
                                         return (<div key={question.id} className="question-block">
                                             <h4 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h4>
