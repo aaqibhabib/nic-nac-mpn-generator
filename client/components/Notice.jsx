@@ -112,7 +112,7 @@ export default class Notice extends React.Component {
                         <div className="footer">
                             <h1 className="text-center">Contact Us</h1>
                             <div>
-                                <h3>Privacy Officer, {this.props.entityName}</h3>
+                                <h3>{this.props.entityName}</h3>
                                 <h3>{this.props.privacyPolicyLink}</h3>
                                 <h3>{this.props.commentLink}</h3>
                                 <h3>{this.props.emailAddress}</h3>
