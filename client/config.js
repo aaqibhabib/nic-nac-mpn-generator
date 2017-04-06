@@ -143,7 +143,7 @@ export const Questions = [
         pageID: 1,
         title: 'HIPAA',
         type: QuestionTypes.TEXT,
-        prompt: '(Optional) If some of the health data collected is protected by HIPAA, what is the link to the company\'s HIPAA Notice of Privacy Practices?',
+        prompt: '(optional) If some of the health data collected is protected by HIPAA, what is the link to the company\'s HIPAA Notice of Privacy Practices?',
         hintText: 'https://'
     },
     {
@@ -196,9 +196,9 @@ export const Questions = [
         pageID: 2,
         title: 'Share',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'If not obvious, what is the primary service of the app or technology?',
+        floatingLabelText: '(optional) If selected above and not obvious, what is the primary service of the app or technology?',
         noticeText: 'The primary service of this app or technology is:',
-        // hintText: 'E.g. Recording your fitness activity to help meet fitness goals'
+        hintText: 'The primary service of this app or technology is:'
     },
     {
         id: 'p-3 g-3 q-1',
@@ -219,9 +219,9 @@ export const Questions = [
         pageID: 2,
         title: 'Sell',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'How can users adjust this permission?',
+        floatingLabelText: '(optional) If permission is required, how can users adjust this permission?',
         noticeText: 'You can adjust this permission by:',
-        // hintText: 'E.g. Share settings in user dashboard'
+        hintText: 'You can adjust this permission by:',
     },
     {
         id: 'p-3 g-3 q-3',
@@ -242,9 +242,9 @@ export const Questions = [
         pageID: 2,
         title: 'Sell',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'How can users adjust this permission?',
+        floatingLabelText: '(optional) If permission is required, how can users adjust this permission?',
         noticeText: 'You can adjust this permission by:',
-        // hintText: 'E.g. Share settings in user dashboard'
+        hintText: 'You can adjust this permission by:',
     },
     {
         id: 'p-4 g-1 q-1',
@@ -533,7 +533,8 @@ export const HelpfulTips = [
     },
     {
         title: 'Helpful Tip',
-        text: 'This sections focuses on Use, Sharing and Privacy of the data. We and our refer to your company as it will appear on the notice to the user. You refers to the consumer of the policy.',
+        text: 'This section focuses on the company\'s policies toward use, sharing, and privacy of the data. \"We\" and \"our\" refer to your company as it will appear on the notice to the user. \"You\" refers to the consumer of the policy.',
+
     },
     {
         title: 'Helpful Tip',
