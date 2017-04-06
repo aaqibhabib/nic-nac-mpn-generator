@@ -540,26 +540,26 @@ export const HelpfulTips = [
     },
     {
         title: 'Helpful Tip',
-        text: 'Help on page 2',
+        text: 'This part focuses on whether or not your company is HIPAA Entity. We and our refer to your company as it will appear on the notice to the user.',
     },
     {
         title: 'Helpful Tip',
-        text: 'Help on page 3',
+        text: 'We and our refer to your company as it will appear on the notice to the user. You refers to the consumer of the policy.',
     },
     {
         title: 'Helpful Tip',
-        text: 'Help on page 4',
+        text: 'We and our refer to your company as it will appear on the notice to the user. You refers to the consumer of the policy.',
     },
     {
         title: 'Helpful Tip',
-        text: 'Help on page 5',
+        text: 'Make sure to be clear about where users should go to chekc privacy setting. We and our refer to your company as it will appear on the notice to the user. You refers to the consumer of the policy.',
+    },
+    {
+        title: 'Instructions/Helpful Tip',
+        text: 'Fill this out with as much detail as possible to let the user know. If you do not have these sections in your policy they should be added in as they are required by law. We and our refer to your company as it will appear on the notice to the user. You refers to the consumer of the policy.',
     },
     {
         title: 'Helpful Tip',
-        text: 'Help on page 6',
-    },
-    {
-        title: 'Helpful Tip',
-        text: 'Help on page 7',
+        text: 'Review the answers you filed out to make sure they are accurate. Edit the question if you find an issue with your answers.',
     },
 ];
