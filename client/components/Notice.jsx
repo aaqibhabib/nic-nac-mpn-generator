@@ -85,13 +85,18 @@ export default class Notice extends React.Component {
                                     } else if (question.type === QuestionTypes.RADIO) {
                                         let selection = this.props.selections[key];
                                         const helpText = HelpText[selection];
-                                        if (key === '1-HIPAA Covered Entity-p-2 g-1 q-1') { selection = _.template(selection)({ 'techName': this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-2'] || 'our product' }); }
+                                        if (key === '1-HIPAA Covered Entity-p-2 g-1 q-1') {
+                                            selection = _.template(selection)({
+                                                techName: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-2'] || 'our product',
+                                                privacyLink: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3'] || 'Link to HIPPA Notice',
+                                            });
+                                        }
                                         return (<div key={question.id} className="question-block">
                                             <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
                                             <div className="question-answers">{helpText ? <abbr title={helpText}>{selection}</abbr> : selection}</div>
                                         </div>);
                                     } else if (question.type === QuestionTypes.TEXT) {
-                                        const prompt = _.template(question.noticeText || question.prompt)({ 'entityName': this.props.entityName || 'The Company' });
+                                        const prompt = _.template(question.noticeText || question.prompt)({ entityName: this.props.entityName || 'The Company' });
                                         return (<div key={question.id} className="question-block">
                                             <h3 className="question-prompt">{prompt}</h3>
                                             <div className="question-answers">{this.props.selections[key]}</div>

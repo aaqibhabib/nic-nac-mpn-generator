@@ -2,6 +2,16 @@ import React from 'react';
 import _ from 'lodash';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
+import { grey700, cyan500 } from 'material-ui/styles/colors';
+
+const styles = {
+    floatingLabelStyle: {
+        color: grey700,
+    },
+    floatingLabelFocusStyle: {
+        color: cyan500, // change to pramry theme color
+    },
+};
 
 export default class TextQuestion extends React.Component {
     constructor(props) {
@@ -24,6 +34,8 @@ export default class TextQuestion extends React.Component {
                           id={this.props.id}
                           floatingLabelText={this.props.floatingLabelText}
                           hintText={this.props.hintText}
+                          floatingLabelStyle={styles.floatingLabelStyle}
+                          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                           value={this.props.selection}
                           onChange={this.onChange}
                           multiLine={!!this.props.multiLine}
