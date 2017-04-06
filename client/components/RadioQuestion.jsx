@@ -32,7 +32,9 @@ export default class RadioQuestion extends React.Component {
                             {this.props.options.map((op) => {
                                 const key = `${this.props.pageID}-${this.props.groupID}-${this.props.id}`;
                                 let option = op;
-                                if (key === '1-HIPAA Covered Entity-p-2 g-1 q-1') { option = _.template(option)({ 'techName': this.props.techName || 'our product' }); }
+                                console.log(option);
+                                if (key === '1-HIPAA Covered Entity-p-2 g-1 q-1') { option = _.template(option)({ 'techName': this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-2'] || 'our product', 'privacyLink': this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3'] || 'LINK TO PRIAVCY' }); }
+                                console.log(option);
                                 return (<RadioButton
                                   key={option}
                                   value={option}
@@ -58,6 +60,7 @@ RadioQuestion.propTypes = {
     prompt: React.PropTypes.string.isRequired,
     options: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired,
     selection: React.PropTypes.string.isRequired,
-    techName: React.PropTypes.string.isRequired,
+    // eslint-disable-next-line react/forbid-prop-types
+    selections: React.PropTypes.object.isRequired,
     onChange: React.PropTypes.func.isRequired,
 };
