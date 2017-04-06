@@ -29,14 +29,17 @@ export default class RadioQuestion extends React.Component {
                     <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>
                     <CardText>
                         <RadioButtonGroup name={this.props.id} onChange={this.onChange} valueSelected={this.props.selection}>
-                            {this.props.options.map(option => (
-                                <RadioButton
+                            {this.props.options.map((op) => {
+                                const key = `${this.props.pageID}-${this.props.groupID}-${this.props.id}`;
+                                let option = op;
+                                if (key === '1-HIPAA Covered Entity-p-2 g-1 q-1') { option = _.template(option)({ 'techName': this.props.techName || 'our product' }); }
+                                return (<RadioButton
                                   key={option}
                                   value={option}
                                   label={option}
                                   style={styles.radio}
-                                />
-                            ))}
+                                />);
+                            })}
                         </RadioButtonGroup>
                     </CardText>
                 </div>
@@ -55,5 +58,6 @@ RadioQuestion.propTypes = {
     prompt: React.PropTypes.string.isRequired,
     options: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired,
     selection: React.PropTypes.string.isRequired,
+    techName: React.PropTypes.string.isRequired,
     onChange: React.PropTypes.func.isRequired,
 };

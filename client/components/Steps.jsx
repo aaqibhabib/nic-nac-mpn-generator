@@ -29,6 +29,7 @@ export default class Questions extends React.Component {
                                 return (<RadioQuestion
                                   {...question}
                                   key={question.id}
+                                  techName={this.props.techName}
                                   selection={selection}
                                   onChange={this.props.onSelectionChange}
                                 />);
@@ -54,6 +55,7 @@ export default class Questions extends React.Component {
 Questions.propTypes = {
     // eslint-disable-next-line react/forbid-prop-types
     selections: React.PropTypes.object.isRequired,
+    techName: React.PropTypes.string.isRequired,
     onSelectionChange: React.PropTypes.func.isRequired,
     currentStepIndex: React.PropTypes.number.isRequired,
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import { Card, CardText } from 'material-ui/Card';
+import { Card, CardText, CardTitle } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import { grey700, cyan500 } from 'material-ui/styles/colors';
 
@@ -17,7 +17,8 @@ export default class Contact extends React.Component {
     constructor(props) {
         super(props);
         _.bindAll(this, 'onEntityNameChange', 'onPrivacyPolicyLinkChange',
-            'onCommentLinkChange', 'onEmailAddressChange', 'onPhoneNumberChange', 'onAddressChange');
+            'onCommentLinkChange', 'onEmailAddressChange', 'onPhoneNumberChange',
+            'onAddressChange', 'onTechChange');
     }
 
     onEntityNameChange(e) {
@@ -42,6 +43,9 @@ export default class Contact extends React.Component {
 
     onAddressChange(e) {
         this.props.onIntroChange('address', e.target.value);
+    }
+    onTechChange(e) {
+        this.props.onIntroChange('techName', e.target.value);
     }
 
     render() {
@@ -102,6 +106,19 @@ export default class Contact extends React.Component {
                         />
                     </CardText>
                 </Card>
+                <Card>
+                    <CardText>
+                        <TextField
+                          fullWidth
+                          floatingLabelText="What is the name of the technology or product this notice is for?"
+                          hintText="Name of app or technology"
+                          floatingLabelStyle={styles.floatingLabelStyle}
+                          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                          value={this.props.techName}
+                          onChange={this.onTechChange}
+                        />
+                    </CardText>
+                </Card>
             </div>
         );
     }
@@ -115,4 +132,5 @@ Contact.propTypes = {
     emailAddress: React.PropTypes.string.isRequired,
     phoneNumber: React.PropTypes.string.isRequired,
     address: React.PropTypes.string.isRequired,
+    techName: React.PropTypes.string.isRequired,
 };

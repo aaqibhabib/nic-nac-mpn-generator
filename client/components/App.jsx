@@ -48,6 +48,7 @@ class App extends React.Component {
             emailAddress: '',
             phoneNumber: '',
             address: '',
+            techName: '',
         };
     }
 
@@ -56,7 +57,8 @@ class App extends React.Component {
             selections: {
                 ...this.state.selections,
                 [id]: state,
-            },
+            } }, () => {
+                console.log(this.state.selections);
         });
     }
 
@@ -122,11 +124,13 @@ class App extends React.Component {
                                       emailAddress={this.state.emailAddress}
                                       phoneNumber={this.state.phoneNumber}
                                       address={this.state.address}
+                                      techName={this.state.techName}
                                       onIntroChange={this.onIntroChange}
                                     />);
                                 } else if (this.state.currentStepIndex > 0 && this.state.currentStepIndex < 6) {
                                     return (<Steps
                                       currentStepIndex={this.state.currentStepIndex}
+                                      techName={this.state.techName}
                                       selections={this.state.selections}
                                       onSelectionChange={this.onSelectionChange}
                                     />);
