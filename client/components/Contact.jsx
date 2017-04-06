@@ -104,15 +104,6 @@ export default class Contact extends React.Component {
                           value={this.props.address}
                           onChange={this.onAddressChange}
                         />
-                        <TextField
-                          fullWidth
-                          floatingLabelText="What is the name of the technology or product this notice is for?"
-                          hintText="Name of app or technology"
-                          floatingLabelStyle={styles.floatingLabelStyle}
-                          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                          value={this.props.techName}
-                          onChange={this.onTechChange}
-                        />
                     </CardText>
                 </Card>
             </div>
@@ -128,5 +119,4 @@ Contact.propTypes = {
     emailAddress: React.PropTypes.string.isRequired,
     phoneNumber: React.PropTypes.string.isRequired,
     address: React.PropTypes.string.isRequired,
-    techName: React.PropTypes.string.isRequired,
 };

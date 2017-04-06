@@ -30,6 +30,7 @@ export default class Questions extends React.Component {
                                   {...question}
                                   key={question.id}
                                   techName={this.props.techName}
+                                  selections={this.props.selections}
                                   selection={selection}
                                   onChange={this.props.onSelectionChange}
                                 />);
