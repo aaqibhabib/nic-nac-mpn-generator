@@ -484,17 +484,17 @@ export const Questions = [
         title: 'Policy Changes',
         type: QuestionTypes.TEXT,
         floatingLabelText: 'Link to policy change section in privacy policy:',
-        noticeText: 'Section of privacy policy:',   
+        noticeText: 'Section of privacy policy:',  
+        hintText: 'https://', 
     },
     {
         id: 'p-6 g-2 q-1',
-        groupID: 'Breach: How the company notify users and protect data in case of an improper disclosure',
+        groupID: 'Breach: How the company will notify users and protect data in case of an improper disclosure',
         pageID: 5,
         title: 'Breach',
         type: QuestionTypes.TEXT,
         prompt: 'Describe how the company will notify users and protect consumers’ data in the case of a breach.',
         noticeText: '<%= entityName %> complies with all applicable laws regarding breaches. In case of a breach...',
-        // hintText: 'In case of a breach...',
         helpText: 'Breach means: an unauthorized disclosure',
         multiLine: true,
         rows: 5,
@@ -502,12 +502,13 @@ export const Questions = [
     },
     {
         id: 'p-6 g-2 q-2',
-        groupID: 'Breach: How the company notify users and protect data in case of an improper disclosure',
+        groupID: 'Breach: How the company will notify users and protect data in case of an improper disclosure',
         pageID: 5,
         title: 'Breach',
         type: QuestionTypes.TEXT,
         floatingLabelText: 'Link to breach notification section of privacy policy:',
-        noticeText: 'Section of privacy policy:',   
+        noticeText: 'Section of privacy policy:', 
+        hintText: 'https://',   
     },
 ];
 
@@ -545,8 +546,8 @@ export const HelpfulTips = [
         text: 'Make sure to be clear about where users should go to check privacy settings.\"We\" and \"our\" refer to your company as it will appear on the notice to the user. \"You\" refers to the consumer of the policy.',
     },
     {
-        title: 'Instructions/Helpful Tip',
-        text: 'Fill this out with as much detail as possible to let the user know. If you do not have these sections in your policy they should be added in as they are required by law. We and our refer to your company as it will appear on the notice to the user. You refers to the consumer of the policy.',
+        title: 'Instructions',
+        text: 'Please complete this section with as much detail as possible to keep users informed about your company\'s privacy policy. If you do not have these sections in your policy they should be added in, as they are required to complete a Model Privacy Notice.',
     },
     {
         title: 'Helpful Tip',
