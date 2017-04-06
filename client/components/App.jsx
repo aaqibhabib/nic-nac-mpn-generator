@@ -67,16 +67,35 @@ class App extends React.Component {
         });
     }
 
+    onPageChanged() {
+        window.scrollTo(0, 0);
+    }
+
     setStep(index) {
-        this.setState({ currentStepIndex: index, visited: _.uniq(this.state.visited.concat(this.state.currentStepIndex)) });
+        this.setState({
+            currentStepIndex: index,
+            visited: _.uniq(this.state.visited.concat(this.state.currentStepIndex)),
+        }, () => {
+            this.onPageChanged();
+        });
     }
 
     nextStep() {
-        this.setState({ currentStepIndex: this.state.currentStepIndex + 1, visited: _.uniq(this.state.visited.concat(this.state.currentStepIndex)) });
+        this.setState({
+            currentStepIndex: this.state.currentStepIndex + 1,
+            visited: _.uniq(this.state.visited.concat(this.state.currentStepIndex)),
+        }, () => {
+            this.onPageChanged();
+        });
     }
 
     previousStep() {
-        this.setState({ currentStepIndex: this.state.currentStepIndex - 1, vistied: _.uniq(this.state.visited.concat(this.state.currentStepIndex)) });
+        this.setState({
+            currentStepIndex: this.state.currentStepIndex - 1,
+            vistied: _.uniq(this.state.visited.concat(this.state.currentStepIndex)),
+        }, () => {
+            this.onPageChanged();
+        });
     }
 
     render() {
