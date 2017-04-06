@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import { Card, CardText, CardTitle } from 'material-ui/Card';
+import { Card, CardText } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import { grey700, cyan500 } from 'material-ui/styles/colors';
 
@@ -104,10 +104,6 @@ export default class Contact extends React.Component {
                           value={this.props.address}
                           onChange={this.onAddressChange}
                         />
-                    </CardText>
-                </Card>
-                <Card>
-                    <CardText>
                         <TextField
                           fullWidth
                           floatingLabelText="What is the name of the technology or product this notice is for?"
