@@ -46,6 +46,19 @@ class CodeBlock extends Component {
       expand: !this.state.expand,
     });
   };
+  onCopy = e => {
+    debugger;
+  };
+  onDownload = e => {
+    const blob = new Blob([this.props.children], {type : 'text/html'});
+    const url = window.URL.createObjectURL(blob);
+    var link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", "privacy-notice.html");
+    document.body.appendChild(link); // Required for FF
+
+    link.click();
+  };
 
   render() {
     const text = `\`\`\`js
@@ -63,8 +76,8 @@ ${this.props.children}
 
     return (
       <div style={styles.root}>
-        <div onTouchTap={this.handleTouchTap} style={styles.codeBlockTitle}>
-          <CodeBlockTitle title={this.props.title} tooltip={tooltip} />
+        <div style={styles.codeBlockTitle}>
+          <CodeBlockTitle title={this.props.title} tooltip={tooltip} onCopy={this.onCopy} onDownload={this.onDownload} onOpenClose={this.handleTouchTap}/>
         </div>
         <MarkdownElement style={codeStyle} text={text} />
         <MarkdownElement style={descriptionStyle} text={this.props.description} />

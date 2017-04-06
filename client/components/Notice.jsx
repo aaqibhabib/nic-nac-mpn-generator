@@ -27,6 +27,7 @@ export default class Notice extends React.Component {
             <head>
                 <meta charset="UTF-8">
                 <title>Privacy Notice</title>
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
                 <style>
                 ${css}
                 </style>

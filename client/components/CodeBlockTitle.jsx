@@ -11,13 +11,13 @@ const CodeBlockTitle = props => (
             <ToolbarTitle text={props.title || 'Example'} />
         </ToolbarGroup>
         <ToolbarGroup>
-            <IconButton touch tooltip={'Download'}>
+            <IconButton touch tooltip={'Download'} onClick={props.onDownload}>
                 <DownloadIcon />
             </IconButton>
-            <IconButton touch tooltip={'Copy to clipboard'}>
+            <IconButton touch tooltip={'Copy to clipboard'} onClick={props.onCopy}>
                 <CopyIcon />
             </IconButton>
-            <IconButton touch tooltip={props.tooltip}>
+            <IconButton touch tooltip={props.tooltip} onClick={props.onOpenClose}>
                 <CodeIcon />
             </IconButton>
         </ToolbarGroup>
