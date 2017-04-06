@@ -8,7 +8,7 @@ const styles = {
         marginBottom: '24px',
         fontSize: '1.4em',
         fontWeight: 'lighter',
-        color: '#546E7A'
+        color: '#546E7A',
     },
 };
 
@@ -24,21 +24,21 @@ export default class RadioQuestion extends React.Component {
     render() {
         return (
             <Card title={this.props.prompt} >
-                <div className ="cardPadding">
+                <div className="cardPadding">
 
-                <CardTitle ><div className ="questionTitleText">{this.props.prompt}</div></CardTitle>
-                <CardText>
-                    <RadioButtonGroup name={this.props.id} onChange={this.onChange} valueSelected={this.props.selection}>
-                        {this.props.options.map(option => (
-                            <RadioButton
-                              key={option}
-                              value={option}
-                              label={option}
-                              style={styles.radio}
-                            />
+                    <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>
+                    <CardText>
+                        <RadioButtonGroup name={this.props.id} onChange={this.onChange} valueSelected={this.props.selection}>
+                            {this.props.options.map(option => (
+                                <RadioButton
+                                  key={option}
+                                  value={option}
+                                  label={option}
+                                  style={styles.radio}
+                                />
                             ))}
-                    </RadioButtonGroup>
-                </CardText>
+                        </RadioButtonGroup>
+                    </CardText>
                 </div>
             </Card>
         );

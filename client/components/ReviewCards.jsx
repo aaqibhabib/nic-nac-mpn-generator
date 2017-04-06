@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import { Card, CardTitle, CardText, CardExpandable } from 'material-ui/Card';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
 import ModeEdit from 'material-ui/svg-icons/editor/mode-edit';
 
@@ -48,46 +48,46 @@ export default class ReviewCards extends React.Component {
         const currentStep = Steps[this.props.currentStepIndex];
         return (
             <Card className="reviewCard" style={styles.reviewCard}>
-                <div className = "cardPadding">
-                <CardTitle title={titles[this.props.currentStepIndex - 1]} className="questionTitleText">
-                    <IconButton style={styles.root} touch tooltip="Edit" onClick={() => this.setStep(this.props.currentStepIndex)}><ModeEdit /></IconButton>
-                </CardTitle>
-                <CardText>
-                    {currentStep.values.map(questionGroup =>
-                        (<div key={questionGroup.key}>
-                            {questionGroup.values.map((question) => {
-                                const key = `${Steps[this.props.currentStepIndex].key}-${questionGroup.key}-${question.id}`;
-                                if (question.type === QuestionTypes.CHECKBOX) {
-                                    return (<div key={question.id} className="tr" style={styles.tr}>
-                                        <div style={styles.td}>{question.prompt}</div>
-                                        <div style={styles.td}>
-                                            {(() => {
-                                                const items = [];
-                                                const checkBox = this.props.selections[key];
-                                                // eslint-disable-next-line no-restricted-syntax
-                                                for (const selection in checkBox) {
-                                                    if (checkBox[selection]) items.push(<li>{selection === 'Other:' ? checkBox[selection] : selection}</li>);
-                                                }
-                                                return <ul style={{ paddingLeft: 0 }}>{items}</ul>;
-                                            })()}
-                                        </div>
-                                    </div>);
-                                } else if (question.type === QuestionTypes.RADIO) {
-                                    return (<div key={question.id} className="tr" style={styles.tr}>
-                                        <div style={styles.td}>{question.prompt}</div>
-                                        <div style={styles.td}>{this.props.selections[key]}</div>
-                                    </div>);
-                                } else if (question.type === QuestionTypes.TEXT) {
-                                    return (<div key={question.id} className="tr" style={styles.tr}>
-                                        <div style={styles.td}>{question.prompt || question.floatingLabelText}</div>
-                                        <div style={styles.td}>{this.props.selections[key]}</div>
-                                    </div>);
-                                }
-                                return null;
-                            })}
-                        </div>))
-                    }
-                </CardText>
+                <div className="cardPadding">
+                    <CardTitle title={titles[this.props.currentStepIndex - 1]} className="questionTitleText">
+                        <IconButton style={styles.root} touch tooltip="Edit" onClick={() => this.setStep(this.props.currentStepIndex)}><ModeEdit /></IconButton>
+                    </CardTitle>
+                    <CardText>
+                        {currentStep.values.map(questionGroup =>
+                            (<div key={questionGroup.key}>
+                                {questionGroup.values.map((question) => {
+                                    const key = `${Steps[this.props.currentStepIndex].key}-${questionGroup.key}-${question.id}`;
+                                    if (question.type === QuestionTypes.CHECKBOX) {
+                                        return (<div key={question.id} className="tr" style={styles.tr}>
+                                            <div style={styles.td}>{question.prompt}</div>
+                                            <div style={styles.td}>
+                                                {(() => {
+                                                    const items = [];
+                                                    const checkBox = this.props.selections[key];
+                                                    // eslint-disable-next-line no-restricted-syntax
+                                                    for (const selection in checkBox) {
+                                                        if (checkBox[selection]) items.push(<li>{selection === 'Other:' ? checkBox[selection] : selection}</li>);
+                                                    }
+                                                    return <ul style={{ paddingLeft: 0 }}>{items}</ul>;
+                                                })()}
+                                            </div>
+                                        </div>);
+                                    } else if (question.type === QuestionTypes.RADIO) {
+                                        return (<div key={question.id} className="tr" style={styles.tr}>
+                                            <div style={styles.td}>{question.prompt}</div>
+                                            <div style={styles.td}>{this.props.selections[key]}</div>
+                                        </div>);
+                                    } else if (question.type === QuestionTypes.TEXT) {
+                                        return (<div key={question.id} className="tr" style={styles.tr}>
+                                            <div style={styles.td}>{question.prompt || question.floatingLabelText}</div>
+                                            <div style={styles.td}>{this.props.selections[key]}</div>
+                                        </div>);
+                                    }
+                                    return null;
+                                })}
+                            </div>))
+                        }
+                    </CardText>
                 </div>
             </Card>
         );

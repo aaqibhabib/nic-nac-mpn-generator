@@ -103,9 +103,5 @@ Review.propTypes = {
     emailAddress: React.PropTypes.string.isRequired,
     phoneNumber: React.PropTypes.string.isRequired,
     address: React.PropTypes.string.isRequired,
-    policyText: React.PropTypes.string.isRequired,
-    changeSectionLink: React.PropTypes.string.isRequired,
-    breachText: React.PropTypes.string.isRequired,
-    breachSectionLink: React.PropTypes.string.isRequired,
     setStep: React.PropTypes.func.isRequired,
 };

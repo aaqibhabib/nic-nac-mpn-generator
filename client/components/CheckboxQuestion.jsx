@@ -9,7 +9,7 @@ const styles = {
         marginBottom: '24px',
         fontSize: '1.4em',
         fontWeight: 'lighter',
-        color: '#546E7A'
+        color: '#546E7A',
     },
 };
 
@@ -28,11 +28,11 @@ class MPNCheckbox extends React.Component {
     render() {
         if (this.props.label === 'Other:') {
             return (<div className="other" style={{ display: 'flex', flexDirection: 'row' }}>
-            <Checkbox
-              label={this.props.label}
-              style={{ marginBottom: '24px', fontSize: '1.4em', fontWeight: 'lighter', color: '#546E7A', width: 'auto', flex: '1' }}
-              checked={!!this.props.checked}
-            />
+                <Checkbox
+                  label={this.props.label}
+                  style={{ marginBottom: '24px', fontSize: '1.4em', fontWeight: 'lighter', color: '#546E7A', width: 'auto', flex: '1' }}
+                  checked={!!this.props.checked}
+                />
                 <TextField
                   id={`${this.props.label}-other`}
                   value={this.props.checked || ''}
@@ -78,18 +78,18 @@ export default class CheckboxQuestion extends React.Component {
     render() {
         return (
             <Card>
-                <div className ="cardPadding">
-                <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>
-                <CardText>
-                    {this.props.options.map(option => (<MPNCheckbox
-                      key={option}
-                      label={option}
-                      style={styles.checkbox}
-                      onCheck={this.onChange}
-                      checked={this.props.selection[option]}
-                    />),
-                    )}
-                </CardText>
+                <div className="cardPadding">
+                    <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>
+                    <CardText>
+                        {this.props.options.map(option => (<MPNCheckbox
+                          key={option}
+                          label={option}
+                          style={styles.checkbox}
+                          onCheck={this.onChange}
+                          checked={this.props.selection[option]}
+                        />),
+                        )}
+                    </CardText>
                 </div>
             </Card>
         );

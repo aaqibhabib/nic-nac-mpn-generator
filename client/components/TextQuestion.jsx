@@ -3,15 +3,6 @@ import _ from 'lodash';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 
-const styles = {
-    radio: {
-        marginBottom: '24px',
-        fontSize: '1.4em',
-        fontWeight: 'lighter',
-        color: '#546E7A'
-    },
-};
-
 export default class TextQuestion extends React.Component {
     constructor(props) {
         super(props);
@@ -25,21 +16,21 @@ export default class TextQuestion extends React.Component {
     render() {
         return (
             <Card title={this.props.prompt}>
-                <div className ='cardPadding'>
-                <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>                
-                <CardText>
-                    <TextField
-                      fullWidth
-                      id={this.props.id}
-                      floatingLabelText={this.props.floatingLabelText}
-                      hintText={this.props.hintText}
-                      value={this.props.selection}
-                      onChange={this.onChange}
-                      multiLine={!!this.props.multiLine}
-                      rows={this.props.rows}
-                      textareaStyle={this.props.textareaStyle}
-                    />
-                </CardText>
+                <div className="cardPadding">
+                    <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>
+                    <CardText>
+                        <TextField
+                          fullWidth
+                          id={this.props.id}
+                          floatingLabelText={this.props.floatingLabelText}
+                          hintText={this.props.hintText}
+                          value={this.props.selection}
+                          onChange={this.onChange}
+                          multiLine={!!this.props.multiLine}
+                          rows={this.props.rows}
+                          textareaStyle={this.props.textareaStyle}
+                        />
+                    </CardText>
                 </div>
             </Card>
         );
@@ -48,6 +39,8 @@ export default class TextQuestion extends React.Component {
 
 TextQuestion.defaultProps = {
     hintText: '',
+    floatingLabelText: null,
+    multiLine: false,
 };
 
 TextQuestion.propTypes = {
@@ -60,5 +53,7 @@ TextQuestion.propTypes = {
     prompt: React.PropTypes.string.isRequired,
     selection: React.PropTypes.string.isRequired,
     hintText: React.PropTypes.string,
+    floatingLabelText: React.PropTypes.string,
+    multiLine: React.PropTypes.bool,
     onChange: React.PropTypes.func.isRequired,
 };

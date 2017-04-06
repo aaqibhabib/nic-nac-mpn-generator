@@ -40,50 +40,50 @@ export default class Policy extends React.Component {
             <div>
                 <h3>Policy Changes: How the company will notify users if the privacy policy changes</h3>
                 <Card>
-                   <div className='cardPadding'>
-                    <CardText>
-                        <TextField
-                          fullWidth
-                          multiLine
-                          floatingLabelText="Describe how/if the company will notify consumers of privacy policy changes (e.g. merger or acquisition)"
-                          floatingLabelStyle={styles.floatingLabelStyle}
-                          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                          value={this.props.policyText}
-                          onChange={this.onPolicyChange}
-                        />
-                        <TextField
-                          fullWidth
-                          floatingLabelText="Link to section in privacy policy"
-                          floatingLabelStyle={styles.floatingLabelStyle}
-                          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                          value={this.props.changeSectionLink}
-                          onChange={this.onChangeSectionLinkChange}
-                        />
-                    </CardText>
+                    <div className="cardPadding">
+                        <CardText>
+                            <TextField
+                              fullWidth
+                              multiLine
+                              floatingLabelText="Describe how/if the company will notify consumers of privacy policy changes (e.g. merger or acquisition)"
+                              floatingLabelStyle={styles.floatingLabelStyle}
+                              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                              value={this.props.policyText}
+                              onChange={this.onPolicyChange}
+                            />
+                            <TextField
+                              fullWidth
+                              floatingLabelText="Link to section in privacy policy"
+                              floatingLabelStyle={styles.floatingLabelStyle}
+                              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                              value={this.props.changeSectionLink}
+                              onChange={this.onChangeSectionLinkChange}
+                            />
+                        </CardText>
                     </div>
                 </Card>
                 <h3>Breach: How the company will notify users and protect data in case of an improper disclosure</h3>
                 <Card>
-                  <div className='cardPadding'>
-                    <CardText>
-                        <TextField
-                          fullWidth
-                          multiLine
-                          floatingLabelText="Describe how the company will notify users and protect consumers’ data in the case of a breach"
-                          floatingLabelStyle={styles.floatingLabelStyle}
-                          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                          value={this.props.breachText}
-                          onChange={this.onBreachChange}
-                        />
-                        <TextField
-                          fullWidth
-                          floatingLabelText="Link to section in privacy policy"
-                          floatingLabelStyle={styles.floatingLabelStyle}
-                          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                          value={this.props.breachSectionLink}
-                          onChange={this.onBreachSectionLinkChange}
-                        />
-                    </CardText>
+                    <div className="cardPadding">
+                        <CardText>
+                            <TextField
+                              fullWidth
+                              multiLine
+                              floatingLabelText="Describe how the company will notify users and protect consumers’ data in the case of a breach"
+                              floatingLabelStyle={styles.floatingLabelStyle}
+                              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                              value={this.props.breachText}
+                              onChange={this.onBreachChange}
+                            />
+                            <TextField
+                              fullWidth
+                              floatingLabelText="Link to section in privacy policy"
+                              floatingLabelStyle={styles.floatingLabelStyle}
+                              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                              value={this.props.breachSectionLink}
+                              onChange={this.onBreachSectionLinkChange}
+                            />
+                        </CardText>
                     </div>
                 </Card>
             </div>
