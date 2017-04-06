@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "NPM Generator",
   "main": "index.js",
+  "engines": {
+    "node": "6.9.4"
+  },
   "scripts": {
     "start": "node index",
     "lint": "eslint client/components/**",
