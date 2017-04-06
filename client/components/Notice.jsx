@@ -1,7 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
 import CodeExample from './CodeExample';
+import NoticeCSS from '!raw!../styles/notice.css';
 const beautifyHTML = require('js-beautify').html;
+const beautifyCSS = require('js-beautify').css;
 
 import { Steps, QuestionTypes, HelpText } from '../config';
 
@@ -17,8 +19,24 @@ export default class Notice extends React.Component {
 
     componentDidMount() {
         const notice = document.getElementById('mpn-notice');
-        const code = beautifyHTML(notice.outerHTML);
-        this.setState({ code });
+        const html = beautifyHTML(notice.outerHTML);
+        const css = beautifyCSS(NoticeCSS);
+        const code = `
+        <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>Privacy Notice</title>
+                <style>
+                ${css}
+                </style>
+            </head>
+            <body>
+            ${html}
+            </body>
+        </html>
+        `;
+        this.setState({ code: beautifyHTML(code) });
     }
 
     render() {
