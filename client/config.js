@@ -544,7 +544,7 @@ export const HelpfulTips = [
     },
     {
         title: 'Helpful Tip',
-        text: 'We and our refer to your company as it will appear on the notice to the user. You refers to the consumer of the policy.',
+        text: 'This sections focuses on Use, Sharing and Privacy of the data. We and our refer to your company as it will appear on the notice to the user. You refers to the consumer of the policy.',
     },
     {
         title: 'Helpful Tip',
