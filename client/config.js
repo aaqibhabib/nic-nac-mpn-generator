@@ -289,9 +289,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'What steps does a user need to perform to enable encryption in the device or app?',
+        floatingLabelText: '(optional) If certain steps are required, how can users enable encryption in the device or app?',
         noticeText: 'To enable encryption in the device or app... ',
-        // hintText: 'E.g. By going to Settings -> Encryption on user profile page'
+        hintText: 'To enable encryption in the device or app... ',
     },
     {
         id: 'p-4 g-2 q-3',
@@ -312,9 +312,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'What steps does a user need to perform to enable encryption of data stored on company servers or with an outside cloud computing services provider?',
+        floatingLabelText: '(optional) If certain steps are required, how can users enable encryption of data stored off device?',
         noticeText: 'To enable encryption of data stored on company servers or with an outside cloud computing services provider... ',
-        // hintText: 'E.g. By going to Settings -> Encryption on user profile page'
+        hintText: 'To enable encryption of data stored on company servers or with outside services... ',
     },
     {
         id: 'p-4 g-2 q-5',
@@ -334,9 +334,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'What steps does a user need to perform to enable encryption of data while it is transmitted?',
-        noticeText: 'To enable encryption of data while it is transmitted... ',
-        // hintText: 'E.g. By going to Settings -> Encryption on user profile page'
+        floatingLabelText: '(optional) If certain steps are required, how can users enable encryption of data while it is transmitted?',
+        noticeText: 'To enable encryption of data while it is transmitted...',
+        hintText: 'To enable encryption of data while it is transmitted...',
     },
     {
         id: 'p-4 g-3 q-1',
@@ -357,7 +357,7 @@ export const Questions = [
         pageID: 3,
         title: 'Privacy',
         type: QuestionTypes.CHECKBOX,
-        prompt: 'If yes, what other device data or applications can the technology or app access?',
+        prompt: '(optional) If other device data is accessed, what other data or applications can the technology or app access?',
         noticeText: 'It connects to...',
         options: [
             'Camera',
@@ -375,9 +375,9 @@ export const Questions = [
         pageID: 3,
         title: 'Privacy',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'If yes, how can users check their settings, including permissions set as a default?',
+        floatingLabelText: '(optional) If other device data is accessed, how can users check their settings?',
         noticeText: 'You can check your settings, including permissions set as a default by: ',
-        // hintText: 'E.g. Managing mobile device permissions by going to Settings -> AppName',
+        hintText: 'You can check your settings, including permissions set as a default by: ',
     },
     {
         id: 'p-4 g-3 q-3',
@@ -397,9 +397,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'If yes, how can users check their social media sharing settings?',
+        floatingLabelText: '(optional) If data can be shared with social media, how can users check their social media sharing settings?',
         noticeText: 'You can check your social media sharing settings by: ',
-        // hintText: 'E.g. Going to Settings -> Sharing in your user profile',
+        hintText: 'You can check your social media sharing settings by: ',
     },
     {
         id: 'p-5 g-1 q-1',
@@ -538,7 +538,7 @@ export const HelpfulTips = [
     },
     {
         title: 'Helpful Tip',
-        text: 'We and our refer to your company as it will appear on the notice to the user. You refers to the consumer of the policy.',
+        text: '\"We\" and \"our\" refer to your company as it will appear on the notice to the user. \"You\" refers to the consumer of the policy.',
     },
     {
         title: 'Helpful Tip',
