@@ -17,7 +17,7 @@ export default class TextQuestion extends React.Component {
         return (
             <Card title={this.props.prompt}>
                 <div className="cardPadding">
-                    <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>
+                    {this.props.prompt ? <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle> : null}
                     <CardText>
                         <TextField
                           fullWidth
