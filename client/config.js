@@ -551,6 +551,6 @@ export const HelpfulTips = [
     },
     {
         title: 'Helpful Tip',
-        text: 'Review the answers you filed out to make sure they are accurate. Edit the question if you find an issue with your answers.',
+        text: 'Review your answers to make sure they are accurate. You can change your answers by clicking the \"Edit\" icon in each section.',
     },
 ];
