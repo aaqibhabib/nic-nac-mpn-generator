@@ -19,7 +19,7 @@ export default class Notice extends React.Component {
 
     componentDidMount() {
         const notice = document.getElementById('mpn-notice');
-        const html = beautifyHTML(notice.outerHTML);
+        const html = beautifyHTML(notice.outerHTML.replace(/<!--[\s\S]*?-->/g, ''));
         const css = beautifyCSS(NoticeCSS);
         const code = `
         <!DOCTYPE html>
