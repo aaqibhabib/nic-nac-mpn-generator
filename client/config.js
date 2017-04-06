@@ -419,7 +419,7 @@ export const Questions = [
         pageID: 4,
         title: 'User Options',
         type: QuestionTypes.CHECKBOX,
-        prompt: 'If yes, which of the following can a user do with their data?',
+        prompt: '(optional) If yes, which of the following can a user do with their data?',
         noticeText: 'You can...',
         options: [
             'Access data',
@@ -434,9 +434,9 @@ export const Questions = [
         pageID: 4,
         title: 'User Options',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'If yes, how can a user interact with their data?',
+        floatingLabelText: '(optional) How can a user access, edit, share, or delete their data?',
         noticeText: 'Here\'s how:',
-        // hintText: 'E.g. Data that you provide can be modified from your account dashboard',
+        hintText: 'Here\'s how:',
     },
     {
         id: 'p-5 g-2 q-1',
@@ -460,9 +460,9 @@ export const Questions = [
         pageID: 4,
         title: 'Deactivation',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'If not specified above, how long after deactivation will the data be deleted?',
+        floatingLabelText: '(optional) If not specified above, how long after deactivation will the data be deleted?',
         noticeText: 'Data will be deleted after',
-        hintText: 'E.g. 2 years',
+        hintText: 'Data will be deleted after:',
     },
     {
         id: 'p-6 g-1 q-1',
@@ -542,7 +542,7 @@ export const HelpfulTips = [
     },
     {
         title: 'Helpful Tip',
-        text: 'Make sure to be clear about where users should go to chekc privacy setting. We and our refer to your company as it will appear on the notice to the user. You refers to the consumer of the policy.',
+        text: 'Make sure to be clear about where users should go to check privacy settings.\"We\" and \"our\" refer to your company as it will appear on the notice to the user. \"You\" refers to the consumer of the policy.',
     },
     {
         title: 'Instructions/Helpful Tip',
