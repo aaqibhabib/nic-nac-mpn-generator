@@ -558,4 +558,8 @@ export const HelpfulTips = [
         title: 'Helpful Tip',
         text: 'Help on page 6',
     },
+    {
+        title: 'Helpful Tip',
+        text: 'Help on page 7',
+    },
 ];
