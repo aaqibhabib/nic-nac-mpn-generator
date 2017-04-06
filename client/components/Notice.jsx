@@ -71,8 +71,10 @@ export default class Notice extends React.Component {
                                             <div className="question-answers">{helpText ? <abbr title={helpText}>{selection}</abbr> : selection}</div>
                                         </div>);
                                     } else if (question.type === QuestionTypes.TEXT) {
+                                        const prompt = _.template(question.noticeText || question.prompt)({ 'entityName': this.props.entityName || 'The Company' });
+                                        console.log(prompt);
                                         return (<div key={question.id} className="question-block">
-                                            <h3 className="question-prompt">{question.noticeText || question.prompt}</h3>
+                                            <h3 className="question-prompt">{prompt}</h3>
                                             <div className="question-answers">{this.props.selections[key]}</div>
                                         </div>);
                                     }

@@ -482,7 +482,7 @@ export const Questions = [
         title: 'Policy Changes',
         type: QuestionTypes.TEXT,
         prompt: 'Describe how/if the company will notify consumers of privacy policy changes (e.g. merger or acquisition).',
-        noticeText: "The company will notify consumers of privacy policy changes by...",
+        noticeText: '<%= entityName %> will notify consumers of privacy policy changes by...',
         // hintText: "The company will notify consumers of privacy policy changes by...",
         multiLine: true,
         rows: 5,
@@ -503,8 +503,8 @@ export const Questions = [
         pageID: 5,
         title: 'Breach',
         type: QuestionTypes.TEXT,
-        prompt: "Describe how the company will notify users and protect consumers’ data in the case of a breach.",
-        noticeText: 'The company complies with all applicable laws regarding breaches. In case of a breach...',
+        prompt: 'Describe how the company will notify users and protect consumers’ data in the case of a breach.',
+        noticeText: '<%= entityName %> complies with all applicable laws regarding breaches. In case of a breach...',
         // hintText: 'In case of a breach...',
         helpText: 'Breach means: an unauthorized disclosure',
         multiLine: true,
@@ -532,3 +532,30 @@ export const HelpText = {
     'To develop and improve new and current products and services (e.g., analytics)': 'Analytics means: the process of examining data to draw conclusions from that information.',
     'We DO NOT share identifiable data': 'Identifiable data means: data, such as your name, phone number, email, address, health services, information on your physical or mental health conditions, or your social security number, that can be used on its own or with other information to identify you'
 };
+
+export const HelpfulTips = [
+    {
+        title: 'Instructions',
+        text: 'Help on page 1',
+    },
+    {
+        title: 'Helpful Tip',
+        text: 'Help on page 2',
+    },
+    {
+        title: 'Helpful Tip',
+        text: 'Help on page 3',
+    },
+    {
+        title: 'Helpful Tip',
+        text: 'Help on page 4',
+    },
+    {
+        title: 'Helpful Tip',
+        text: 'Help on page 5',
+    },
+    {
+        title: 'Helpful Tip',
+        text: 'Help on page 6',
+    },
+];

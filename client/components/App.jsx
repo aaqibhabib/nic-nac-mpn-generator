@@ -16,6 +16,7 @@ import Contact from './Contact';
 import Intro from './Intro';
 import Review from './Review';
 import Notice from './Notice';
+import { HelpfulTips } from '../config';
 
 const styles = {
     container: {
@@ -32,8 +33,6 @@ const styles = {
         float: 'left',
     },
 };
-
-const helpText = ['Help Page 1', 'Help Page 2', 'Help Page 3', 'Help Page 4', 'Help Page 5', 'Help Page 6', 'Help Page 7'];
 
 class App extends React.Component {
     constructor(props) {
@@ -104,10 +103,10 @@ class App extends React.Component {
                             {this.state.currentStepIndex >= 0 && this.state.currentStepIndex !== 7 ? <div style={{ flex: 1, marginRight: '15px', marginTop: '20px' }}>
                                 <Card>
                                     <Toolbar>
-                                        <ToolbarTitle style={{ margin: '0px auto' }} text="INSTRUCTIONS" />
+                                        <ToolbarTitle style={{ margin: '0px auto' }} text={HelpfulTips[this.state.currentStepIndex].title} />
                                     </Toolbar>
                                     <CardText>
-                                        {helpText[this.state.currentStepIndex]}
+                                        {HelpfulTips[this.state.currentStepIndex].text}
                                     </CardText>
                                 </Card>
                             </div> : null}
