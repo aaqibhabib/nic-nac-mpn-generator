@@ -30,7 +30,7 @@ export default class Notice extends React.Component {
                 >
                     <div id="mpn-notice">
                         <div className="intro">
-                            <h1 className="text-center">Learn About Our Privacy Policy</h1>
+                            <h1 className="notice-title text-center">Learn About Our Privacy Policy</h1>
                             <h2 className="text-center">We want you to know our privacy and security policies to encourage transparency and help you make informed choices when using our products. Learn everything you need to know in one quick summary.</h2>
                             <h4 className="text-center">If you want more information, you can peruse our full privacy policy. And, if you have any questions, comments or concerns, email us at {this.props.emailAddress}.</h4>
                         </div>

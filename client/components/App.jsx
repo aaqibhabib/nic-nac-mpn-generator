@@ -81,7 +81,7 @@ class App extends React.Component {
     render() {
         return (
             <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-                <div>
+                <div className='npm-generator'>
                     <AppBar
                       title="MPN Generator"
                       showMenuIconButton={false}
@@ -93,7 +93,7 @@ class App extends React.Component {
                           </div>}
                     />
                     <div style={styles.container}>
-                        {this.state.currentStepIndex >= 0 ? <h2 className="NoticeTitle">Privacy Notice Generator</h2> : null}
+                        {this.state.currentStepIndex >= 0 ? <h2 className="notice-title">Privacy Notice Generator</h2> : null}
                         {this.state.currentStepIndex >= 0 ? <Stepper
                           currentStepIndex={this.state.currentStepIndex}
                           visited={this.state.visited}

@@ -46,7 +46,7 @@ export default class Review extends React.Component {
     render() {
         return (
             <div style={{ flex: 3 }}>
-                <h3>Review</h3>
+                <h3 className='question-group-title'>Review</h3>
                 <Card className="reviewCard" style={styles.reviewCard}>
                     <CardTitle title="Contact Info" titleStyle={{ fontSize: 20 }} >
                         <IconButton style={styles.root} touch tooltip="Edit" onClick={() => this.setStep(0)}><ModeEdit /></IconButton>

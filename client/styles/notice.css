@@ -15,6 +15,7 @@
     margin-left: 15%;
     margin-right: 15%;
 }*/
+
 #mpn-notice .question-block {
     display: flex;
     align-items: center;
@@ -57,9 +58,9 @@
     background-color: #0f2429;
     padding: 3em 10em;
 }
-#mpn-notice .intro > h1 {
+#mpn-notice .notice-title {
     font-size: 2.2em;
-    color: #4378C2;
+    color: #46cbcb;
     text-transform: uppercase;
     font-weight: normal;
 }

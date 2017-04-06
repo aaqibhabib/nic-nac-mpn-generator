@@ -1,32 +1,21 @@
-
-
-div.other {
-    display: flex;
-    flex-direction: row;
-}
-
-div.other div input {
-    height: 24px !important
-}
-
-div.reviewCard div div div div.tr:last-child {
-    border-bottom: 0px solid rgb(224, 224, 224);
-}
-
-
 html * {
    font-family: 'Source Sans Pro', 'Open Sans', sans-serif !important;
 }
 
-h2 {
-	font-weight: lighter;
-	color: #0ebacf;
-	font-size: 1.5em;
-    text-align: center;
-	margin: auto;
+.npm-generator div.other {
+    display: flex;
+    flex-direction: row;
 }
 
-p {
+.npm-generatordiv.other div input {
+    height: 24px !important
+}
+
+.npm-generator div.reviewCard div div div div.tr:last-child {
+    border-bottom: 0px solid rgb(224, 224, 224);
+}
+
+.npm-generator .intro-text {
 	font-size: 1.25rem;
     font-weight: 300;
     margin-bottom: 30px;
@@ -34,17 +23,19 @@ p {
     padding-right: 100px;
     text-align: center;
 }
-div.questionTitleText {
+
+.npm-generator div.questionTitleText {
   font-size: 1.2em;
   font-weight: normal;
   padding: 15px 0px 0px 0px;
   color: #546E7A;
 }
 
-div.cardPadding{
+.npm-generator div.cardPadding{
   margin: 0px 2em;
 }
-.grad {
+
+.npm-generator .grad {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#228ed5+0,0ebacf+100 */
 	background: #228ed5; /* Old browsers */
 	background: -moz-linear-gradient(-45deg, #228ed5 0%, #0ebacf 100%); /* FF3.6-15 */
@@ -52,23 +43,28 @@ div.cardPadding{
 	background: linear-gradient(135deg, #228ed5 0%,#0ebacf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228ed5', endColorstr='#0ebacf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-h2.NoticeTitle {
-  padding-top:50px;
-  padding-bottom: 25px
+.npm-generator .notice-title {
+    font-weight: lighter;
+    color: #0ebacf;
+    font-size: 1.5em;
+    text-align: center;
+    margin: auto;
+    padding-top:50px;
+    padding-bottom: 25px
 }
-h3 {
-  color: white;
-  font-size: 28;
-  font-weight: normal;
-  background: #228ed5; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #228ed5 0%, #0ebacf 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #228ed5 0%,#0ebacf 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #228ed5 0%,#0ebacf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228ed5', endColorstr='#0ebacf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  padding-top: 30px;
-  padding-bottom: 30px;
-  text-align: center;
-  margin:20px 0px 0px 0px;
+.npm-generator .question-group-title {
+    color: white;
+    font-size: 28;
+    font-weight: normal;
+    background: #228ed5; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #228ed5 0%, #0ebacf 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #228ed5 0%,#0ebacf 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #228ed5 0%,#0ebacf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228ed5', endColorstr='#0ebacf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    margin:20px 0px 0px 0px;
 }
 
 abbr[title],
@@ -77,15 +73,15 @@ abbr[data-original-title] {
   border-bottom: 1px dotted #777777;
   text-decoration: none;}
 
-div.other {
+.npm-generator div.other {
     display: flex;
     flex-direction: row;
 }
 
-div.other div input {
+.npm-generator div.other div input {
     height: 24px !important
 }
 
-div.reviewCard div div div div.tr:last-child {
+.npm-generatordiv.reviewCard div div div div.tr:last-child {
     border-bottom: 0px solid rgb(224, 224, 224);
 }

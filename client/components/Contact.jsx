@@ -47,7 +47,7 @@ export default class Contact extends React.Component {
     render() {
         return (
             <div style={{ flex: 3 }}>
-                <h3>Contact Info</h3>
+                <h3 className='question-group-title'>Contact Info</h3>
                 <Card>
                     <CardText>
                         <TextField

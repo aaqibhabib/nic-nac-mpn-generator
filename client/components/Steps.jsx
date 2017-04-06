@@ -13,7 +13,7 @@ export default class Questions extends React.Component {
             <div style={{ flex: 3 }}>
                 {currentStep.values.map(questionGroup =>
                     (<div key={questionGroup.key}>
-                        <h3>{questionGroup.key}</h3>
+                        <h3 className='question-group-title'>{questionGroup.key}</h3>
                         {questionGroup.values.map((question) => {
                             const key = `${currentStep.key}-${questionGroup.key}-${question.id}`;
                             if (question.type === QuestionTypes.CHECKBOX) {
