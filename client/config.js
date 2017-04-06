@@ -527,7 +527,7 @@ export const HelpText = {
 export const HelpfulTips = [
     {
         title: 'Instructions',
-        text: 'Help on page 1',
+        text: 'Every question is required to be filed out. Fill out each question based on your company’s current privacy policy. We have included tool tips on each page to better explain components that may be confusing. If you have access to your lawyer that may be helpful as well ',
     },
     {
         title: 'Helpful Tip',
