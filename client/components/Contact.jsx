@@ -67,6 +67,7 @@ export default class Contact extends React.Component {
                           floatingLabelText="Link to Full Privacy Policy"
                           floatingLabelStyle={styles.floatingLabelStyle}
                           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                          hintText="https://"
                           value={this.props.privacyPolicyLink}
                           onChange={this.onPrivacyPolicyLinkChange}
                         />
@@ -75,6 +76,7 @@ export default class Contact extends React.Component {
                           floatingLabelText="Link to Online Comment/Contact Form"
                           floatingLabelStyle={styles.floatingLabelStyle}
                           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                          hintText="https://"
                           value={this.props.commentLink}
                           onChange={this.onCommentLinkChange}
                         />
@@ -92,13 +94,14 @@ export default class Contact extends React.Component {
                           floatingLabelText="Phone Number"
                           floatingLabelStyle={styles.floatingLabelStyle}
                           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                          hintText="(555) 555-1234"
                           style={{ width: '48%' }}
                           value={this.props.phoneNumber}
                           onChange={this.onPhoneNumberChange}
                         />
                         <TextField
                           fullWidth
-                          floatingLabelText="Address (country at minimum)"
+                          floatingLabelText="Address (or country in which the company is located)"
                           floatingLabelStyle={styles.floatingLabelStyle}
                           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                           value={this.props.address}

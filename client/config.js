@@ -115,17 +115,6 @@ export const Questions = [
             'we do not track',
         ],
     },
-    // {
-    //     id: 'p-2 g-1 q-1',
-    //     groupID: 'HIPAA Covered Entity',
-    //     pageID: 1,
-    //     title: 'HIPAA',
-    //     type: QuestionTypes.RADIO,
-    //     prompt: 'Is the company a HIPAA covered entity?',
-    //     options: [
-    //         ...YES_NO_OPTIONS,
-    //     ],
-    // },
     {
         id: 'p-2 g-1 q-1',
         groupID: 'HIPAA Covered Entity',
@@ -135,7 +124,7 @@ export const Questions = [
         prompt: 'If the company is a covered entity, select one of the following statements to be inserted into the privacy notice:',
         options: [
             'Please note that the health data we collect as part of <%= techName %> are not protected by HIPAA and our company\'s HIPAA Notice of Privacy Practices does not apply.',
-            'Some of the health data we collect as part of <%= techName %> also are protected by HIPAA. Read our HIPAA Notice of Privacy Practices [link to HIPAA Notice]<%= privacyLink %> for more information.',
+            'Some of the health data we collect as part of <%= techName %> also are protected by HIPAA. Read our HIPAA Notice of Privacy Practices [<%= privacyLink %>] for more information.',
             'Not a HIPAA covered entity',
         ],
     },
@@ -154,7 +143,7 @@ export const Questions = [
         pageID: 1,
         title: 'HIPAA',
         type: QuestionTypes.TEXT,
-        prompt: 'What is the link to the company\'s HIPAA Notice of Privacy Practices?',
+        prompt: '(optional) If some of the health data collected is protected by HIPAA, what is the link to the company\'s HIPAA Notice of Privacy Practices?',
         hintText: 'https://'
     },
     {
@@ -207,9 +196,9 @@ export const Questions = [
         pageID: 2,
         title: 'Share',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'If not obvious, what is the primary service of the app or technology?',
+        floatingLabelText: '(optional) If selected above and not obvious, what is the primary service of the app or technology?',
         noticeText: 'The primary service of this app or technology is:',
-        // hintText: 'E.g. Recording your fitness activity to help meet fitness goals'
+        hintText: 'The primary service of this app or technology is:'
     },
     {
         id: 'p-3 g-3 q-1',
@@ -230,9 +219,9 @@ export const Questions = [
         pageID: 2,
         title: 'Sell',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'How can users adjust this permission?',
+        floatingLabelText: '(optional) If permission is required, how can users adjust this permission?',
         noticeText: 'You can adjust this permission by:',
-        // hintText: 'E.g. Share settings in user dashboard'
+        hintText: 'You can adjust this permission by:',
     },
     {
         id: 'p-3 g-3 q-3',
@@ -253,9 +242,9 @@ export const Questions = [
         pageID: 2,
         title: 'Sell',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'How can users adjust this permission?',
+        floatingLabelText: '(optional) If permission is required, how can users adjust this permission?',
         noticeText: 'You can adjust this permission by:',
-        // hintText: 'E.g. Share settings in user dashboard'
+        hintText: 'You can adjust this permission by:',
     },
     {
         id: 'p-4 g-1 q-1',
@@ -300,9 +289,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'What steps does a user need to perform to enable encryption in the device or app?',
+        floatingLabelText: '(optional) If certain steps are required, how can users enable encryption in the device or app?',
         noticeText: 'To enable encryption in the device or app... ',
-        // hintText: 'E.g. By going to Settings -> Encryption on user profile page'
+        hintText: 'To enable encryption in the device or app... ',
     },
     {
         id: 'p-4 g-2 q-3',
@@ -323,9 +312,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'What steps does a user need to perform to enable encryption of data stored on company servers or with an outside cloud computing services provider?',
+        floatingLabelText: '(optional) If certain steps are required, how can users enable encryption of data stored off device?',
         noticeText: 'To enable encryption of data stored on company servers or with an outside cloud computing services provider... ',
-        // hintText: 'E.g. By going to Settings -> Encryption on user profile page'
+        hintText: 'To enable encryption of data stored on company servers or with outside services... ',
     },
     {
         id: 'p-4 g-2 q-5',
@@ -345,9 +334,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'What steps does a user need to perform to enable encryption of data while it is transmitted?',
-        noticeText: 'To enable encryption of data while it is transmitted... ',
-        // hintText: 'E.g. By going to Settings -> Encryption on user profile page'
+        floatingLabelText: '(optional) If certain steps are required, how can users enable encryption of data while it is transmitted?',
+        noticeText: 'To enable encryption of data while it is transmitted...',
+        hintText: 'To enable encryption of data while it is transmitted...',
     },
     {
         id: 'p-4 g-3 q-1',
@@ -368,7 +357,7 @@ export const Questions = [
         pageID: 3,
         title: 'Privacy',
         type: QuestionTypes.CHECKBOX,
-        prompt: 'If yes, what other device data or applications can the technology or app access?',
+        prompt: '(optional) If other device data is accessed, what other data or applications can the technology or app access?',
         noticeText: 'It connects to...',
         options: [
             'Camera',
@@ -386,9 +375,9 @@ export const Questions = [
         pageID: 3,
         title: 'Privacy',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'If yes, how can users check their settings, including permissions set as a default?',
+        floatingLabelText: '(optional) If other device data is accessed, how can users check their settings?',
         noticeText: 'You can check your settings, including permissions set as a default by: ',
-        // hintText: 'E.g. Managing mobile device permissions by going to Settings -> AppName',
+        hintText: 'You can check your settings, including permissions set as a default by: ',
     },
     {
         id: 'p-4 g-3 q-3',
@@ -408,9 +397,9 @@ export const Questions = [
         pageID: 3,
         title: 'Encryption',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'If yes, how can users check their social media sharing settings?',
+        floatingLabelText: '(optional) If data can be shared with social media, how can users check their social media sharing settings?',
         noticeText: 'You can check your social media sharing settings by: ',
-        // hintText: 'E.g. Going to Settings -> Sharing in your user profile',
+        hintText: 'You can check your social media sharing settings by: ',
     },
     {
         id: 'p-5 g-1 q-1',
@@ -430,7 +419,7 @@ export const Questions = [
         pageID: 4,
         title: 'User Options',
         type: QuestionTypes.CHECKBOX,
-        prompt: 'If yes, which of the following can a user do with their data?',
+        prompt: '(optional) If yes, which of the following can a user do with their data?',
         noticeText: 'You can...',
         options: [
             'Access data',
@@ -445,9 +434,9 @@ export const Questions = [
         pageID: 4,
         title: 'User Options',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'If yes, how can a user interact with their data?',
+        floatingLabelText: '(optional) How can a user access, edit, share, or delete their data?',
         noticeText: 'Here\'s how:',
-        // hintText: 'E.g. Data that you provide can be modified from your account dashboard',
+        hintText: 'Here\'s how:',
     },
     {
         id: 'p-5 g-2 q-1',
@@ -471,9 +460,9 @@ export const Questions = [
         pageID: 4,
         title: 'Deactivation',
         type: QuestionTypes.TEXT,
-        floatingLabelText: 'If not specified above, how long after deactivation will the data be deleted?',
+        floatingLabelText: '(optional) If not specified above, how long after deactivation will the data be deleted?',
         noticeText: 'Data will be deleted after',
-        hintText: 'E.g. 2 years',
+        hintText: 'Data will be deleted after:',
     },
     {
         id: 'p-6 g-1 q-1',
@@ -495,17 +484,17 @@ export const Questions = [
         title: 'Policy Changes',
         type: QuestionTypes.TEXT,
         floatingLabelText: 'Link to policy change section in privacy policy:',
-        noticeText: 'Section of privacy policy:',   
+        noticeText: 'Section of privacy policy:',  
+        hintText: 'https://', 
     },
     {
         id: 'p-6 g-2 q-1',
-        groupID: 'Breach: How the company notify users and protect data in case of an improper disclosure',
+        groupID: 'Breach: How the company will notify users and protect data in case of an improper disclosure',
         pageID: 5,
         title: 'Breach',
         type: QuestionTypes.TEXT,
         prompt: 'Describe how the company will notify users and protect consumers’ data in the case of a breach.',
         noticeText: '<%= entityName %> complies with all applicable laws regarding breaches. In case of a breach...',
-        // hintText: 'In case of a breach...',
         helpText: 'Breach means: an unauthorized disclosure',
         multiLine: true,
         rows: 5,
@@ -513,12 +502,13 @@ export const Questions = [
     },
     {
         id: 'p-6 g-2 q-2',
-        groupID: 'Breach: How the company notify users and protect data in case of an improper disclosure',
+        groupID: 'Breach: How the company will notify users and protect data in case of an improper disclosure',
         pageID: 5,
         title: 'Breach',
         type: QuestionTypes.TEXT,
         floatingLabelText: 'Link to breach notification section of privacy policy:',
-        noticeText: 'Section of privacy policy:',   
+        noticeText: 'Section of privacy policy:', 
+        hintText: 'https://',   
     },
 ];
 
@@ -536,30 +526,31 @@ export const HelpText = {
 export const HelpfulTips = [
     {
         title: 'Instructions',
-        text: 'Every question is required to be filed out. Fill out each question based on your company’s current privacy policy. We have included tool tips on each page to better explain components that may be confusing. If you have access to your lawyer that may be helpful as well ',
+        text: 'Complete each question based on your company’s current privacy policy. Every question is required to be filed out, unless otherwise specified. There are tips on each page to better explain components that may be confusing. Additionally, it\'d be helpful to have assistance from your company\'s legal team to answer some questions.',
     },
     {
         title: 'Helpful Tip',
-        text: 'Help on page 2',
+        text: 'This section focuses on whether or not your company is a Covered Entity under the HIPAA Privacy Rule. \"We\" and \"our\" refer to your company as it will appear on the notice to the user.',
     },
     {
         title: 'Helpful Tip',
-        text: 'Help on page 3',
+        text: 'This section focuses on the company\'s policies toward use, sharing, and privacy of the data. \"We\" and \"our\" refer to your company as it will appear on the notice to the user. \"You\" refers to the consumer of the policy.',
+
     },
     {
         title: 'Helpful Tip',
-        text: 'Help on page 4',
+        text: '\"We\" and \"our\" refer to your company as it will appear on the notice to the user. \"You\" refers to the consumer of the policy.',
     },
     {
         title: 'Helpful Tip',
-        text: 'Help on page 5',
+        text: 'Make sure to be clear about where users should go to check privacy settings.\"We\" and \"our\" refer to your company as it will appear on the notice to the user. \"You\" refers to the consumer of the policy.',
+    },
+    {
+        title: 'Instructions',
+        text: 'Please complete this section with as much detail as possible to keep users informed about your company\'s privacy policy. If you do not have these sections in your policy they should be added in, as they are required to complete a Model Privacy Notice.',
     },
     {
         title: 'Helpful Tip',
-        text: 'Help on page 6',
-    },
-    {
-        title: 'Helpful Tip',
-        text: 'Help on page 7',
+        text: 'Review your answers to make sure they are accurate. You can change your answers by clicking the \"Edit\" icon in each section.',
     },
 ];

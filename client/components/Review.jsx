@@ -65,7 +65,7 @@ export default class Review extends React.Component {
                             <div style={styles.td}><a href={this.props.commentLink}>{this.props.commentLink}</a></div>
                         </div>
                         <div className="tr" style={styles.tr}>
-                            <div style={styles.td}>Privacy Officer&quot;s Email Address:</div>
+                            <div style={styles.td}>Email Address:</div>
                             <div style={styles.td}><a href={this.props.emailAddress}>{this.props.emailAddress}</a></div>
                         </div>
                         <div className="tr" style={styles.tr}>

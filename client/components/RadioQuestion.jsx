@@ -35,7 +35,7 @@ export default class RadioQuestion extends React.Component {
                                 if (key === '1-HIPAA Covered Entity-p-2 g-1 q-1') {
                                     label = _.template(option)({
                                         techName: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-2'] || 'our product',
-                                        privacyLink: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3'] || 'LINK TO PRIAVCY',
+                                        privacyLink: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3'] || 'Link to HIPPA Notice',
                                     });
                                 }
                                 return (<RadioButton
