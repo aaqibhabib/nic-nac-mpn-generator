@@ -29,16 +29,19 @@ export default class RadioQuestion extends React.Component {
                     <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>
                     <CardText>
                         <RadioButtonGroup name={this.props.id} onChange={this.onChange} valueSelected={this.props.selection}>
-                            {this.props.options.map((op) => {
+                            {this.props.options.map((option) => {
                                 const key = `${this.props.pageID}-${this.props.groupID}-${this.props.id}`;
-                                let option = op;
-                                console.log(option);
-                                if (key === '1-HIPAA Covered Entity-p-2 g-1 q-1') { option = _.template(option)({ 'techName': this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-2'] || 'our product', 'privacyLink': this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3'] || 'LINK TO PRIAVCY' }); }
-                                console.log(option);
+                                let label = option;
+                                if (key === '1-HIPAA Covered Entity-p-2 g-1 q-1') {
+                                    label = _.template(option)({
+                                        techName: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-2'] || 'our product',
+                                        privacyLink: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3'] || 'LINK TO PRIAVCY',
+                                    });
+                                }
                                 return (<RadioButton
                                   key={option}
                                   value={option}
-                                  label={option}
+                                  label={label}
                                   style={styles.radio}
                                 />);
                             })}
