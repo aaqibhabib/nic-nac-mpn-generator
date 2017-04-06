@@ -115,17 +115,6 @@ export const Questions = [
             'we do not track',
         ],
     },
-    // {
-    //     id: 'p-2 g-1 q-1',
-    //     groupID: 'HIPAA Covered Entity',
-    //     pageID: 1,
-    //     title: 'HIPAA',
-    //     type: QuestionTypes.RADIO,
-    //     prompt: 'Is the company a HIPAA covered entity?',
-    //     options: [
-    //         ...YES_NO_OPTIONS,
-    //     ],
-    // },
     {
         id: 'p-2 g-1 q-1',
         groupID: 'HIPAA Covered Entity',
@@ -154,7 +143,7 @@ export const Questions = [
         pageID: 1,
         title: 'HIPAA',
         type: QuestionTypes.TEXT,
-        prompt: 'What is the link to the company\'s HIPAA Notice of Privacy Practices?',
+        prompt: '(Optional) If some of the health data collected is protected by HIPAA, what is the link to the company\'s HIPAA Notice of Privacy Practices?',
         hintText: 'https://'
     },
     {
@@ -540,7 +529,7 @@ export const HelpfulTips = [
     },
     {
         title: 'Helpful Tip',
-        text: 'This part focuses on whether or not your company is HIPAA Entity. We and our refer to your company as it will appear on the notice to the user.',
+        text: 'This section focuses on whether or not your company is a Covered Entity under the HIPAA Privacy Rule. \"We\" and \"our\" refer to your company as it will appear on the notice to the user.',
     },
     {
         title: 'Helpful Tip',
