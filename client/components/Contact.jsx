@@ -67,7 +67,7 @@ export default class Contact extends React.Component {
                           floatingLabelText="Link to Full Privacy Policy"
                           floatingLabelStyle={styles.floatingLabelStyle}
                           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                          hintText="https://"
+                          hintText="https://www.company.com/privacy"
                           value={this.props.privacyPolicyLink}
                           onChange={this.onPrivacyPolicyLinkChange}
                         />
@@ -76,7 +76,7 @@ export default class Contact extends React.Component {
                           floatingLabelText="Link to Online Comment/Contact Form"
                           floatingLabelStyle={styles.floatingLabelStyle}
                           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                          hintText="https://"
+                          hintText="https://www.company.com/contact"
                           value={this.props.commentLink}
                           onChange={this.onCommentLinkChange}
                         />

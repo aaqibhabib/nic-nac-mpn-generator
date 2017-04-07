@@ -146,7 +146,7 @@ export const Questions = [
         type: QuestionTypes.TEXT,
         prompt: '(optional) If some of the health data collected is protected by HIPAA, what is the link to the company\'s HIPAA Notice of Privacy Practices?',
         noticeText: 'The link to the company\'s HIPAA Notice of Privacy Practices is:',
-        hintText: 'https://',
+        hintText: 'https://www.company.com/hipaa',
     },
     {
         id: 'p-3 g-1 q-1',
@@ -487,7 +487,7 @@ export const Questions = [
         type: QuestionTypes.TEXT,
         floatingLabelText: 'Link to policy change section in privacy policy:',
         noticeText: 'Section of privacy policy:',  
-        hintText: 'https://', 
+        hintText: 'https://www.company.com/privacy#changes', 
     },
     {
         id: 'p-6 g-2 q-1',
@@ -510,7 +510,7 @@ export const Questions = [
         type: QuestionTypes.TEXT,
         floatingLabelText: 'Link to breach notification section of privacy policy:',
         noticeText: 'Section of privacy policy:', 
-        hintText: 'https://',   
+        hintText: 'https://www.company.com/privacy#breach',   
     },
 ];
 
