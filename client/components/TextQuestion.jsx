@@ -53,6 +53,7 @@ TextQuestion.defaultProps = {
     hintText: '',
     floatingLabelText: null,
     multiLine: false,
+    prompt: null,
 };
 
 TextQuestion.propTypes = {
@@ -62,7 +63,7 @@ TextQuestion.propTypes = {
         React.PropTypes.number,
         React.PropTypes.string,
     ]).isRequired,
-    prompt: React.PropTypes.string.isRequired,
+    prompt: React.PropTypes.string,
     selection: React.PropTypes.string.isRequired,
     hintText: React.PropTypes.string,
     floatingLabelText: React.PropTypes.string,

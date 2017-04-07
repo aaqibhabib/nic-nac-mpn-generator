@@ -58,53 +58,60 @@ export default class Notice extends React.Component {
                             for (let i = 1; i < 6; i++) {
                                 const currentStep = Steps[i];
                                 sections.push(currentStep.values.map(questionGroup =>
-                            (<section key={questionGroup.key}>
-                                <h1 className="text-center">{questionGroup.key}</h1>
-                                {questionGroup.values.map((question) => {
-                                    const key = `${Steps[i].key}-${questionGroup.key}-${question.id}`;
-                                    const values = this.props.selections[key];
-                                    if (!values || _.isEmpty(values)) return null; // skip questions with no answers
-                                    if (question.type === QuestionTypes.CHECKBOX) {
-                                        return (<div key={question.id} className="question-block">
-                                            <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
-                                            <div className="question-answers">
-                                                {(() => {
-                                                    const items = [];
-                                                    const checkBox = this.props.selections[key];
-                                                    // eslint-disable-next-line no-restricted-syntax
-                                                    for (const selection in checkBox) {
-                                                        const helpText = HelpText[selection];
-                                                        if (checkBox[selection]) {
-                                                            items.push(<li>{selection === 'Other:' ? checkBox[selection] : helpText ? <abbr title={helpText}>{selection}</abbr> : selection}</li>);
-                                                        }
+                                    (<section key={questionGroup.key}>
+                                        <h1 className="text-center">{questionGroup.key}</h1>
+                                        {questionGroup.values.map((question) => {
+                                            const key = `${Steps[i].key}-${questionGroup.key}-${question.id}`;
+                                            const values = this.props.selections[key];
+                                            if (!values || _.isEmpty(values)) return null; // skip questions with no answers
+                                            if (question.type === QuestionTypes.CHECKBOX) {
+                                                return (<div key={question.id} className="question-block">
+                                                    <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
+                                                    <div className="question-answers">
+                                                        {(() => {
+                                                            const items = [];
+                                                            const checkBox = this.props.selections[key];
+                                                            // eslint-disable-next-line no-restricted-syntax
+                                                            for (const selection in checkBox) {
+                                                                const helpText = HelpText[selection];
+                                                                if (checkBox[selection]) {
+                                                                    items.push(<li>{selection === 'Other:' ? checkBox[selection] : helpText ? <abbr title={helpText}>{selection}</abbr> : selection}</li>);
+                                                                }
+                                                            }
+                                                            return <ul>{items}</ul>;
+                                                        })()}
+                                                    </div>
+                                                </div>);
+                                            } else if (question.type === QuestionTypes.RADIO) {
+                                                let selection = this.props.selections[key];
+                                                const helpText = HelpText[selection];
+                                                if (key === '1-HIPAA Covered Entity-p-2 g-1 q-1') {
+                                                    selection = _.template(selection)({
+                                                        techName: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-2'] || 'our product',
+                                                        privacyLink: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3'] || 'Link to HIPPA Notice',
+                                                    });
+                                                    if (_.startsWith(selection, 'Some')) {
+                                                        return (<div key={question.id} className="question-block">
+                                                            <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
+                                                            <div className="question-answers">{helpText ? <abbr title={helpText}>{selection}</abbr> : selection} <a href={this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3' || 'Link to HIPPA Notice']}>Read our HIPAA Notice of Privacy Practices for more information.</a></div>
+                                                        </div>
+                                                        );
                                                     }
-                                                    return <ul>{items}</ul>;
-                                                })()}
-                                            </div>
-                                        </div>);
-                                    } else if (question.type === QuestionTypes.RADIO) {
-                                        let selection = this.props.selections[key];
-                                        const helpText = HelpText[selection];
-                                        if (key === '1-HIPAA Covered Entity-p-2 g-1 q-1') {
-                                            selection = _.template(selection)({
-                                                techName: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-2'] || 'our product',
-                                                privacyLink: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3'] || 'Link to HIPPA Notice',
-                                            });
-                                        }
-                                        return (<div key={question.id} className="question-block">
-                                            <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
-                                            <div className="question-answers">{helpText ? <abbr title={helpText}>{selection}</abbr> : selection}</div>
-                                        </div>);
-                                    } else if (question.type === QuestionTypes.TEXT) {
-                                        const prompt = _.template(question.noticeText || question.prompt)({ entityName: this.props.entityName || 'The Company' });
-                                        return (<div key={question.id} className="question-block">
-                                            <h3 className="question-prompt">{prompt}</h3>
-                                            <div className="question-answers">{this.props.selections[key]}</div>
-                                        </div>);
-                                    }
-                                    return null;
-                                })}
-                            </section>)));
+                                                }
+                                                return (<div key={question.id} className="question-block">
+                                                    <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
+                                                    <div className="question-answers">{helpText ? <abbr title={helpText}>{selection}</abbr> : selection}</div>
+                                                </div>);
+                                            } else if (question.type === QuestionTypes.TEXT) {
+                                                const prompt = _.template(question.noticeText || question.prompt)({ entityName: this.props.entityName || 'The Company' });
+                                                return (<div key={question.id} className="question-block">
+                                                    <h3 className="question-prompt">{prompt}</h3>
+                                                    <div className="question-answers">{this.props.selections[key]}</div>
+                                                </div>);
+                                            }
+                                            return null;
+                                        })}
+                                    </section>)));
                             }
                             return sections;
                         })()}

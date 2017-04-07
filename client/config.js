@@ -124,7 +124,7 @@ export const Questions = [
         prompt: 'If the company is a covered entity, select one of the following statements to be inserted into the privacy notice:',
         options: [
             'Please note that the health data we collect as part of <%= techName %> are not protected by HIPAA and our company\'s HIPAA Notice of Privacy Practices does not apply.',
-            'Some of the health data we collect as part of <%= techName %> also are protected by HIPAA. Read our HIPAA Notice of Privacy Practices [<%= privacyLink %>] for more information.',
+            'Some of the health data we collect as part of <%= techName %> also are protected by HIPAA.',
             'Not a HIPAA covered entity',
         ],
     },
