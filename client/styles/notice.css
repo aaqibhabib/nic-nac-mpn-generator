@@ -14,6 +14,10 @@ html * {
     text-align: center;
 }
 
+.text-center a {
+    color: #46cbcb;
+}
+
 .text-justify {
     text-align: justify;
 }
@@ -56,6 +60,10 @@ html * {
     font-weight: normal;
 }
 
+#mpn-notice .question-answers a {
+    color: #99dccf;
+}
+
 #mpn-notice .intro {
     background-color: #0f2429;
     padding: 3em 10em;
@@ -80,6 +88,7 @@ html * {
     color: #FFFFFF;
     font-weight: lighter;
 }
+
 
 #mpn-notice section > h1 {
     background-color: #99dccf;

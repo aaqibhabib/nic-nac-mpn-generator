@@ -51,7 +51,7 @@ export default class Notice extends React.Component {
                         <div className="intro">
                             <h1 className="notice-title text-center">Learn About Our Privacy Policy</h1>
                             <h2 className="text-center">We want you to know our privacy and security policies to encourage transparency and help you make informed choices when using our products. Learn everything you need to know in one quick summary.</h2>
-                            <h4 className="text-center">If you want more information, you can peruse our full privacy policy. And, if you have any questions, comments or concerns, email us at {this.props.emailAddress}.</h4>
+                            <h4 className="text-center">If you want more information, you can peruse our <a href={this.props.privacyPolicyLink}>full privacy policy</a>. And, if you have any questions, comments or concerns, email us at {this.props.emailAddress}.</h4>
                         </div>
                         {(() => {
                             const sections = [];
@@ -93,7 +93,7 @@ export default class Notice extends React.Component {
                                                     if (_.startsWith(selection, 'Some')) {
                                                         return (<div key={question.id} className="question-block">
                                                             <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
-                                                            <div className="question-answers">{helpText ? <abbr title={helpText}>{selection}</abbr> : selection} <a href={this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3' || 'Link to HIPPA Notice']}>Read our HIPAA Notice of Privacy Practices for more information.</a></div>
+                                                            <div className="question-answers">{helpText ? <abbr title={helpText}>{selection}</abbr> : selection} Read our <a href={this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3' || 'Link to HIPPA Notice']}>HIPAA Notice of Privacy Practices</a> for more information.</div>
                                                         </div>
                                                         );
                                                     }
