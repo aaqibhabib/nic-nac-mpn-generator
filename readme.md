@@ -10,7 +10,7 @@
 
 ## Running the App
 
-1. Install [Yarn Package Manager](https://yarnpkg.com/en/docs/install) and [node.js 5+](https://nodejs.org), if necessary
+1. Install [Yarn Package Manager](https://yarnpkg.com/en/docs/install) and [node.js](https://nodejs.org), if necessary
 
 2. Clone the repository 
 
