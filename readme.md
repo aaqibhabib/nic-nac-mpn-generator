@@ -1,38 +1,34 @@
-## Install
 
-Clone repository and run:
-
-```sh
-$ yarn install
-```
+## Demo Webpage
+[MPN Wizard](http://mpn-wizard.herokuapp.com/)
 
 ## Requirements
 
 [Yarn Package Manager](https://yarnpkg.com/en/docs/install)
 
-node 5+
+[node.js 5+](https://nodejs.org)
 
-## Development
+## Running the App
 
-```sh
-$ npm start
-```
+1. Install [Yarn Package Manager](https://yarnpkg.com/en/docs/install) and [node.js](https://nodejs.org), if necessary
 
-Go to [http://localhost:3001](http://localhost:3001) and see the magic happen.
+2. Clone the repository 
 
-## Production
+2. Move into app directory
 
-If you want to run the project in production, set the `NODE_ENV` environment variable to `production`.
+3. When running the app the first time, install the app dependencies:
 
-```sh
-$ NODE_ENV=production npm start
-```
+	```sh
+	$ yarn install
+	```
+4. Start the app:  
+	
+	```sh
+	$ npm start
+	```
 
-Also build the production bundle:
+5. Go to [http://localhost:3001](http://localhost:3001) in your browser for the app interface.
 
-```sh
-$ npm run dist
-```
 
 ## License
 

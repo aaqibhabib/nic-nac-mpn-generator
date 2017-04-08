@@ -1,10 +1,10 @@
 {
-  "name": "nic-nac-npm",
-  "description": "NPM Generator",
+  "name": "mpn-wizard",
+  "description": "MPN Generator",
   "keywords": [
     "react",
     "webpack",
-    "NPM"
+    "MPN"
   ],
   "env": {
     "NODE_ENV": {

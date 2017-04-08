@@ -1,7 +1,7 @@
 {
-  "name": "nic-nac-npm",
+  "name": "mpn-wizard",
   "version": "1.0.0",
-  "description": "NPM Generator",
+  "description": "MPN Generator",
   "main": "index.js",
   "scripts": {
     "start": "node index",

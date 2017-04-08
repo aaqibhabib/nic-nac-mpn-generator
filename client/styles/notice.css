@@ -90,14 +90,35 @@ html * {
 }
 
 
-#mpn-notice section > h1 {
+#mpn-notice .question-header {
     background-color: #99dccf;
+    position: relative;
+}
+
+#mpn-notice section div h1 {
     color: #FFF;
     padding: 1.5em 10em;
     margin: 0;
     text-transform: uppercase;
     font-weight: normal;
     font-size: 1.5em;
+    position: relative;
+    z-index: 10;
+}
+
+#mpn-notice section img {
+    position: absolute;
+    left: 0;
+    width:100%;
+    z-index: 1;
+}
+
+#mpn-notice section img.bgstyle1 {
+    bottom: -18;
+}
+
+#mpn-notice section img.bgstyle2 {
+    bottom: 0;
 }
 
 #mpn-notice .footer {
