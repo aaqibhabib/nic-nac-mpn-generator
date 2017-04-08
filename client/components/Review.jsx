@@ -58,15 +58,15 @@ export default class Review extends React.Component {
                         </div>
                         <div className="tr" style={styles.tr}>
                             <div style={styles.td}>Link to Privacy Policy:</div>
-                            <div style={styles.td}><a href={this.props.privacyPolicyLink}>{this.props.privacyPolicyLink}</a></div>
+                            <div style={styles.td}><a href={this.props.privacyPolicyLink} target="_blank">{this.props.privacyPolicyLink}</a></div>
                         </div>
                         <div className="tr" style={styles.tr}>
                             <div style={styles.td}>Link to Comment/Contact Form:</div>
-                            <div style={styles.td}><a href={this.props.commentLink}>{this.props.commentLink}</a></div>
+                            <div style={styles.td}><a href={this.props.commentLink} target="_blank">{this.props.commentLink}</a></div>
                         </div>
                         <div className="tr" style={styles.tr}>
                             <div style={styles.td}>Email Address:</div>
-                            <div style={styles.td}><a href={this.props.emailAddress}>{this.props.emailAddress}</a></div>
+                            <div style={styles.td}><a href={'mailto:' + this.props.emailAddress} target="_blank">{this.props.emailAddress}</a></div>
                         </div>
                         <div className="tr" style={styles.tr}>
                             <div style={styles.td}>Phone Number:</div>

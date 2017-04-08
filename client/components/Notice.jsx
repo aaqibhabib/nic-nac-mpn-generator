@@ -120,9 +120,9 @@ export default class Notice extends React.Component {
                             <h1 className="text-center">Contact Us</h1>
                             <div>
                                 <h3>{this.props.entityName}</h3>
-                                <h3>{this.props.privacyPolicyLink}</h3>
-                                <h3>{this.props.commentLink}</h3>
-                                <h3>{this.props.emailAddress}</h3>
+                                <h3><a href={this.props.privacyPolicyLink} target="_blank">{this.props.privacyPolicyLink}</a></h3>
+                                <h3><a href={this.props.commentLink} target="_blank">{this.props.commentLink}</a></h3>
+                                <h3><a href={'mailto:' + this.props.emailAddress} target="_blank">{this.props.emailAddress}</a></h3>
                                 <h3>{this.props.phoneNumber}</h3>
                                 <h3>{this.props.address}</h3>
                             </div>

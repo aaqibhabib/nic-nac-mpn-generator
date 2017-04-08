@@ -37,7 +37,7 @@ const ENCRYPTION_COMMON_OPTIONS = [
 
 const textFieldStyles = {
   multiLineStyle: {
-    border: groove, 
+    border: groove,
     borderColor: grey400,
   },
 };
@@ -122,21 +122,21 @@ export const Questions = [
         title: 'HIPAA',
         type: QuestionTypes.RADIO,
         prompt: 'Select one of the following statements to be inserted into the privacy notice, based on whether or not the company is a HIPAA covered entity:',
-        noticeText: '\r',
+        noticeText: 'Please note that:',
         options: [
-            'Please note that the health data we collect as part of <%= techName %> are not protected by HIPAA and our company\'s HIPAA Notice of Privacy Practices does not apply.',
+            'The health data we collect as part of <%= techName %> are not protected by HIPAA and our company\'s HIPAA Notice of Privacy Practices does not apply.',
             'Some of the health data we collect as part of <%= techName %> also are protected by HIPAA.',
             'The company is not a HIPAA covered entity',
         ],
     },
     {
-        id: 'p-2 g-1 q-2',		
-        groupID: 'HIPAA Covered Entity',		
-        pageID: 1,		
-        title: 'HIPAA',		
-        type: QuestionTypes.TEXT,		
-        prompt: 'What is the name of the technology or product this notice is for?',		
-        hintText: 'name of app or product',		
+        id: 'p-2 g-1 q-2',
+        groupID: 'HIPAA Covered Entity',
+        pageID: 1,
+        title: 'HIPAA',
+        type: QuestionTypes.TEXT,
+        prompt: 'What is the name of the technology or product this notice is for?',
+        hintText: 'name of app or product',
     },
     {
         id: 'p-2 g-1 q-3',
@@ -486,8 +486,8 @@ export const Questions = [
         title: 'Policy Changes',
         type: QuestionTypes.TEXT,
         floatingLabelText: 'Link to policy change section in privacy policy:',
-        noticeText: 'Section of privacy policy:',  
-        hintText: 'https://www.company.com/privacy#changes', 
+        noticeText: 'Section of privacy policy:',
+        hintText: 'https://www.company.com/privacy#changes',
     },
     {
         id: 'p-6 g-2 q-1',
@@ -509,8 +509,8 @@ export const Questions = [
         title: 'Breach',
         type: QuestionTypes.TEXT,
         floatingLabelText: 'Link to breach notification section of privacy policy:',
-        noticeText: 'Section of privacy policy:', 
-        hintText: 'https://www.company.com/privacy#breach',   
+        noticeText: 'Section of privacy policy:',
+        hintText: 'https://www.company.com/privacy#breach',
     },
 ];
 
