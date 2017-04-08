@@ -19,13 +19,6 @@ import Notice from './Notice';
 import { HelpfulTips } from '../config';
 
 const styles = {
-    container: {
-        maxWidth: '1200px',
-        marginRight: 'auto',
-        marginLeft: 'auto',
-        background: '#fdfdfd',
-        // padding: '0 24px',
-    },
     right: {
         float: 'right',
     },
@@ -112,14 +105,19 @@ class App extends React.Component {
                               <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Github" href="https://github.com/aaqibhabib/nic-nac-mpn-generator" />
                           </div>}
                     />
-                    <div style={styles.container}>
-                        {this.state.currentStepIndex >= 0 ? <h2 className="notice-title">Privacy Notice Generator</h2> : null}
-                        {this.state.currentStepIndex >= 0 ? <Stepper
-                          currentStepIndex={this.state.currentStepIndex}
-                          visited={this.state.visited}
-                          setStep={this.setStep}
-                        /> : null}
-                        <div style={this.state.currentStepIndex >= 0 && this.state.currentStepIndex !== 7 ? { display: 'flex' } : {}}>
+                    <div>
+                        {this.state.currentStepIndex >= 0 ? <div className='container'>
+                            <h2 className="notice-title">Privacy Notice Generator</h2>
+                            <Stepper
+                              currentStepIndex={this.state.currentStepIndex}
+                              visited={this.state.visited}
+                              setStep={this.setStep}
+                            />
+                            </div> : null}
+                        <div
+                          style={this.state.currentStepIndex >= 0 && this.state.currentStepIndex !== 7 ? { display: 'flex' } : {}}
+                          className={this.state.currentStepIndex < 0 ? '' : 'container'}
+                        >
                             {this.state.currentStepIndex >= 0 && this.state.currentStepIndex !== 7 ? <div style={{ flex: 1, marginRight: '15px', marginTop: '20px' }}>
                                 <Card>
                                     <Toolbar>
@@ -131,9 +129,10 @@ class App extends React.Component {
                                 </Card>
                             </div> : null}
                             {(() => {
-                                console.log(this.state.currentStepIndex);
                                 if (this.state.currentStepIndex < 0) {
-                                    return (<Intro />);
+                                    return (<Intro
+                                      onNextStep={this.nextStep}
+                                    />);
                                 } else if (this.state.currentStepIndex === 0) {
                                     return (<Contact
                                       entityName={this.state.entityName}
@@ -175,16 +174,20 @@ class App extends React.Component {
                                 return null;
                             })()}
                         </div>
-                        <div style={{ height: '42px', margin: '30px 0%', float: 'right' }}>
-                            {this.state.currentStepIndex > 0 ? <RaisedButton
-                              label="Back"
-                              onClick={this.previousStep}
-                            /> : null}
-                            {this.state.currentStepIndex === 7 ? null : <RaisedButton
-                              label={this.state.currentStepIndex >= 0 ? 'Continue' : 'Begin'}
-                              primary
-                              onClick={this.nextStep}
-                            />}
+                        <div className='section container'>
+                            <div className='right'>
+                                {this.state.currentStepIndex > 0 ? <RaisedButton
+                                label="Back"
+                                onClick={this.previousStep}
+                                /> : null}
+                                {this.state.currentStepIndex >= 0 && this.state.currentStepIndex < 7 ? <RaisedButton
+                                label={this.state.currentStepIndex >= 0 ? 'Continue' : 'Begin'}
+                                primary
+                                onClick={this.nextStep}
+                                /> : null}
+                            </div>
+                            <div className='clearfix'></div>
+                            
                         </div>
                     </div>
                 </div>
