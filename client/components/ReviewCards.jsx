@@ -73,9 +73,16 @@ export default class ReviewCards extends React.Component {
                                             </div>
                                         </div>);
                                     } else if (question.type === QuestionTypes.RADIO) {
+                                        let selection = this.props.selections[key];
+                                        if (key === '1-HIPAA Covered Entity-p-2 g-1 q-1') {
+                                            selection = _.template(selection)({
+                                                techName: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-2'] || 'our product',
+                                                privacyLink: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3'] || 'Link to HIPPA Notice',
+                                            });
+                                        }
                                         return (<div key={question.id} className="tr" style={styles.tr}>
                                             <div style={styles.td}>{question.prompt}</div>
-                                            <div style={styles.td}>{this.props.selections[key]}</div>
+                                            <div style={styles.td}>{selection}</div>
                                         </div>);
                                     } else if (question.type === QuestionTypes.TEXT) {
                                         return (<div key={question.id} className="tr" style={styles.tr}>
