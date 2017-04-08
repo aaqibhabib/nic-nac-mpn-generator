@@ -5,7 +5,7 @@ import NoticeCSS from '!raw!../styles/notice.css';
 const beautifyHTML = require('js-beautify').html;
 const beautifyCSS = require('js-beautify').css;
 
-import { Steps, QuestionTypes, HelpText } from '../config';
+import { Steps, QuestionTypes, HelpText, Backgrounds } from '../config';
 
 export default class Notice extends React.Component {
     constructor(props) {
@@ -55,11 +55,19 @@ export default class Notice extends React.Component {
                         </div>
                         {(() => {
                             const sections = [];
+                            let headerCounter = 0;
                             for (let i = 1; i < 6; i++) {
                                 const currentStep = Steps[i];
                                 sections.push(currentStep.values.map(questionGroup =>
                                     (<section key={questionGroup.key}>
-                                        <h1 className="text-center">{questionGroup.key}</h1>
+                                        <div className="question-header">
+                                            {console.log(headerCounter)}
+                                            <img src={Backgrounds[headerCounter % 4]} />
+                                            <h1 className="text-center">{questionGroup.key}</h1>
+                                            {(() => {
+                                                headerCounter++;
+                                            })()}
+                                        </div>
                                         {questionGroup.values.map((question) => {
                                             const key = `${Steps[i].key}-${questionGroup.key}-${question.id}`;
                                             const values = this.props.selections[key];
@@ -110,7 +118,8 @@ export default class Notice extends React.Component {
                                                 </div>);
                                             }
                                             return null;
-                                        })}
+                                        })
+                                        }
                                     </section>)));
                             }
                             return sections;
@@ -122,7 +131,7 @@ export default class Notice extends React.Component {
                                 <h3>{this.props.entityName}</h3>
                                 <h3><a href={this.props.privacyPolicyLink} target="_blank">{this.props.privacyPolicyLink}</a></h3>
                                 <h3><a href={this.props.commentLink} target="_blank">{this.props.commentLink}</a></h3>
-                                <h3><a href={'mailto:' + this.props.emailAddress} target="_blank">{this.props.emailAddress}</a></h3>
+                                <h3><a href={`mailto:${  this.props.emailAddress}`} target="_blank">{this.props.emailAddress}</a></h3>
                                 <h3>{this.props.phoneNumber}</h3>
                                 <h3>{this.props.address}</h3>
                             </div>
