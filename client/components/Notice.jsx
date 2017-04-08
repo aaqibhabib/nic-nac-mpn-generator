@@ -62,7 +62,7 @@ export default class Notice extends React.Component {
                                     (<section key={questionGroup.key}>
                                         <div className="question-header">
                                             {console.log(headerCounter)}
-                                            <img src={Backgrounds[headerCounter % 4]} />
+                                            <img className={headerCounter % 2 === 0 ? 'bgStyle1' : 'bgStyle2'} src={Backgrounds[headerCounter % 4]} />
                                             <h1 className="text-center">{questionGroup.key}</h1>
                                             {(() => {
                                                 headerCounter++;
