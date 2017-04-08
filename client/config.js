@@ -522,30 +522,30 @@ export const Steps = d3.nest()
 
 export const HelpText = {
     'To develop and improve new and current products and services (e.g., analytics)': 'Analytics means: the process of examining data to draw conclusions from that information.',
-    'We DO NOT share identifiable data': 'Identifiable data means: data, such as your name, phone number, email, address, health services, information on your physical or mental health conditions, or your social security number, that can be used on its own or with other information to identify you'
+    'We DO NOT share identifiable data': 'Identifiable data means: data, such as your name, phone number, email, address, health services, information on your physical or mental health conditions, or your social security number, that can be used on its own or with other information to identify you.',
 };
 
 export const HelpfulTips = [
     {
         title: 'Instructions',
-        text: 'Complete each question based on your company’s current privacy policy. Every question is required to be filed out, unless otherwise specified. There are tips on each page to better explain components that may be confusing. Additionally, it\'d be helpful to have assistance from your company\'s legal team to answer some questions.',
+        text: 'Complete each question based on your company’s current privacy policy. \n Every question is required to be filed out, unless otherwise specified. There are tips on each page to better explain components that may be confusing. Additionally, it\'d be helpful to have assistance from your company\'s legal team to answer some questions.',
     },
     {
         title: 'Helpful Tip',
-        text: 'This section focuses on whether or not your company is a covered entity under the HIPAA Privacy Rule. \"We\" and \"our\" refer to your company as it will appear on the notice to the user.',
+        text: 'This section focuses on whether or not your company is a covered entity under the HIPAA Privacy Rule. "We" and "our" refer to your company as it will appear on the notice to the user.',
     },
     {
         title: 'Helpful Tip',
-        text: 'This section focuses on the company\'s policies toward use, sharing, and privacy of the data. \"We\" and \"our\" refer to your company as it will appear on the notice to the user. \"You\" refers to the consumer of the policy.',
+        text: 'This section focuses on the company\'s policies toward use, sharing, and privacy of the data. "We" and "our" refer to your company as it will appear on the notice to the user. "You" refers to the consumer of the policy.',
 
     },
     {
         title: 'Helpful Tip',
-        text: '\"We\" and \"our\" refer to your company as it will appear on the notice to the user. \"You\" refers to the consumer of the policy.',
+        text: '"We" and "our" refer to your company as it will appear on the notice to the user. "You" refers to the consumer of the policy.',
     },
     {
         title: 'Helpful Tip',
-        text: 'Make sure to be clear about where users should go to check privacy settings.\"We\" and \"our\" refer to your company as it will appear on the notice to the user. \"You\" refers to the consumer of the policy.',
+        text: 'Make sure to be clear about where users should go to check privacy settings. "We" and "our" refer to your company as it will appear on the notice to the user. "You" refers to the consumer of the policy.',
     },
     {
         title: 'Instructions',
@@ -553,6 +553,6 @@ export const HelpfulTips = [
     },
     {
         title: 'Helpful Tip',
-        text: 'Review your answers to make sure they are accurate. You can change your answers by clicking the \"Edit\" icon in each section.',
+        text: 'Review your answers to make sure they are accurate. You can change your answers by clicking the "Edit" icon in each section.',
     },
 ];
