@@ -1,5 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import { grey300 } from 'material-ui/styles/colors';
 
 export default class Intro extends React.Component {
     render() {
@@ -11,7 +12,7 @@ export default class Intro extends React.Component {
                     <RaisedButton onClick={this.props.onNextStep} label="Get Started" primary />
                 </section>
 
-                <section className='grey lighten-2'>
+                <section style={{backgroundColor: grey300 }}>
                     <div className=' section container'>
                         <h2 className='notice-title'>What is the MPN Wizard?</h2>
                         <p>The Model Privacy Notice (MPN) is a voluntary, openly available resource designed to help health technology developers who collect digital health data clearly convey information about their privacy and security policies to their users.</p>

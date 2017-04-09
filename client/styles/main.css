@@ -82,6 +82,6 @@ abbr[data-original-title] {
     height: 24px !important
 }
 
-.npm-generatordiv.reviewCard div div div div.tr:last-child {
+.npm-generator div.reviewCard div div div div.tr:last-child {
     border-bottom: 0px solid rgb(224, 224, 224);
 }
