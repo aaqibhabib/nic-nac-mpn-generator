@@ -103,7 +103,7 @@ class App extends React.Component {
                               <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Github" href="https://github.com/aaqibhabib/nic-nac-mpn-generator" target='_blank' />
                           </div>}
                     />
-                    <div>
+                    <div style={{ minHeight: 'calc(100vh - 154px)' }}>
                         {this.state.currentStepIndex >= 0 ? <div className="container">
                             <h2 className="notice-title">Privacy Notice Generator</h2>
                             <Stepper
@@ -187,6 +187,9 @@ class App extends React.Component {
                             <div className="clearfix" />
                         </div>
                     </div>
+                    <footer className="page-footer">
+                        <div className="container footer-copyright"></div>
+                    </footer>
                 </div>
             </MuiThemeProvider>
         );

@@ -78,3 +78,15 @@ html * {
     font-size: 1.5em;
     line-height: 1.4em;
 }
+
+footer.page-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    background-color: rgb(0, 188, 212);
+}
+footer.page-footer .footer-copyright {
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+    color: rgba(255, 255, 255, 0.8);
+}
