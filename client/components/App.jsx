@@ -103,7 +103,7 @@ class App extends React.Component {
                               <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Github" href="https://github.com/aaqibhabib/nic-nac-mpn-generator" target='_blank' />
                           </div>}
                     />
-                    <div style={{ minHeight: 'calc(100vh - 154px)' }}>
+                    <div style={{ minHeight: 'calc(100vh - 119px)' }}>
                         {this.state.currentStepIndex >= 0 ? <div className="container">
                             <Stepper
                               currentStepIndex={this.state.currentStepIndex}

@@ -96,7 +96,7 @@ footer.page-footer {
 }
 footer.page-footer .footer-copyright {
     overflow: hidden;
-    height: 50px;
+    height: 5px;
     line-height: 50px;
     color: rgba(255, 255, 255, 0.8);
 }
