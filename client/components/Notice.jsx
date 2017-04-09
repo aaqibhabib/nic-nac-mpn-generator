@@ -49,9 +49,11 @@ export default class Notice extends React.Component {
                 >
                     <div id="mpn-notice">
                         <div className="intro">
+                            <div className="container">
                             <h1 className="notice-title text-center">Learn About Our Privacy Policy</h1>
                             <h2 className="text-center">We want you to know our privacy and security policies to encourage transparency and help you make informed choices when using our products. Learn everything you need to know in one quick summary.</h2>
                             <h4 className="text-center">If you want more information, you can peruse our <a href={this.props.privacyPolicyLink}>full privacy policy</a>. And, if you have any questions, comments or concerns, email us at {this.props.emailAddress}.</h4>
+                            </div>
                         </div>
                         {(() => {
                             const sections = [];
@@ -62,7 +64,7 @@ export default class Notice extends React.Component {
                                     (<section key={questionGroup.key}>
                                         <div className="question-header">
                                             <img className={headerCounter % 2 === 0 ? 'bg-style-1' : 'bg-style-2'} src={Backgrounds[headerCounter % 4]} />
-                                            <h1 className="text-center">{questionGroup.key}</h1>
+                                            <h1 className="text-center container">{questionGroup.key}</h1>
                                             {(() => {
                                                 headerCounter++;
                                             })()}
@@ -72,7 +74,7 @@ export default class Notice extends React.Component {
                                             const values = this.props.selections[key];
                                             if (!values || _.isEmpty(values)) return null; // skip questions with no answers
                                             if (question.type === QuestionTypes.CHECKBOX) {
-                                                return (<div key={question.id} className="question-block">
+                                                return (<div key={question.id} className="question-block container">
                                                     <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
                                                     <div className="question-answers">
                                                         {(() => {
@@ -98,26 +100,26 @@ export default class Notice extends React.Component {
                                                         privacyLink: this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3'] || 'Link to HIPPA Notice',
                                                     });
                                                     if (_.startsWith(selection, 'Some')) {
-                                                        return (<div key={question.id} className="question-block">
+                                                        return (<div key={question.id} className="question-block container">
                                                             <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
                                                             <div className="question-answers">{helpText ? <abbr title={helpText}>{selection}</abbr> : selection} Read our <a href={this.props.selections['1-HIPAA Covered Entity-p-2 g-1 q-3' || 'Link to HIPPA Notice']}>HIPAA Notice of Privacy Practices</a> for more information.</div>
                                                         </div>
                                                         );
                                                     }
                                                 }
-                                                return (<div key={question.id} className="question-block">
+                                                return (<div key={question.id} className="question-block container">
                                                     <h3 className="question-prompt">{question.helpText ? <abbr title={question.helpText}>{question.noticeText || question.prompt}</abbr> : question.noticeText || question.prompt}</h3>
                                                     <div className="question-answers">{helpText ? <abbr title={helpText}>{selection}</abbr> : selection}</div>
                                                 </div>);
                                             } else if (question.type === QuestionTypes.TEXT) {
                                                 const prompt = _.template(question.noticeText || question.prompt)({ entityName: this.props.entityName || 'The Company' });
                                                 if (key === '5-Policy Changes: How the company will notify users if the privacy policy changes-p-6 g-1 q-2' || key === '5-Breach: How the company will notify users and protect data in case of an improper disclosure-p-6 g-2 q-2') {
-                                                    return (<div key={question.id} className="question-block">
+                                                    return (<div key={question.id} className="question-block container">
                                                         <h3 className="question-prompt">{prompt}</h3>
                                                         <div className="question-answers"><a href={this.props.selections[key]}>{this.props.selections[key]}</a></div>
                                                     </div>);
                                                 }
-                                                return (<div key={question.id} className="question-block">
+                                                return (<div key={question.id} className="question-block container">
                                                     <h3 className="question-prompt">{prompt}</h3>
                                                     <div className="question-answers">{this.props.selections[key]}</div>
                                                 </div>);
@@ -131,6 +133,7 @@ export default class Notice extends React.Component {
                         })()}
 
                         <div className="footer">
+                            <div className="container">
                             <h1 className="text-center">Contact Us</h1>
                             <div>
                                 <h3>{this.props.entityName}</h3>
@@ -140,7 +143,7 @@ export default class Notice extends React.Component {
                                 <h3>Phone Number: {this.props.phoneNumber}</h3>
                                 <h3>{this.props.address}</h3>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                 </CodeExample>
