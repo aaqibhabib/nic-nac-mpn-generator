@@ -57,10 +57,7 @@ export default class ReviewCards extends React.Component {
                             (<div key={questionGroup.key}>
                                 {questionGroup.values.map((question) => {
                                     const key = `${Steps[this.props.currentStepIndex].key}-${questionGroup.key}-${question.id}`;
-                                    const values = this.props.selections[key];
-                                    if (!values || _.isEmpty(values)) return null; // skip questions with no answers
                                     if (question.type === QuestionTypes.CHECKBOX) {
-                                        console.log(questionGroup.key);
                                         return (<div key={question.id} className="tr" style={styles.tr}>
                                             <div style={styles.td}>{question.prompt}</div>
                                             <div style={styles.td}>
