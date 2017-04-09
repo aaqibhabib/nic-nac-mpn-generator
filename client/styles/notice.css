@@ -113,13 +113,13 @@ html * {
     z-index: 1;
 }
 
-#mpn-notice .bgstyle1 {
-    bottom: -12;
+#mpn-notice .bg-style-1 {
+    bottom: -12px;
     height: 100px;
 }
 
-#mpn-notice .bgstyle2 {
-    bottom: 0;
+#mpn-notice .bg-style-2 {
+    bottom: 0px;
     height: 100px;
 }
 
