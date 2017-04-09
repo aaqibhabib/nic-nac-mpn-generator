@@ -93,20 +93,16 @@ class App extends React.Component {
         return (
             <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
                 <div className="npm-generator">
-                    <div className='app-bar-container'>
-                        <AppBar
-                            title="MPN Wizard"
-                            className='container'
-                            showMenuIconButton={false}
-                            iconElementRight={
-                                <div style={{ marginTop: '6px' }}>
-                                    <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Home" onClick={this.onHomeClick} />
-                                    <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Generator Tool" onClick={this.onGeneratorClick} />
-                                    <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Github" href="https://github.com/aaqibhabib/nic-nac-mpn-generator" target='_blank' />
-                                </div>}
-                            />
-                    </div>
-                    
+                    <AppBar
+                      title="MPN Wizard"
+                      showMenuIconButton={false}
+                      iconElementRight={
+                          <div style={{ marginTop: '6px' }}>
+                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Home" onClick={this.onHomeClick} />
+                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Generator Tool" onClick={this.onGeneratorClick} />
+                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Github" href="https://github.com/aaqibhabib/nic-nac-mpn-generator" target='_blank' />
+                          </div>}
+                    />
                     <div style={{ minHeight: 'calc(100vh - 154px)' }}>
                         {this.state.currentStepIndex >= 0 ? <div className="container">
                             <Stepper
