@@ -47,7 +47,7 @@ html * {
 }
 .npm-generator .question-group-title {
     color: white;
-    font-size: 28;
+    font-size: 1.5em;
     font-weight: normal;
     background: #228ed5; /* Old browsers */
     background: -moz-linear-gradient(-45deg, #228ed5 0%, #0ebacf 100%); /* FF3.6-15 */
