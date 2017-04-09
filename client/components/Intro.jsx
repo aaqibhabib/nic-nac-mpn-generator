@@ -41,7 +41,7 @@ export default class Intro extends React.Component {
                     <h4 className='intro-title'>Developer Details</h4>
                     <h5 className='intro-secondary-title'>Easily export your generated notice by downloading the HTML file or copying it directly.</h5>
                     <p>The MPN Wizard is a web app that uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</p>
-                    <img src="export.png" alt="Export Notice"/>
+                    <img src="export-notice.png" alt="Export Notice"/>
                 </section>
             </div>
         );
