@@ -105,7 +105,6 @@ class App extends React.Component {
                     />
                     <div style={{ minHeight: 'calc(100vh - 154px)' }}>
                         {this.state.currentStepIndex >= 0 ? <div className="container">
-                            <h2 className="notice-title">Privacy Notice Generator</h2>
                             <Stepper
                               currentStepIndex={this.state.currentStepIndex}
                               visited={this.state.visited}
