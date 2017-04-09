@@ -40,8 +40,7 @@ class App extends React.Component {
             selections: {
                 ...this.state.selections,
                 [id]: state,
-            } }, () => {
-                console.log(this.state.selections);
+            },
         });
     }
 
@@ -93,7 +92,7 @@ class App extends React.Component {
     render() {
         return (
             <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-                <div className='npm-generator'>
+                <div className="npm-generator">
                     <AppBar
                       title="MPN Wizard"
                       showMenuIconButton={false}
@@ -105,14 +104,14 @@ class App extends React.Component {
                           </div>}
                     />
                     <div>
-                        {this.state.currentStepIndex >= 0 ? <div className='container'>
+                        {this.state.currentStepIndex >= 0 ? <div className="container">
                             <h2 className="notice-title">Privacy Notice Generator</h2>
                             <Stepper
                               currentStepIndex={this.state.currentStepIndex}
                               visited={this.state.visited}
                               setStep={this.setStep}
                             />
-                            </div> : null}
+                        </div> : null}
                         <div
                           style={this.state.currentStepIndex >= 0 && this.state.currentStepIndex !== 7 ? { display: 'flex' } : {}}
                           className={this.state.currentStepIndex < 0 ? '' : 'container'}
@@ -173,20 +172,19 @@ class App extends React.Component {
                                 return null;
                             })()}
                         </div>
-                        <div className='section container'>
-                            <div className='right'>
+                        <div className="section container">
+                            <div className="right">
                                 {this.state.currentStepIndex > 0 ? <RaisedButton
-                                label="Back"
-                                onClick={this.previousStep}
+                                  label="Back"
+                                  onClick={this.previousStep}
                                 /> : null}
                                 {this.state.currentStepIndex >= 0 && this.state.currentStepIndex < 7 ? <RaisedButton
-                                label={this.state.currentStepIndex >= 0 ? 'Continue' : 'Begin'}
-                                primary
-                                onClick={this.nextStep}
+                                  label={this.state.currentStepIndex >= 0 ? 'Continue' : 'Begin'}
+                                  primary
+                                  onClick={this.nextStep}
                                 /> : null}
                             </div>
-                            <div className='clearfix'></div>
-                            
+                            <div className="clearfix" />
                         </div>
                     </div>
                 </div>

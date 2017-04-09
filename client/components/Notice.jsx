@@ -61,7 +61,6 @@ export default class Notice extends React.Component {
                                 sections.push(currentStep.values.map(questionGroup =>
                                     (<section key={questionGroup.key}>
                                         <div className="question-header">
-                                            {console.log(headerCounter)}
                                             <img className={headerCounter % 2 === 0 ? 'bg-style-1' : 'bg-style-2'} src={Backgrounds[headerCounter % 4]} />
                                             <h1 className="text-center">{questionGroup.key}</h1>
                                             {(() => {
@@ -112,6 +111,12 @@ export default class Notice extends React.Component {
                                                 </div>);
                                             } else if (question.type === QuestionTypes.TEXT) {
                                                 const prompt = _.template(question.noticeText || question.prompt)({ entityName: this.props.entityName || 'The Company' });
+                                                if (key === '5-Policy Changes: How the company will notify users if the privacy policy changes-p-6 g-1 q-2' || key === '5-Breach: How the company will notify users and protect data in case of an improper disclosure-p-6 g-2 q-2') {
+                                                    return (<div key={question.id} className="question-block">
+                                                        <h3 className="question-prompt">{prompt}</h3>
+                                                        <div className="question-answers"><a href={this.props.selections[key]}>{this.props.selections[key]}</a></div>
+                                                    </div>);
+                                                }
                                                 return (<div key={question.id} className="question-block">
                                                     <h3 className="question-prompt">{prompt}</h3>
                                                     <div className="question-answers">{this.props.selections[key]}</div>
