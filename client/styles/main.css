@@ -33,12 +33,23 @@ html * {
 	background: linear-gradient(135deg, #228ed5 0%,#0ebacf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228ed5', endColorstr='#0ebacf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-.npm-generator .notice-title, .npm-generator .intro-title {
+.npm-generator .notice-title {
     font-weight: lighter;
     text-align: center;
     margin: auto;
     padding-top:50px;
-    padding-bottom: 25px
+    padding-bottom: 25px;
+    color: ;
+}
+
+.npm-generator .intro-title {
+    font-size: 2.5rem;
+    line-height: 110%;
+    margin: 1.46rem 0 1.168rem 0;
+    text-align: center;
+    padding-top:50px;
+    padding-bottom: 25px;
+    color: #2196F3;
 }
 
 .npm-generator .notice-title {
@@ -72,10 +83,36 @@ html * {
 }
 
 .npm-generator .intro-secondary-title {
-    font-size: 1.5em;
-    line-height: 1.4em;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    line-height: 1.7em;
+    padding: 0% 10%;
+    text-align: center;
+    color: rgba(0,0,0,0.71);
 }
 
+.npm-generator .secondary-title {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    font-weight: lighter;
+}
+
+.npm-generator p {
+  font-size: 1.15em;
+  font-weight: 300;
+  color: rgba(0,0,0,0.71);
+  padding: 0 0 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.npm-generator h4 {
+    font-size: 1.7em;
+    font-weight: 500;
+    /*margin-top: 20px;*/
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.71);
+}
 .npm-generator .step-button > div > span {
     display: flex;
     flex-direction: column-reverse;
