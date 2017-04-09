@@ -14,7 +14,7 @@
 
 2. Clone the repository 
 
-2. Move into app directory
+2. Change directory into app 
 
 3. When running the app the first time, install the app dependencies:
 
