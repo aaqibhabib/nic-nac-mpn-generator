@@ -36,7 +36,6 @@ html * {
 }
 .npm-generator .notice-title, .npm-generator .intro-title {
     font-weight: lighter;
-    color: #0ebacf;
     text-align: center;
     margin: auto;
     padding-top:50px;
