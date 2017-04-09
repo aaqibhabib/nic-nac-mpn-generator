@@ -463,7 +463,7 @@ export const Questions = [
         title: 'Deactivation',
         type: QuestionTypes.TEXT,
         floatingLabelText: '(optional) If not specified above, how long after deactivation will the data be deleted?',
-        noticeText: 'Data will be deleted after',
+        noticeText: 'Data will be deleted after:',
         hintText: 'Data will be deleted after:',
     },
     {

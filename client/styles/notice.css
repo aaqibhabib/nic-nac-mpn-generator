@@ -143,6 +143,10 @@ html * {
     font-size: 1em;
 }
 
+#mpn-notice .footer a {
+    color: #FFF;   
+}
+
 #mpn-notice .footer > div {
     width: 30%;
     margin: 0 auto;
