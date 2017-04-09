@@ -7,8 +7,8 @@ export default class Intro extends React.Component {
         return (
             <div>
                 <section className='section container'>
-                    <h4 className='intro-title'>Create Your Privacy Notice</h4>
-                    <h5 className='intro-secondary-title'>Help your users understand how your organization collects and shares information. Answer a couple questions about your privacy policy and make an "In Plain English" policy to share with users.</h5>
+                    <h4 className='intro-title'>Create Your Model Privacy Notice</h4>
+                    <h5 className='intro-secondary-title'>Help your users understand how your organization collects and shares information. By answering a few questions about your company's privacy policy you can generate an "In Plain English" notice to share with users.</h5>
                     <div className='row'>
                         <div className='col s8 offset-s4'>
                             <RaisedButton onClick={this.props.onNextStep} label="Get Started" primary fullWidth />
@@ -38,9 +38,9 @@ export default class Intro extends React.Component {
 
                 <section className='section container'>
                     <h4 className='intro-title'>Developer Details</h4>
-                    <h5 className='intro-secondary-title'>Easily export your generated notice by downloading the HTML file or copying it directly.</h5>
+                    <h5 className='intro-secondary-title'>Easily export your generated MPN by downloading the HTML file or copying it directly.</h5>
                     <img style={{ width: '100%' }} src="export-notice.png" alt="Export Notice"/>
-                    <p>The MPN Wizard is a web app that uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</p>
+                    <p>The MPN Wizard is a web app which uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</p>
                 </section>
             </div>
         );
