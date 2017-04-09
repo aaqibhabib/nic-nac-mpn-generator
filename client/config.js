@@ -280,7 +280,7 @@ export const Questions = [
         type: QuestionTypes.RADIO,
         prompt: 'Does the app or technology encrypt data in the device or app?',
         noticeText: 'Does the app or technology encrypt your data in the device or app?',
-        helpText: 'Encryption means: a method of converting an original message of regular text into encoded text in such a way that only authorized parties can read it. Alternatively, a more consumer friendly definition may be substituted as a result of the Challenge, including based on consumer testing feedback',
+        helpText: 'Encryption means: a method of converting an original message of regular text into encoded text in such a way that only authorized parties can read it.',
         options: [
             ...ENCRYPTION_COMMON_OPTIONS,
         ],
@@ -303,7 +303,7 @@ export const Questions = [
         type: QuestionTypes.RADIO,
         prompt: 'Does the app or technology encrypt data when stored on company servers or with an outside cloud computing services provider? ',
         noticeText: 'Does the app or technology encrypt your data when stored on our company servers or with an outside cloud computing services provider? ',
-        helpText: ' Cloud computing means: a kind of Internet-based computing that provides shared processing resources and data to computers and other devices on demand',
+        helpText: ' Cloud computing means: a kind of Internet-based computing that provides shared processing resources and data to computers and other devices on demand.',
         options: [
             ...ENCRYPTION_COMMON_OPTIONS,
         ],
@@ -497,7 +497,7 @@ export const Questions = [
         type: QuestionTypes.TEXT,
         prompt: 'Describe how the company will notify users and protect consumers’ data in the case of a breach.',
         noticeText: '<%= entityName %> complies with all applicable laws regarding breaches. In case of a breach...',
-        helpText: 'Breach means: an unauthorized disclosure',
+        helpText: 'Breach means: an unauthorized disclosure.',
         multiLine: true,
         rows: 5,
         textareaStyle: textFieldStyles.multiLineStyle
