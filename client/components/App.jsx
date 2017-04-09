@@ -101,7 +101,7 @@ class App extends React.Component {
                           <div style={{ marginTop: '6px' }}>
                               <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Home" onClick={this.onHomeClick} />
                               <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Generator Tool" onClick={this.onGeneratorClick} />
-                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Github" href="https://github.com/aaqibhabib/nic-nac-mpn-generator" />
+                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Github" href="https://github.com/aaqibhabib/nic-nac-mpn-generator" target='_blank' />
                           </div>}
                     />
                     <div>
