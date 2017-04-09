@@ -62,6 +62,7 @@ html * {
 
 #mpn-notice .question-answers a {
     color: #99dccf;
+    text-decoration: underline;
 }
 
 #mpn-notice .intro {
@@ -144,7 +145,8 @@ html * {
 }
 
 #mpn-notice .footer a {
-    color: #FFF;   
+    color: #FFF; 
+    text-decoration: underline;  
 }
 
 #mpn-notice .footer > div {
