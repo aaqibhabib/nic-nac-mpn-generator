@@ -18,19 +18,10 @@ import Review from './Review';
 import Notice from './Notice';
 import { HelpfulTips } from '../config';
 
-const styles = {
-    right: {
-        float: 'right',
-    },
-    left: {
-        float: 'left',
-    },
-};
-
 class App extends React.Component {
     constructor(props) {
         super(props);
-        _.bindAll(this, 'onSelectionChange', 'onIntroChange', 'setStep', 'nextStep', 'previousStep');
+        _.bindAll(this, 'onSelectionChange', 'onIntroChange', 'setStep', 'nextStep', 'previousStep', 'onHomeClick', 'onGeneratorClick');
         this.state = {
             currentStepIndex: -1,
             visited: [],
@@ -62,6 +53,14 @@ class App extends React.Component {
 
     onPageChanged() {
         window.scrollTo(0, 0);
+    }
+
+    onHomeClick() {
+        this.setStep(-1);
+    }
+
+    onGeneratorClick() {
+        this.setStep(0);
     }
 
     setStep(index) {
@@ -96,12 +95,12 @@ class App extends React.Component {
             <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
                 <div className='npm-generator'>
                     <AppBar
-                      title="MPN Generator"
+                      title="MPN Wizard"
                       showMenuIconButton={false}
                       iconElementRight={
                           <div style={{ marginTop: '6px' }}>
-                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Home" />
-                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Generator Tool" />
+                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Home" onClick={this.onHomeClick} />
+                              <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Generator Tool" onClick={this.onGeneratorClick} />
                               <FlatButton style={{ color: 'white' }} hoverColor="rgba(255,255,255,0.4)" rippleColor="white" label="Github" href="https://github.com/aaqibhabib/nic-nac-mpn-generator" />
                           </div>}
                     />

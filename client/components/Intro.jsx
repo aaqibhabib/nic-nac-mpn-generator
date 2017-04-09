@@ -15,7 +15,7 @@ export default class Intro extends React.Component {
                 <section style={{backgroundColor: grey300 }}>
                     <div className=' section container'>
                         <h2 className='notice-title'>What is the MPN Wizard?</h2>
-                        <p>The Model Privacy Notice (MPN) is a voluntary, openly available resource designed to help health technology developers who collect digital health data clearly convey information about their privacy and security policies to their users.</p>
+                        <p>The <a href='https://www.healthit.gov/sites/default/files/2016_model_privacy_notice.pdf'>Model Privacy Notice (MPN)</a> is a voluntary, openly available resource designed to help health technology developers who collect digital health data clearly convey information about their privacy and security policies to their users.</p>
                         <div className='row'>
                             <div className='col s6'>
                                 <h4>How it works</h4>
