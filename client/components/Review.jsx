@@ -48,7 +48,8 @@ export default class Review extends React.Component {
             <div style={{ flex: 3 }}>
                 <h3 className='question-group-title'>Review</h3>
                 <Card className="reviewCard" style={styles.reviewCard}>
-                    <CardTitle title="Contact Info" titleStyle={{ fontSize: 20 }} >
+                    <div className="cardPadding">
+                    <CardTitle title="Contact Info" className="questionTitleText" style={{ paddingLeft: '35px', paddingBottom: '0em', paddingTop: '1.5em' }} >
                         <IconButton style={styles.root} touch tooltip="Edit" onClick={() => this.setStep(0)}><ModeEdit /></IconButton>
                     </CardTitle>
                     <CardText>
@@ -77,6 +78,7 @@ export default class Review extends React.Component {
                             <div style={styles.td}>{this.props.address}</div>
                         </div>
                     </CardText>
+                    </div>
                 </Card>
                 {(() => {
                     const cards = [];

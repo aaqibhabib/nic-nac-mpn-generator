@@ -49,10 +49,10 @@ export default class ReviewCards extends React.Component {
         return (
             <Card className="reviewCard" style={styles.reviewCard}>
                 <div className="cardPadding">
-                    <CardTitle title={titles[this.props.currentStepIndex - 1]} className="questionTitleText">
+                    <CardTitle title={titles[this.props.currentStepIndex - 1]} className="questionTitleText" style={{ paddingLeft: '35px', paddingBottom: '0em', paddingTop: '1.5em' }}>
                         <IconButton style={styles.root} touch tooltip="Edit" onClick={() => this.setStep(this.props.currentStepIndex)}><ModeEdit /></IconButton>
                     </CardTitle>
-                    <CardText>
+                    <CardText style={{ padding: '0px 1em 1em 1em' }}>
                         {currentStep.values.map(questionGroup =>
                             (<div key={questionGroup.key}>
                                 {questionGroup.values.map((question) => {

@@ -95,6 +95,7 @@ class App extends React.Component {
                 <div className="npm-generator">
                     <AppBar
                       title="MPN Wizard"
+                      className="grad"
                       showMenuIconButton={false}
                       iconElementRight={
                           <div style={{ marginTop: '6px' }}>
@@ -118,9 +119,9 @@ class App extends React.Component {
                             {this.state.currentStepIndex >= 0 && this.state.currentStepIndex !== 7 ? <div style={{ flex: 1, marginRight: '15px', marginTop: '20px' }}>
                                 <Card>
                                     <Toolbar>
-                                        <ToolbarTitle style={{ margin: '0px auto' }} text={HelpfulTips[this.state.currentStepIndex].title} />
+                                        <ToolbarTitle style={{ margin: '0px auto', color: 'rgba(0, 0, 0, 0.4)' }} text={HelpfulTips[this.state.currentStepIndex].title} />
                                     </Toolbar>
-                                    <CardText>
+                                    <CardText style={{ fontSize: 16 }}>
                                         {HelpfulTips[this.state.currentStepIndex].text}
                                     </CardText>
                                 </Card>
@@ -186,7 +187,7 @@ class App extends React.Component {
                             <div className="clearfix" />
                         </div>
                     </div>
-                    <footer className="page-footer">
+                    <footer className="page-footer grad">
                         <div className="container footer-copyright"></div>
                     </footer>
                 </div>

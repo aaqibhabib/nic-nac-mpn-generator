@@ -16,14 +16,13 @@ html * {
 }
 
 .npm-generator div.questionTitleText {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: normal;
   padding: 15px 0px 0px 0px;
-  color: #546E7A;
 }
 
 .npm-generator div.cardPadding{
-  margin: 0px 2em;
+  padding: 0px 2em 1em 2em;
 }
 
 .npm-generator .grad {
@@ -54,8 +53,7 @@ html * {
     background: -webkit-linear-gradient(-45deg, #228ed5 0%,#0ebacf 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, #228ed5 0%,#0ebacf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228ed5', endColorstr='#0ebacf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px;
     text-align: center;
     margin:20px 0px 0px 0px;
 }

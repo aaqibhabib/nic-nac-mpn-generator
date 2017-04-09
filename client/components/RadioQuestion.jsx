@@ -23,7 +23,7 @@ export default class RadioQuestion extends React.Component {
     }
     render() {
         return (
-            <Card title={this.props.prompt} >
+            <Card title={this.props.prompt}>
                 <div className="cardPadding">
 
                     <CardTitle ><div className="questionTitleText">{this.props.prompt}</div></CardTitle>

@@ -53,6 +53,7 @@ export default class Contact extends React.Component {
             <div style={{ flex: 3 }}>
                 <h3 className='question-group-title'>Contact Info</h3>
                 <Card>
+                    <div className="cardPadding">
                     <CardText>
                         <TextField
                           fullWidth
@@ -108,6 +109,7 @@ export default class Contact extends React.Component {
                           onChange={this.onAddressChange}
                         />
                     </CardText>
+                </div>
                 </Card>
             </div>
         );
