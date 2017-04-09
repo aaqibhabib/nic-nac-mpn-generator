@@ -61,12 +61,6 @@ html * {
     margin:20px 0px 0px 0px;
 }
 
-abbr[title],
-abbr[data-original-title] {
-  cursor: help;
-  border-bottom: 1px dotted #777777;
-  text-decoration: none;}
-
 .npm-generator div.other {
     display: flex;
     flex-direction: row;
