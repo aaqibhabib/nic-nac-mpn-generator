@@ -1,6 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import { grey200 } from 'material-ui/styles/colors';
+import { grey100 } from 'material-ui/styles/colors';
 
 export default class Intro extends React.Component {
     render() {
@@ -16,7 +16,7 @@ export default class Intro extends React.Component {
                     </div>
                 </section>
 
-                <section style={{ backgroundColor: grey200 }}>
+                <section style={{ backgroundColor: grey100 }}>
                     <div className=' section container'>
                         <h4 className='intro-title'>What is the MPN Wizard?</h4>
                         <h5 className='intro-secondary-title'>The <a href='https://www.healthit.gov/sites/default/files/2016_model_privacy_notice.pdf'>Model Privacy Notice (MPN)</a> is a voluntary, openly available resource designed to help health technology developers who collect digital health data clearly convey information about their privacy and security policies to their users.</h5>
@@ -40,8 +40,8 @@ export default class Intro extends React.Component {
                 <section className='section container'>
                     <h4 className='intro-title'>Developer Details</h4>
                     <h5 className='intro-secondary-title'>Easily export your generated notice by downloading the HTML file or copying it directly.</h5>
-                    <p>The MPN Wizard is a web app that uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</p>
                     <img style={{ width: '100%' }} src="export-notice.png" alt="Export Notice"/>
+                    <p>The MPN Wizard is a web app that uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</p>
                 </section>
             </div>
         );
