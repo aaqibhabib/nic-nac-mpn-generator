@@ -40,7 +40,8 @@ class App extends React.Component {
             selections: {
                 ...this.state.selections,
                 [id]: state,
-            },
+            } }, () => {
+            console.log(this.state.selections);
         });
     }
 
