@@ -7,15 +7,19 @@ export default class Intro extends React.Component {
         return (
             <div>
                 <section className='section container'>
-                    <h2 className='notice-title'>Create Your Privacy Notice</h2>
-                    <p>Help your users understand how your organization collects and shares information. Answer a couple questions about your privacy policy and make an "In Plain English" policy to share with users.</p>
-                    <RaisedButton onClick={this.props.onNextStep} label="Get Started" primary />
+                    <h4 className='intro-title'>Create Your Privacy Notice</h4>
+                    <h5 className='intro-secondary-title'>Help your users understand how your organization collects and shares information. Answer a couple questions about your privacy policy and make an "In Plain English" policy to share with users.</h5>
+                    <div className='row'>
+                        <div className='col s6 offset-s6'>
+                            <RaisedButton onClick={this.props.onNextStep} label="Get Started" primary fullWidth />
+                        </div>
+                    </div>
                 </section>
 
-                <section style={{backgroundColor: grey300 }}>
+                <section style={{ backgroundColor: grey300 }}>
                     <div className=' section container'>
-                        <h2 className='notice-title'>What is the MPN Wizard?</h2>
-                        <p>The <a href='https://www.healthit.gov/sites/default/files/2016_model_privacy_notice.pdf'>Model Privacy Notice (MPN)</a> is a voluntary, openly available resource designed to help health technology developers who collect digital health data clearly convey information about their privacy and security policies to their users.</p>
+                        <h4 className='intro-title'>What is the MPN Wizard?</h4>
+                        <h5 className='intro-secondary-title'>The <a href='https://www.healthit.gov/sites/default/files/2016_model_privacy_notice.pdf'>Model Privacy Notice (MPN)</a> is a voluntary, openly available resource designed to help health technology developers who collect digital health data clearly convey information about their privacy and security policies to their users.</h5>
                         <div className='row'>
                             <div className='col s6'>
                                 <h4>How it works</h4>
@@ -25,13 +29,18 @@ export default class Intro extends React.Component {
                             </div>
                             <img className='col s6' src='tool.png' alt='Policy Notice' />
                         </div>
-                        <RaisedButton label="Sample Notice" primary />
+                        <div className='row'>
+                            <div className='col s6 offset-s6'>
+                                <RaisedButton label="See Sample Notice" primary fullWidth href='privacy-notice.html' />
+                            </div>
+                        </div>
+                        
                     </div>
                 </section>
 
                 <section className='section container'>
-                    <h2 className='notice-title'>Developer Details</h2>
-                    <p>The MPN Wizard is a web app that uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a></p>
+                    <h4 className='intro-title'>Developer Details</h4>
+                    <h5 className='intro-secondary-title'>The MPN Wizard is a web app that uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</h5>
                 </section>
             </div>
         );
