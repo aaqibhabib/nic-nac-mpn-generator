@@ -40,7 +40,8 @@ class App extends React.Component {
             selections: {
                 ...this.state.selections,
                 [id]: state,
-            },
+            } }, () => {
+            console.log(this.state.selections);
         });
     }
 
@@ -106,6 +107,7 @@ class App extends React.Component {
                     />
                     <div style={{ minHeight: 'calc(100vh - 119px)' }}>
                         {this.state.currentStepIndex >= 0 ? <div className="container">
+                        <h2 className="notice-title">Model Privacy Notice Generator</h2>
                             <Stepper
                               currentStepIndex={this.state.currentStepIndex}
                               visited={this.state.visited}
@@ -180,6 +182,7 @@ class App extends React.Component {
                                 /> : null}
                                 {this.state.currentStepIndex >= 0 && this.state.currentStepIndex < 7 ? <RaisedButton
                                   label={this.state.currentStepIndex >= 0 ? 'Continue' : 'Begin'}
+                                  style={{marginLeft:15}}
                                   primary
                                   onClick={this.nextStep}
                                 /> : null}
