@@ -27,7 +27,7 @@ export default class Intro extends React.Component {
                                 <RaisedButton label="See Sample Notice" primary fullWidth href='privacy-notice.html' />
                             </div>
                             <div className='col m8'>
-                                <img style={{ width: '100%', marginBottom: '20px' }} src='notice-preview.png' alt='Policy Notice' />
+                                <img style={{ width: '100%', marginTop: '10px', marginBottom: '20px' }} src='notice-preview.png' alt='Policy Notice' />
                             
                             </div>
                             
@@ -37,7 +37,7 @@ export default class Intro extends React.Component {
 
                 <section className='section container'>
                     <h4 className='intro-title'>Developer Details</h4>
-                    <h5 className='secondary-title'>he MPN Wizard is a web app which uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</h5>
+                    <h5 className='secondary-title'>The MPN Wizard is a web app which uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</h5>
                     <img style={{ width: '100%' }} src="export-notice.png" alt="Export Notice"/>
                 </section>
             </div>
