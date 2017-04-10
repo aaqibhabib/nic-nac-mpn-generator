@@ -135,7 +135,7 @@ export const Questions = [
         pageID: 1,
         title: 'HIPAA',
         type: QuestionTypes.TEXT,
-        prompt: 'What is the name of the technology or product this notice is for?',
+        prompt: '(optional) What is the name of the technology or product this notice is for?',
         hintText: 'name of app or product',
     },
     {
@@ -528,7 +528,7 @@ export const HelpText = {
 export const HelpfulTips = [
     {
         title: 'Instructions',
-        text: 'Complete each question based on your company’s current privacy policy. \n Every question is required to be filed out, unless otherwise specified. There are tips on each page to better explain components that may be confusing. Additionally, it\'d be helpful to have assistance from your company\'s legal team to answer some questions.',
+        text: 'Complete each question based on your company’s current privacy policy. Every question is required to be filled out for a valid MPN, including those that appear after you answer certain questions. There are tips on each page to better explain components that may be confusing. Additionally, it\'d be helpful to have assistance from your company\'s legal team to answer some questions.',
     },
     {
         title: 'Helpful Tip',
