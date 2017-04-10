@@ -37,7 +37,7 @@ export default class Intro extends React.Component {
 
                 <section className='section container'>
                     <h4 className='intro-title'>Developer Details</h4>
-                    <h5 className='secondary-title'>The MPN Wizard is a web app which uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</h5>
+                    <h5 className='secondary-title'>The MPN Wizard is a web app which uses the React and Material-UI frameworks. The tool outputs HTML for your MPN which you can download or copy to use on your website. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</h5>
                     <img style={{ width: '100%' }} src="export-notice.png" alt="Export Notice"/>
                 </section>
             </div>
