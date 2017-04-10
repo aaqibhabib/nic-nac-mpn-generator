@@ -121,7 +121,7 @@ class App extends React.Component {
                             {this.state.currentStepIndex >= 0 && this.state.currentStepIndex !== 7 ? <div style={{ flex: 1, marginRight: '15px', marginTop: '20px' }}>
                                 <Card>
                                     <Toolbar>
-                                        <ToolbarTitle style={{ margin: '0px auto', color: 'rgba(0, 0, 0, 0.4)' }} text={HelpfulTips[this.state.currentStepIndex].title} />
+                                        <ToolbarTitle style={{ margin: '0px auto', color: '#424242' }} text={HelpfulTips[this.state.currentStepIndex].title} />
                                     </Toolbar>
                                     <CardText style={{ fontSize: '16', fontWeight: '300', lineHeight: '1.45em', color:'#212121' }}>
                                         {HelpfulTips[this.state.currentStepIndex].text}
