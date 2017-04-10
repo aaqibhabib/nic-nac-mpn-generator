@@ -64,11 +64,7 @@ html * {
     color: white;
     font-size: 1.5em;
     font-weight: normal;
-    background: #228ed5; /* Old browsers */
-    background: -moz-linear-gradient(-45deg, #228ed5 0%, #0ebacf 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, #228ed5 0%,#0ebacf 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, #228ed5 0%,#0ebacf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228ed5', endColorstr='#0ebacf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: #00bcd4; /* Old browsers */
     padding: 30px;
     text-align: center;
     margin:20px 0px 0px 0px;
