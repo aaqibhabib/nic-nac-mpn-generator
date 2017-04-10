@@ -181,6 +181,7 @@ class App extends React.Component {
                                 /> : null}
                                 {this.state.currentStepIndex >= 0 && this.state.currentStepIndex < 7 ? <RaisedButton
                                   label={this.state.currentStepIndex >= 0 ? 'Continue' : 'Begin'}
+                                  style={{marginLeft:15}}
                                   primary
                                   onClick={this.nextStep}
                                 /> : null}
