@@ -55,7 +55,7 @@ html * {
     text-align: center;
     padding-top:50px;
     padding-bottom: 25px;
-    color: rgba(255, 0, 0, 0.5);
+    color: #43C2C2;
     font-weight: 300;
 }
 
@@ -103,7 +103,7 @@ html * {
 }
 
 .npm-generator a{
-  color: rgba(255, 0, 0, 0.5);;
+  color: #43C2C2;
 }
 .npm-generator p {
   font-size: 1.15em;
@@ -111,6 +111,7 @@ html * {
   color: rgba(0,0,0,0.71);
   padding: 0 0 20px;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.7em;
 }
 
 .npm-generator h4 {
