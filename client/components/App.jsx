@@ -123,7 +123,7 @@ class App extends React.Component {
                                     <Toolbar>
                                         <ToolbarTitle style={{ margin: '0px auto', color: 'rgba(0, 0, 0, 0.4)' }} text={HelpfulTips[this.state.currentStepIndex].title} />
                                     </Toolbar>
-                                    <CardText style={{ fontSize: 16 }}>
+                                    <CardText style={{ fontSize: '16', fontWeight: '300', lineHeight: '1.45em', color:'#212121' }}>
                                         {HelpfulTips[this.state.currentStepIndex].text}
                                     </CardText>
                                 </Card>
