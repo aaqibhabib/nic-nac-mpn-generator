@@ -32,6 +32,11 @@ export default class Questions extends React.Component {
                                         {const selection = _.get(this.props.selections, [key], ''); return (<TextQuestion {...question} key={question.id} selection={selection} hintText={question.hintText} onChange={this.props.onSelectionChange}/>);}
                                     }
                                 }
+                                if (!_.isEmpty(this.props.selections['2-Use: How data is used internally-p-3 g-1 q-1'])) {
+                                    if (!!this.props.selections['2-Use: How data is used internally-p-3 g-1 q-1']['To provide the primary service of the app or technology']) {
+                                        {const selection = _.get(this.props.selections, [key], ''); return (<TextQuestion {...question} key={question.id} selection={selection} hintText={question.hintText} onChange={this.props.onSelectionChange}/>);}
+                                    }
+                                }
                                 if (!_.isEmpty(this.props.selections['2-Share: How data is shared externally with other companies or entities-p-3 g-2 q-1'])) {
                                     if (!!this.props.selections['2-Share: How data is shared externally with other companies or entities-p-3 g-2 q-1']['To provide the primary service of the app or technology']) {
                                         {const selection = _.get(this.props.selections, [key], ''); return (<TextQuestion {...question} key={question.id} selection={selection} hintText={question.hintText} onChange={this.props.onSelectionChange}/>);}
