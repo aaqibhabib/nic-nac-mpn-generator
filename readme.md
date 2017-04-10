@@ -2,7 +2,7 @@
 ## Demos
 [Demo Webpage](http://mpn-wizard.herokuapp.com/)
 
-[Video Demo](https://www.youtube.com/watch?v=ZiQo_Ixe0Ds)
+[Demo Video](https://www.youtube.com/watch?v=ZiQo_Ixe0Ds)
 
 ## Requirements
 
