@@ -2,13 +2,15 @@
 ## Demos
 [Demo Webpage](http://mpn-wizard.herokuapp.com/)
 
-[Video Demo](https://www.youtube.com/watch?v=ZiQo_Ixe0Ds)
+[Demo Video](https://www.youtube.com/watch?v=ZiQo_Ixe0Ds)
 
 ## Requirements
 
 [Yarn Package Manager](https://yarnpkg.com/en/docs/install)
 
 [node.js 5+](https://nodejs.org)
+
+The MPN Wizard is compatible with recent versions of Chrome, Safari, Firefox, and Microsoft Edge. Internet Explorer is not supported.
 
 ## Running the App
 
