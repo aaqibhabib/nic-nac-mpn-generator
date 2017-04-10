@@ -9,7 +9,7 @@ export default class Intro extends React.Component {
                 <section className='section container'>
                     <h4 className='intro-title'>Create Your Model Privacy Notice</h4>
                     <h5 className='intro-secondary-title'>Help your users understand how your organization collects and shares information. You can generate an "In Plain English" notice to share with users by answering a few questions about your company's privacy policy.</h5>            
-                    <div style={{ width: "280", margin: '0 auto', paddingBottom: 20 }}><RaisedButton style={{ width: '100%', margin: '0 auto' }} buttonStyle={{ height: 70 }} overlayStyle={{ height: 70, paddingTop:16 }} labelStyle={{ fontSize: 28 }} onClick={this.props.onNextStep} label="Get Started" primary halfWidth /></div>
+                    <div style={{ width: "280", margin: '0 auto', paddingBottom: 25 }}><RaisedButton style={{ width: '100%', margin: '0 auto' }} buttonStyle={{ height: 70 }} overlayStyle={{ height: 70, paddingTop:16 }} labelStyle={{ fontSize: 28 }} onClick={this.props.onNextStep} label="Get Started" primary halfWidth /></div>
                 </section>
 
                 <section style={{ backgroundColor: grey100 }}>
