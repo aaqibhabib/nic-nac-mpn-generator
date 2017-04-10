@@ -23,7 +23,7 @@ export default class Intro extends React.Component {
                                 <h4>How it works</h4>
                                 <p className='homepage'>This tool will help you generate a MPN for your company. After answering a few simple questions about your company’s privacy and security practices, you’ll be able to download HTML for your MPN to use on your website.</p>
                                 <h4>Final Design</h4>
-                                <p>Your final notice will be exportable for usage in any html environment.</p>
+                                <p>Your final notice will be usable in any HTML environment. Easily export your generated MPN by downloading the HTML file or copying it directly from the Export Notice section of the generator.</p>
                                 <RaisedButton label="See Sample Notice" primary fullWidth href='privacy-notice.html' />
                             </div>
                             <div className='col m8'>
@@ -37,9 +37,8 @@ export default class Intro extends React.Component {
 
                 <section className='section container'>
                     <h4 className='intro-title'>Developer Details</h4>
-                    <h5 className='secondary-title'>Easily export your generated MPN by downloading the HTML file or copying it directly.</h5>
+                    <h5 className='secondary-title'>he MPN Wizard is a web app which uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</h5>
                     <img style={{ width: '100%' }} src="export-notice.png" alt="Export Notice"/>
-                    <p>The MPN Wizard is a web app which uses the React and Material-UI frameworks. The app source code is available on <a href='https://github.com/aaqibhabib/nic-nac-mpn-generator'>GitHub</a>.</p>
                 </section>
             </div>
         );

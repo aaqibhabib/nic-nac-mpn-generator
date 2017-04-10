@@ -7,6 +7,10 @@ html * {
     flex-direction: row;
 }
 
+.npm-generator .section {
+  padding-bottom: 3em;
+}
+
 .npm-generatordiv.other div input {
     height: 24px !important
 }
@@ -39,7 +43,7 @@ html * {
     margin: auto;
     padding-top:50px;
     padding-bottom: 25px;
-    color: ;
+    font-size: 1.5em;
 }
 
 .npm-generator .intro-title {
@@ -49,12 +53,11 @@ html * {
     text-align: center;
     padding-top:50px;
     padding-bottom: 25px;
-    color: #2196F3;
+    color: rgba(255, 0, 0, 0.5);
+    font-weight: 300;
 }
 
-.npm-generator .notice-title {
-    font-size: 1.5em;
-}
+
 .npm-generator .question-group-title {
     color: white;
     font-size: 1.5em;
@@ -82,22 +85,24 @@ html * {
     border-bottom: 0px solid rgb(224, 224, 224);
 }
 
-.npm-generator .intro-secondary-title {
+.npm-generator .intro-secondary-title, .npm-generator .secondary-title {
+    font-size: 1.5em;
+    line-height: 1.4em;
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 30px;
-    line-height: 1.7em;
-    padding: 0% 10%;
     text-align: center;
     color: rgba(0,0,0,0.71);
 }
 
-.npm-generator .secondary-title {
-    font-size: 1.5em;
-    line-height: 1.4em;
-    font-weight: lighter;
+.npm-generator .intro-secondary-title {
+    line-height: 1.7em;
+    padding: 0% 10%;
 }
 
+.npm-generator a{
+  color: rgba(255, 0, 0, 0.5);;
+}
 .npm-generator p {
   font-size: 1.15em;
   font-weight: 300;
