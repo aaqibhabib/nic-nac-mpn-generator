@@ -116,8 +116,7 @@ html * {
 .npm-generator h4 {
     font-size: 1.7em;
     font-weight: 500;
-    /*margin-top: 20px;*/
-    margin-bottom: 0;
+    margin-bottom: 20px;
     color: rgba(0,0,0,0.71);
 }
 .npm-generator .step-button > div > span {

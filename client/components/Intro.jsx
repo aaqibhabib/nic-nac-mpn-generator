@@ -27,7 +27,7 @@ export default class Intro extends React.Component {
                                 <RaisedButton label="See Sample Notice" primary fullWidth href='privacy-notice.html' />
                             </div>
                             <div className='col m8'>
-                                <img style={{ width: '100%', marginTop: '30px', marginBottom: '20px' }} src='notice-preview.png' alt='Policy Notice' />
+                                <img style={{ width: '100%', marginBottom: '20px' }} src='notice-preview.png' alt='Policy Notice' />
                             
                             </div>
                             
